@@ -5,6 +5,9 @@
                 Presets
             </a>
             <a href="#" id="save-animation" class="button disabled" >Save as Preset</a>
+            <% if (project.branding) { %>
+                <%- file(project.branding.leftPanel) %>
+            <% } %>
         </li>
     </ul>
 
