@@ -116,6 +116,7 @@
         "lib/utils/mixers.js",
         "lib/utils/timer.js",
         "lib/utils/warp_helpers.js",
+        "lib/mobile/views/render_surface_view.js",
         "lib/views/help_view.js"
     ],
     "mobile_components": [
@@ -123,8 +124,6 @@
         "html/main.html"
     ],
     "mobile_popups": [
-        "html/browser-popup.html",
-        "html/github-popup.html",
         "html/help-popup.html"
     ]
 }
