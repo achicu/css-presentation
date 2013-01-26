@@ -39,6 +39,7 @@ body {
     height: 100%;
     overflow: hidden;
     font: 14px "Source Sans Pro", "source", helvetica, arial, sans-serif;
+    -webkit-transform-style: preserve-3d;
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -316,7 +317,7 @@ h1,h2,h3,h4,h5,h6 {
     height: 100%;
     overflow: auto;
     -webkit-overflow-scrolling: touch;
-    box-shadow: inset -4px 0px 20px #222;
+    box-shadow: inset 0px 0px 20px #222;
     background: #333;
 }
 
@@ -350,7 +351,34 @@ h1,h2,h3,h4,h5,h6 {
 
 #active-filters {
     color: white;
-    font-size: 14px;
+    font-size: 20px;
+}
+
+#filter-list {
+    padding: 10px;
+    margin: 0px;
+    padding-bottom: 100px;
+}
+
+#filter-list > li {
+    position: relative;
+    @include list-reset;
+}
+
+.filter-name {
+    border-bottom: 1px solid #cecece;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+}
+
+.delete-filter {
+    -webkit-appearance: none;
+    font-size: 16px;
+    background: #c00;
+    color: white;
+    border-radius: 5px;
+    position: absolute;
+    right: 5px;
 }
 
 input[type=range] {
