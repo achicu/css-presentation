@@ -116,7 +116,9 @@
         "lib/utils/mixers.js",
         "lib/utils/timer.js",
         "lib/utils/warp_helpers.js",
+        "lib/mobile/views/dock_panel.js",
         "lib/mobile/views/render_surface_view.js",
+        "lib/views/filter_store_view.js",
         "lib/views/help_view.js"
     ],
     "mobile_components": [

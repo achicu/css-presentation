@@ -37,6 +37,7 @@ body {
     top: 0px;
     width: 100%;
     height: 100%;
+    overflow: hidden;
     font: 14px "Source Sans Pro", "source", helvetica, arial, sans-serif;
 }
 
@@ -202,12 +203,13 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 #help-popup {
-    
-    article {
-        margin-top: 25px;
-        max-height: 250px;
+    .popup-inner {
         overflow: auto;
         -webkit-overflow-scrolling: touch;
+    }
+
+    article {
+        margin-top: 25px;
 
         .button {
             vertical-align: middle;
@@ -222,6 +224,9 @@ h1,h2,h3,h4,h5,h6 {
 
 #main {
     background: #f8f8f8;
+    width: 100%;
+    height: 100%;
+    -webkit-transition: -webkit-transform 0.1s linear;
 }
 
 #container {
@@ -303,4 +308,45 @@ h1,h2,h3,h4,h5,h6 {
         }
 
     }
+}
+
+.panel-view {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 80%;
+    height: 100%;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    box-shadow: inset -4px 0px 20px #222;
+    background: #333;
+}
+
+.dock-left {
+    -webkit-transform: translateX(-100%);
+    -webkit-transition: -webkit-transform 0.1s linear;
+}
+
+.dock-right {
+    -webkit-transform: translateX(100%);
+    -webkit-transition: -webkit-transform 0.1s linear;
+}
+
+.filter-preview {
+    display: inline-block;
+    width: 75px;
+    height: 50px;
+    margin: 0 15px 0 5px;
+    background: url(../../images/shaderprincess.svg) center 6px no-repeat;
+    background-size: 100%;
+}
+
+.filter-label {
+    display: inline-block;
+    color: black;
+    margin-top: 20px;
+}
+
+.button-box {
+    
 }
