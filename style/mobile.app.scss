@@ -14,3 +14,121 @@
  * limitations under the License.
  */
 
+@import "src/_utils";
+@import "src/_northstar";
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+#app-body {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    font: 14px "Source Sans Pro", "source", helvetica, arial, sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    color: #000;
+    font-family: "Source Sans Pro", "source-l", helvetica, arial, sans-serif;
+    margin: 0;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+}
+
+#components, #main-view, .popup {
+    display: none;
+}
+
+#main-view, #loading {
+    width: 100%;
+    height: 100%;
+}
+
+#loading > div {
+    position: absolute;
+    left: 40px;
+    right: 40px;
+    bottom: 45%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 2em;
+    background: #ccc;
+    border: 2px solid gray;
+    border-radius: 20px;
+}
+
+#main {
+    box-sizing: border-box;
+    background: #f8f8f8;
+}
+
+#container {
+    position: absolute;
+    @include user-select(auto);
+    border-radius: 3px;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    color: white;
+    font-size: 16px;
+    padding: 40px;
+    border: none;
+    outline-offset:-15px;
+    background: #263F51;
+    background-image:url(../../images/bottomscene.png);
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+
+    p {
+        line-height: 22px;
+    }
+
+    .content-link {
+        color: yellow;
+    }
+
+    #multi-col {
+        
+        h2{
+            color: #60C5DF;
+            font-size: 32px;
+            margin: 0px;
+            text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+        }
+    }
+
+    #svg-img {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 100px;
+    }
+
+    #png-img {
+        display: block;
+        margin: auto;
+        margin-bottom: 2em;
+    }
+
+    #css3-img {
+        position: absolute;
+        display: block;
+        border: 6px solid #33ccff;
+        background: white;
+        border-radius: 45px;
+        padding: 10px;
+        width: 30px;
+        height: 30px;
+        bottom: -30px;
+        right: 20px;
+    }
+}
