@@ -14,6 +14,10 @@
  * limitations under the License.
  */
 
+* {
+    box-sizing: border-box;
+}
+
 @import "src/_utils";
 @import "src/_northstar";
 
@@ -24,6 +28,7 @@ body {
     overflow: hidden;
     margin: 0;
     padding: 0;
+    background: black;
 }
 
 #app-body {
@@ -102,19 +107,16 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .popup .popup-inner {
+    position: absolute;
     margin-left: auto;
     margin-right: auto;
-    width: 500px;
-    margin-top: -100px;
-    margin-left: -250px;
+    width: 100%;
+    height: 100%;
     background: white;
     border-radius: 4px;
     border: none;
     padding: 30px 35px;
     box-shadow: 0 15px 36px rgba(0,0,0,0.6);
-    position: absolute;
-    top: 50%;
-    left: 50%;
     z-index: 1999;
 }
 
@@ -199,25 +201,13 @@ h1,h2,h3,h4,h5,h6 {
     }
 }
 
-#help-popup{
-    @include vbox;
-    -webkit-box-pack: center;
-    -webkit-box-align: center;
-
-    .popup-inner{
-        margin: 0;
-        height: 400px;
-        position: relative;
-        top: auto;
-        left: auto;
-        right: auto;
-        bottom: auto;
-    }
-
-    article{
+#help-popup {
+    
+    article {
         margin-top: 25px;
         max-height: 250px;
-        overflow-y: auto;
+        overflow: auto;
+        -webkit-overflow-scrolling: touch;
 
         .button {
             vertical-align: middle;
@@ -231,16 +221,15 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 #main {
-    box-sizing: border-box;
     background: #f8f8f8;
 }
 
 #container {
     position: absolute;
     @include user-select(auto);
-    border-radius: 3px;
     height: 100%;
     width: 100%;
+    border-radius: 10px;
     overflow: hidden;
     color: white;
     font-size: 16px;
@@ -251,8 +240,7 @@ h1,h2,h3,h4,h5,h6 {
     background-image:url(../../images/bottomscene.png);
     background-position: center bottom;
     background-repeat: no-repeat;
-    box-sizing: border-box;
-
+    
     p {
         line-height: 22px;
     }
@@ -262,7 +250,6 @@ h1,h2,h3,h4,h5,h6 {
     }
 
     #multi-col {
-        
         h2{
             color: #60C5DF;
             font-size: 32px;
@@ -274,8 +261,8 @@ h1,h2,h3,h4,h5,h6 {
     #svg-img {
         display: block;
         position: absolute;
-        right: 20px;
-        top: 100px;
+        right: 10px;
+        bottom: 50px;
     }
 
     #png-img {
@@ -295,5 +282,25 @@ h1,h2,h3,h4,h5,h6 {
         height: 30px;
         bottom: -30px;
         right: 20px;
+    }
+}
+
+@media screen and (orientation:landscape) {
+    #container {
+        font-size: 12px;
+        p {
+            line-height: 16px;
+        }
+
+        #multi-col {
+            h2 {
+                font-size: 22px;
+            }
+        }
+
+        #svg-img {
+            display: none;
+        }
+
     }
 }

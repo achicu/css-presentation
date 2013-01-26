@@ -4,6 +4,12 @@
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="494.767px" height="207.194px" viewBox="66.288 61.73 494.767 207.194"
 	 enable-background="new 66.288 61.73 494.767 207.194" xml:space="preserve">
+<script>
+    // Prevent scrolling the full App.
+    document.ontouchstart = function(e){
+        e.preventDefault();
+    };
+</script>
 <g id="CROWN">
 	<path fill="#FDC93B" d="M245.837,74.865c-0.129-0.491-0.585-0.886-1.195-0.647c-3.552,1.385-7.064,3.74-9.565,6.725
 		c-0.311-0.666-0.639-1.322-0.96-1.969c-0.224-0.714-0.46-1.428-0.722-2.146c-1.18-4.672-2.247-9.384-4.191-13.783
