@@ -350,7 +350,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .button-box {
-    
+    display: none;
 }
 
 #active-filters {
@@ -367,6 +367,16 @@ h1,h2,h3,h4,h5,h6 {
 #filter-list > li {
     position: relative;
     @include list-reset;
+}
+
+.filters-header {
+    padding-left: 10px;
+    padding-top: 10px;
+    font-weight: bold;
+    font-size: 16px;
+    color: white;
+    border-bottom: 1px solid rgba(80, 80, 80, 0.5);
+    margin-bottom: 5px;
 }
 
 .filter-name {
