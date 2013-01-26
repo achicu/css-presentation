@@ -31,7 +31,7 @@ module.exports = function(grunt) {
 
     var project = branding.initProject(JSON.parse(grunt.file.read("project.json")));
 
-    function generateHTMLConfig(dest, scripts, css, addThirdPartyLibs, addQunit) {
+    function generateHTMLConfig(src, dest, scripts, css, addThirdPartyLibs, addQunit) {
         scripts = Array.isArray(scripts) ? scripts : [scripts];
         css = Array.isArray(css) ? css : [css];
 
@@ -47,7 +47,7 @@ module.exports = function(grunt) {
         }
 
         var config = {
-            src: 'index.html',
+            src: src,
             dest: dest,
             js: scripts,
             css: css,
@@ -109,25 +109,48 @@ module.exports = function(grunt) {
                 dest: 'dist/<%= concat.js.name %>',
                 name: 'lib/<%= pkg.name %>.concat.js'
             },
+            mobile_js: {
+                src: ['<banner:meta.banner>', '<config:lint.mobile>'],
+                dest: 'dist/<%= concat.mobile_js.name %>',
+                name: 'lib/mobile.<%= pkg.name %>.concat.js'
+            },
             min_js: {
                 src: [project.third_party_libs, '<config:min.third_party.dest>', '<config:min.dist.dest>'],
                 dest: 'dist/<%= concat.min_js.name %>',
                 name: 'lib/<%= pkg.name %>.min.js'
             },
+            mobile_min_js: {
+                src: [project.third_party_libs, '<config:min.third_party.dest>', '<config:min.mobile_dist.dest>'],
+                dest: 'dist/<%= concat.mobile_min_js.name %>',
+                name: 'lib/mobile.<%= pkg.name %>.min.js'
+            },
             css: {
                 src: ['<banner:meta.banner>', '<config:cssmin.css.dest>', '<config:cssmin.third_party.dest>'],
                 dest: '<config:cssmin.css.dest>'
+            },
+            mobile_css: {
+                src: ['<banner:meta.banner>', '<config:cssmin.mobile_css.dest>', '<config:cssmin.third_party.dest>'],
+                dest: '<config:cssmin.mobile_css.dest>'
             }
         },
         html: {
-            index_dev: generateHTMLConfig('dist/index.dev.html', '<config:lint.all>', ['style/css/app.dev.css', project.injected_dev_css], true),
-            index_dev_qunit: generateHTMLConfig('dist/index.dev.qunit.html', '<config:lint.all>', ['style/css/app.dev.css', project.injected_dev_css], true, true),
+            index_dev: generateHTMLConfig('index.html', 'dist/index.dev.html', '<config:lint.all>', ['style/css/app.dev.css', project.injected_dev_css], true),
+            index_dev_qunit: generateHTMLConfig('index.html', 'dist/index.dev.qunit.html', '<config:lint.all>', ['style/css/app.dev.css', project.injected_dev_css], true, true),
 
-            index_concat: generateHTMLConfig('dist/index.concat.html', '<config:concat.js.name>', ['style/css/app.concat.css', project.injected_concat_css], true),
-            index_concat_qunit: generateHTMLConfig('dist/index.concat.qunit.html', '<config:concat.js.name>', ['style/css/app.concat.css', project.injected_concat_css], true, true),
+            index_concat: generateHTMLConfig('index.html', 'dist/index.concat.html', '<config:concat.js.name>', ['style/css/app.concat.css', project.injected_concat_css], true),
+            index_concat_qunit: generateHTMLConfig('index.html', 'dist/index.concat.qunit.html', '<config:concat.js.name>', ['style/css/app.concat.css', project.injected_concat_css], true, true),
 
-            index_prod: generateHTMLConfig('dist/index.html', '<config:concat.min_js.name>', 'style/css/app.min.css', false),
-            index_prod_qunit: generateHTMLConfig('dist/index.qunit.html', '<config:concat.min_js.name>', 'style/css/app.min.css', false, true)
+            index_prod: generateHTMLConfig('index.html', 'dist/index.html', '<config:concat.min_js.name>', 'style/css/app.min.css', false),
+            index_prod_qunit: generateHTMLConfig('index.html', 'dist/index.qunit.html', '<config:concat.min_js.name>', 'style/css/app.min.css', false, true),
+
+            mobile_index_dev: generateHTMLConfig('mobile.index.html', 'dist/mobile.index.dev.html', '<config:lint.mobile>', ['style/css/mobile.app.dev.css', project.injected_dev_css], true),
+            mobile_index_dev_qunit: generateHTMLConfig('mobile.index.html', 'dist/mobile.index.dev.qunit.html', '<config:lint.mobile>', ['style/css/mobile.app.dev.css', project.injected_dev_css], true, true),
+
+            mobile_index_concat: generateHTMLConfig('mobile.index.html', 'dist/mobile.index.concat.html', '<config:concat.mobile_js.name>', ['style/css/mobile.app.concat.css', project.injected_concat_css], true),
+            mobile_index_concat_qunit: generateHTMLConfig('mobile.index.html', 'dist/mobile.index.concat.qunit.html', '<config:concat.mobile_js.name>', ['style/css/mobile.app.concat.css', project.injected_concat_css], true, true),
+
+            mobile_index_prod: generateHTMLConfig('mobile.index.html', 'dist/mobile.index.html', '<config:concat.mobile_min_js.name>', 'style/css/mobile.app.min.css', false),
+            mobile_index_prod_qunit: generateHTMLConfig('mobile.index.html', 'dist/mobile.index.qunit.html', '<config:concat.mobile_min_js.name>', 'style/css/mobile.app.min.css', false, true)
         },
         qunit: {
             dev: "http://localhost:9000/index.dev.qunit.html",
@@ -140,6 +163,11 @@ module.exports = function(grunt) {
                 dest: 'dist/<%= min.dist.name %>',
                 name: 'lib/<%= pkg.name %>.concat.min.js'
             },
+            mobile_dist: {
+                src: ['<banner:meta.banner>', '<config:concat.mobile_js.dest>'],
+                dest: 'dist/<%= min.mobile_dist.name %>',
+                name: 'lib/mobile.<%= pkg.name %>.concat.min.js'
+            },
             third_party: {
                 src: project.third_party_unminified_libs,
                 dest: 'dist/lib/third_party.min.js'
@@ -149,7 +177,8 @@ module.exports = function(grunt) {
             grunt: ['grunt.js'],
             tests: project.tests,
             /* Note that the order of loading the files is important. */
-            all: project.scripts
+            all: project.scripts,
+            mobile: project.mobile_scripts
         },
         watch: {
             js: {
@@ -177,6 +206,17 @@ module.exports = function(grunt) {
                     'dist/style/css/app.dev.css': 'style/app.scss'
                 }
             },
+            mobile_dev: {
+                options: {
+                    style: 'expanded',
+                    debugInfo: true,
+                    lineNumbers: true,
+                    trace: true
+                },
+                files: {
+                    'dist/style/css/mobile.app.dev.css': 'style/mobile.app.scss'
+                }
+            },
             prod: {
                 options: {
                     // Using compact here, so that debugging is not a nightmare. We minify it later.
@@ -184,6 +224,15 @@ module.exports = function(grunt) {
                 },
                 files: {
                     'dist/style/css/app.concat.css': 'style/app.scss'
+                }
+            },
+            mobile_prod: {
+                options: {
+                    // Using compact here, so that debugging is not a nightmare. We minify it later.
+                    style: 'compact'
+                },
+                files: {
+                    'dist/style/css/mobile.app.concat.css': 'style/mobile.app.scss'
                 }
             }
         },
@@ -228,6 +277,10 @@ module.exports = function(grunt) {
                 src: 'dist/style/css/app.concat.css',
                 dest: 'dist/style/css/app.min.css'
             },
+            mobile_css: {
+                src: 'dist/style/css/mobile.app.concat.css',
+                dest: 'dist/style/css/mobile.app.min.css'
+            },
             third_party: {
                 src: project.third_party_css,
                 dest: 'dist/style/css/third_party.min.css'
@@ -270,8 +323,8 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-css');
 
     grunt.registerTask('check-sources', 'html lint sass');
-    grunt.registerTask('minify-js', 'concat:js min concat:min_js');
-    grunt.registerTask('minify-css', 'cssmin concat:css');
+    grunt.registerTask('minify-js', 'concat:js concat:mobile_js min concat:min_js concat:mobile_min_js');
+    grunt.registerTask('minify-css', 'cssmin concat:css concat:mobile_css');
 
     grunt.registerTask('default', 'check-sources copy minify-js minify-css');
     grunt.registerTask('test', 'copy:tests server qunit:dev');

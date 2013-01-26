@@ -1,0 +1,66 @@
+<!doctype html>
+
+<!--
+Copyright (c) 2012 Adobe Systems Incorporated. All rights reserved.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+<html dir="ltr" lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=9">
+    <title>CSS FilterLab</title>
+
+    <%- css %>
+</head>
+
+<body>
+    <div id="components">
+        <% if (project.branding) { %>
+            <%- file(project.branding.logo) %>
+        <% } %>
+        <% project.mobile_components.forEach(function(component){ %>
+            <%- file(component) %>
+        <% }) %>
+    </div>
+
+    <div id="app-body">
+        <div id="main-view">
+            <div id="app" class="container">
+            </div>
+        </div>
+
+        <div id="loading">
+            <div>
+                Loading CSS FilterLab ...
+            </div>
+        </div>
+
+        <% project.mobile_popups.forEach(function(popup){ %>
+            <%- file(popup) %>
+        <% }) %>
+
+        <% if (qunit) { %>
+            <% project.qunit.forEach(function(qunit){ %>
+                <%- file(qunit) %>
+            <% }) %>
+        <% } %>
+
+        <% if (project.branding) { %>
+            <%- file(project.branding.main) %>
+        <% } %>
+    </div>
+
+    <%- scripts %>
+</body>
+</html>
