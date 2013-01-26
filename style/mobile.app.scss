@@ -313,7 +313,6 @@ h1,h2,h3,h4,h5,h6 {
     position: absolute;
     left: 0px;
     top: 0px;
-    width: 80%;
     height: 100%;
     overflow: auto;
     -webkit-overflow-scrolling: touch;
@@ -321,12 +320,16 @@ h1,h2,h3,h4,h5,h6 {
     background: #333;
 }
 
-.dock-left {
+.panel-view.dock-right {
+    width: 80%;
+}
+
+.dock-left, .dock-right {
     -webkit-transform: translateX(-100%);
 }
 
 .dock-right {
-    -webkit-transform: translateX(150%);
+    -webkit-transform: translateX(1000%);
 }
 
 .filter-preview {
@@ -343,6 +346,7 @@ h1,h2,h3,h4,h5,h6 {
     display: inline-block;
     color: white;
     vertical-align: middle;
+    margin-right: 20px;
 }
 
 .button-box {
@@ -379,6 +383,7 @@ h1,h2,h3,h4,h5,h6 {
     border-radius: 5px;
     position: absolute;
     right: 5px;
+    z-index: 10;
 }
 
 input[type=range] {
