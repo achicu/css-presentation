@@ -64,6 +64,7 @@
         "lib/views/dock_panel.js"
     ],
     "components": [
+        "html/active-filters-list.html",
         "html/filters-list.html",
         "html/fork-github.html",
         "html/header-bar.html",
@@ -119,11 +120,14 @@
         "lib/mobile/views/dock_panel.js",
         "lib/mobile/views/render_surface_view.js",
         "lib/views/filter_store_view.js",
-        "lib/views/help_view.js"
+        "lib/views/help_view.js",
+        "lib/views/filter_item_view.js",
+        "lib/views/active_filter_list_view.js"
     ],
     "mobile_components": [
         "html/logo.html",
-        "html/main.html"
+        "html/main.html",
+        "html/active-filters-list.html"
     ],
     "mobile_popups": [
         "html/help-popup.html"

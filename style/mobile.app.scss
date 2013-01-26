@@ -226,7 +226,6 @@ h1,h2,h3,h4,h5,h6 {
     background: #f8f8f8;
     width: 100%;
     height: 100%;
-    -webkit-transition: -webkit-transform 0.1s linear;
 }
 
 #container {
@@ -234,7 +233,6 @@ h1,h2,h3,h4,h5,h6 {
     @include user-select(auto);
     height: 100%;
     width: 100%;
-    border-radius: 10px;
     overflow: hidden;
     color: white;
     font-size: 16px;
@@ -324,29 +322,47 @@ h1,h2,h3,h4,h5,h6 {
 
 .dock-left {
     -webkit-transform: translateX(-100%);
-    -webkit-transition: -webkit-transform 0.1s linear;
 }
 
 .dock-right {
-    -webkit-transform: translateX(100%);
-    -webkit-transition: -webkit-transform 0.1s linear;
+    -webkit-transform: translateX(150%);
 }
 
 .filter-preview {
     display: inline-block;
     width: 75px;
     height: 50px;
-    margin: 0 15px 0 5px;
+    margin: 5px 15px 0 15px;
     background: url(../../images/shaderprincess.svg) center 6px no-repeat;
     background-size: 100%;
+    vertical-align: middle;
 }
 
 .filter-label {
     display: inline-block;
-    color: black;
-    margin-top: 20px;
+    color: white;
+    vertical-align: middle;
 }
 
 .button-box {
     
+}
+
+#active-filters {
+    color: white;
+    font-size: 14px;
+}
+
+input[type=range] {
+    -webkit-appearance: none;
+    background-color: white;
+    height: 30px;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background-color: #333;
+    opacity: 0.5;
+    width: 40px;
+    height: 30px;
 }
