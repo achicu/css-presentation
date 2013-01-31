@@ -91,6 +91,7 @@
         "lib/mobile/views/touch_view.js",
         "lib/mobile/views/gesture_view.js",
         "lib/mobile/views/image_view.js",
+        "lib/mobile/views/scroll_view.js",
         "lib/mobile/application.js",
         "lib/controls/base_control.js",
         "lib/controls/code_editor.js",
