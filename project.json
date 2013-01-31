@@ -88,6 +88,7 @@
         "configs.js",
         "lib/utils/utils.js",
         "lib/utils/event_dispatcher.js",
+        "lib/mobile/views/touch_view.js",
         "lib/mobile/application.js",
         "lib/controls/base_control.js",
         "lib/controls/code_editor.js",

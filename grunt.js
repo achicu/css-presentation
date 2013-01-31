@@ -326,6 +326,11 @@ module.exports = function(grunt) {
     grunt.registerTask('minify-js', 'concat:js concat:mobile_js min concat:min_js concat:mobile_min_js');
     grunt.registerTask('minify-css', 'sass cssmin concat:css concat:mobile_css');
 
+    grunt.registerTask('css-mobile', 'sass:mobile_dev concat:mobile_css');
+    grunt.registerTask('js-mobile', 'copy:js concat:mobile_js');
+
+    grunt.registerTask('mobile', 'css-mobile js-mobile');
+
     grunt.registerTask('default', 'check-sources copy minify-js minify-css');
     grunt.registerTask('test', 'copy:tests server qunit:dev');
     grunt.registerTask('test-concat', 'copy:tests server qunit:concat');
