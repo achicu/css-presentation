@@ -99,6 +99,11 @@
         "lib/mobile/views/step_scroll_view.js",
         "lib/mobile/views/list_item_view.js",
         "lib/mobile/views/highlight_touch_view.js",
+        "lib/mobile/views/content_view.js",
+        "lib/mobile/views/document_view.js",
+        "lib/mobile/views/document_list_view.js",
+        "lib/mobile/views/active_filter_list_view.js",
+        "lib/mobile/views/main_view.js",
         "lib/mobile/application.js",
         "lib/controls/base_control.js",
         "lib/controls/code_editor.js",
@@ -132,8 +137,7 @@
         "lib/mobile/views/render_surface_view.js",
         "lib/views/filter_store_view.js",
         "lib/views/help_view.js",
-        "lib/views/filter_item_view.js",
-        "lib/views/active_filter_list_view.js"
+        "lib/views/filter_item_view.js"
     ],
     "mobile_components": [
         "html/logo.html",
