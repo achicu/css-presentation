@@ -105,6 +105,7 @@
         "lib/mobile/views/active_filter_list_view.js",
         "lib/mobile/views/dialog_view.js",
         "lib/mobile/views/filter_list_view.js",
+        "lib/mobile/views/filter_controls_view.js",
         "lib/mobile/views/main_view.js",
         "lib/mobile/application.js",
         "lib/controls/base_control.js",
