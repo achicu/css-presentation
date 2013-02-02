@@ -103,6 +103,8 @@
         "lib/mobile/views/document_view.js",
         "lib/mobile/views/document_list_view.js",
         "lib/mobile/views/active_filter_list_view.js",
+        "lib/mobile/views/dialog_view.js",
+        "lib/mobile/views/filter_list_view.js",
         "lib/mobile/views/main_view.js",
         "lib/mobile/application.js",
         "lib/controls/base_control.js",
@@ -133,11 +135,7 @@
         "lib/utils/mixers.js",
         "lib/utils/timer.js",
         "lib/utils/warp_helpers.js",
-        "lib/mobile/views/dock_panel.js",
-        "lib/mobile/views/render_surface_view.js",
-        "lib/views/filter_store_view.js",
-        "lib/views/help_view.js",
-        "lib/views/filter_item_view.js"
+        "lib/views/help_view.js"
     ],
     "mobile_components": [
         "html/logo.html",
