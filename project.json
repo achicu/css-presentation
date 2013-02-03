@@ -130,9 +130,7 @@
         "lib/views/help_view.js"
     ],
     "mobile_components": [
-        "html/logo.html",
-        "html/main.html",
-        "html/active-filters-list.html"
+        "html/main.html"
     ],
     "mobile_popups": [
         "html/help-popup.html"
