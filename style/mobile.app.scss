@@ -191,7 +191,8 @@ h1,h2,h3,h4,h5,h6 {
     bottom: 0px;
     width: 100%;
     height: 130px;
-    background: -webkit-linear-gradient(bottom, rgba(0,0,0,0.8) 0%,rgba(0,0,0,0) 50%);
+    border-top: 1px solid #787a7a;
+    background: -webkit-linear-gradient(bottom, rgba(41,44,44,0.95) 0%, rgba(61,65,65,0.95) 100%);
 
     .add-filter-button-view {
         padding-top: 20px;
@@ -199,14 +200,15 @@ h1,h2,h3,h4,h5,h6 {
         width: 70px;
         text-align: center;
         height: 50px;
-        background-color: rgba(255, 255, 255, 0.2);
+        background-color: #595b5b;
         margin-top: 35px;
-        color: black;
+        color: #c3c3c3;
         font-weight: bold;
         margin-left: 10px;
         margin-right: 10px;
-        border-radius: 10px;
-        font-size: 5em;
+        border-radius: 2px;
+        border: 1px solid #26292a;
+        font-size: 4.5em;
         line-height: 5px;
     }
 
@@ -214,26 +216,28 @@ h1,h2,h3,h4,h5,h6 {
         text-align: center;
         margin-top: 20px;
         color: black;
+        padding: 0px;
         font-weight: bold;
         margin-left: 10px;
         margin-right: 10px;
         border-radius: 10px;
         white-space: nowrap;
-        -webkit-transition: border-color 0.1s linear;
-        border: 2px solid rgba(128, 128, 128, 0.5);
-        width: 138px;
-        height: 92px;
+        -webkit-transition: background 0.1s linear;
+        background: transparent;
+        width: 140px;
+        height: 95px;
 
         &.active-filter-box-view {
-            border: 2px solid rgba(0, 0, 128, 0.8);
+            background: -webkit-linear-gradient(top, #00bffe 0%, #004156 100%);
         }
 
         & > .filter-label {
             position: absolute;
-            bottom: 0px;
+            bottom: 4px;
             padding-top: 15px;
             color: white;
-            width: 100%;
+            left: 4px;
+            right: 4px;
             height: 45px;
             border-bottom-left-radius: 5px;
             border-bottom-right-radius: 5px;
@@ -242,10 +246,23 @@ h1,h2,h3,h4,h5,h6 {
             background: -webkit-linear-gradient(bottom, rgba(0,0,0,0.9) 0%,rgba(0,0,0,0) 70%);
         }
 
+        &::before {
+            position: absolute;
+            left: 4px;
+            top: 4px;
+            right: 4px;
+            bottom: 4px;
+            border-radius: 5px;
+            content: "";
+            background: url(../img/color_bg.png);
+        }
+
         & > .filter-preview {
             position: absolute;
-            width: 134px;
-            height: 88px;
+            left: 4px;
+            top: 4px;
+            right: 4px;
+            bottom: 4px;
             border-radius: 5px;
             background: url(../img/mobile/filter-preview.jpg) no-repeat;
         }
