@@ -161,6 +161,7 @@ h1,h2,h3,h4,h5,h6 {
 
 .document-view {
     -webkit-transform: translate3d(10000px, 10000px, 0px);
+    background: url(../img/color_bg.png);
 
     & > .document-ui-view {
         width: 100%;
