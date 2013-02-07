@@ -16,12 +16,14 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-<html dir="ltr" lang="en">
+<html dir="ltr" lang="en"<%- html_attributes %>>
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=9">
     <title>CSS FilterLab</title>
 
-    <%- css %>
+    <% css.forEach(function(cssFile){ %>
+        <link rel="stylesheet" href="<%- cssFile %>" />
+    <% }) %>
 </head>
 
 <body>
@@ -64,6 +66,8 @@ limitations under the License.
         <% } %>
     </div>
 
-    <%- scripts %>
+    <% scripts.forEach(function(scriptFile){ %>
+        <script src="<%- scriptFile %>"></script>
+    <% }) %>
 </body>
 </html>

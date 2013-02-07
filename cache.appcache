@@ -1,0 +1,11 @@
+CACHE MANIFEST
+
+images/shaderprincess.svg
+images/bottomscene.png
+
+<% css.forEach(function(cssFile){ %>
+<%- cssFile %>
+<% }) %>
+<% scripts.forEach(function(scriptFile){ %>
+<%- scriptFile %>
+<% }) %>

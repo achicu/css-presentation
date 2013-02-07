@@ -31,7 +31,7 @@ module.exports = function(grunt) {
 
     var project = branding.initProject(JSON.parse(grunt.file.read("project.json")));
 
-    function generateHTMLConfig(src, dest, scripts, css, addThirdPartyLibs, addQunit) {
+    function generateHTMLConfig(src, dest, scripts, css, addThirdPartyLibs, addQunit, manifestDest) {
         scripts = Array.isArray(scripts) ? scripts : [scripts];
         css = Array.isArray(css) ? css : [css];
 
@@ -52,6 +52,7 @@ module.exports = function(grunt) {
             js: scripts,
             css: css,
             options: {
+                html_attributes: "",
                 qunit: !!addQunit,
                 file: function(file, data) {
                     var content = grunt.file.read(file);
@@ -60,6 +61,12 @@ module.exports = function(grunt) {
                 project: project
             }
         };
+
+        if (manifestDest) {
+            config.manifestSrc = "cache.appcache";
+            config.manifestDest = "dist/" + manifestDest;
+            config.options.html_attributes += "manifest=\"" + manifestDest + "\"";
+        }
 
         return config;
     }
@@ -143,13 +150,13 @@ module.exports = function(grunt) {
             index_prod: generateHTMLConfig('index.html', 'dist/index.html', '<config:concat.min_js.name>', 'style/css/app.min.css', false),
             index_prod_qunit: generateHTMLConfig('index.html', 'dist/index.qunit.html', '<config:concat.min_js.name>', 'style/css/app.min.css', false, true),
 
-            mobile_index_dev: generateHTMLConfig('mobile.index.html', 'dist/mobile.index.dev.html', '<config:lint.mobile>', ['style/css/mobile.app.dev.css', project.injected_dev_css], true),
+            mobile_index_dev: generateHTMLConfig('mobile.index.html', 'dist/mobile.index.dev.html', '<config:lint.mobile>', ['style/css/mobile.app.dev.css', project.injected_dev_css], true, false, "mobile.dev.cache.appcache"),
             mobile_index_dev_qunit: generateHTMLConfig('mobile.index.html', 'dist/mobile.index.dev.qunit.html', '<config:lint.mobile>', ['style/css/mobile.app.dev.css', project.injected_dev_css], true, true),
 
-            mobile_index_concat: generateHTMLConfig('mobile.index.html', 'dist/mobile.index.concat.html', '<config:concat.mobile_js.name>', ['style/css/mobile.app.concat.css', project.injected_concat_css], true),
+            mobile_index_concat: generateHTMLConfig('mobile.index.html', 'dist/mobile.index.concat.html', '<config:concat.mobile_js.name>', ['style/css/mobile.app.concat.css', project.injected_concat_css], true, false, "mobile.concat.cache.appcache"),
             mobile_index_concat_qunit: generateHTMLConfig('mobile.index.html', 'dist/mobile.index.concat.qunit.html', '<config:concat.mobile_js.name>', ['style/css/mobile.app.concat.css', project.injected_concat_css], true, true),
 
-            mobile_index_prod: generateHTMLConfig('mobile.index.html', 'dist/mobile.index.html', '<config:concat.mobile_min_js.name>', 'style/css/mobile.app.min.css', false),
+            mobile_index_prod: generateHTMLConfig('mobile.index.html', 'dist/mobile.index.html', '<config:concat.mobile_min_js.name>', 'style/css/mobile.app.min.css', false, false, "mobile.cache.appcache"),
             mobile_index_prod_qunit: generateHTMLConfig('mobile.index.html', 'dist/mobile.index.qunit.html', '<config:concat.mobile_min_js.name>', 'style/css/mobile.app.min.css', false, true)
         },
         qunit: {
@@ -292,19 +299,16 @@ module.exports = function(grunt) {
         }
     }));
 
-    grunt.registerHelper('scripts', function(scripts) {
+    function makeArray(scripts) {
         scripts = Array.isArray(scripts) ? scripts : [scripts];
-        return grunt.utils._(scripts).chain().flatten().compact().map(function(script) { return "<script src=\"" + script + "\"></script>\n"; }).value().join("    ");
-    });
-
-    grunt.registerHelper('css', function(css) {
-        css = Array.isArray(css) ? css : [css];
-        return grunt.utils._(css).chain().flatten().compact().map(function(cssFile) { return "<link rel=\"stylesheet\" href=\"" + cssFile + "\">\n"; }).value().join("    ");
-    });
+        return grunt.utils._(scripts).chain().flatten().compact().map(function(val) {
+            return grunt.template.process(val);
+        }).value();
+    }
 
     grunt.registerHelper('html', function(content, scripts, css, options) {
-        var scriptsTags = grunt.template.process(grunt.helper("scripts", scripts)),
-            cssTags = grunt.template.process(grunt.helper("css", css));
+        var scriptsTags = makeArray(scripts),
+            cssTags = makeArray(css);
         options = options || {};
         return ejs.render(content, grunt.utils._.extend({}, options, {
             scripts: scriptsTags,
@@ -316,6 +320,12 @@ module.exports = function(grunt) {
         var fileContents = grunt.task.directive(this.data.src, grunt.file.read);
         var output = grunt.helper("html", fileContents, this.data.js, this.data.css, this.data.options);
         grunt.file.write(this.data.dest, output);
+
+        if (this.data.manifestSrc) {
+            var manifestFileContents = grunt.task.directive(this.data.manifestSrc, grunt.file.read);
+            var manifestOutput = grunt.helper("html", manifestFileContents, this.data.js, this.data.css, this.data.options);
+            grunt.file.write(this.data.manifestDest, manifestOutput);
+        }
     });
 
     grunt.loadNpmTasks('grunt-contrib');

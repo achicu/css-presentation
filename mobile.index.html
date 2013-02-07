@@ -16,16 +16,18 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-<html dir="ltr" lang="en">
+<html dir="ltr" lang="en"<%- html_attributes %>>
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=9">
     <title>CSS FilterLab</title>
-    
+
     <meta name="apple-mobile-web-app-title" content="CSS FilterLab" />
     <meta name="viewport" content="user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
 
-    <%- css %>
+    <% css.forEach(function(cssFile){ %>
+        <link rel="stylesheet" href="<%- cssFile %>" />
+    <% }) %>
 </head>
 
 <body>
@@ -39,7 +41,7 @@ limitations under the License.
     </div>
 
     <div id="app-body">
-        
+
 
         <div id="loading">
             <div>
@@ -62,6 +64,8 @@ limitations under the License.
         <% } %>
     </div>
 
-    <%- scripts %>
+    <% scripts.forEach(function(scriptFile){ %>
+        <script src="<%- scriptFile %>"></script>
+    <% }) %>
 </body>
 </html>
