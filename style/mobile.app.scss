@@ -399,7 +399,22 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .filter-list-view {
-    .top-bar-view {
+    .filter-list-view-title {
+        position: absolute;
+        top: 0px;
+        padding-top: 10px;
+        padding-left: 10px;
+        padding-bottom: 5px;
+        font-size: 1.4em;
+        font-weight: bold;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.7);
+        width: 100%;
+        color: white;
+        text-shadow: 1px 1px 1px black;
+        background: -webkit-linear-gradient(bottom, rgba(41,44,44,0.85) 0%, rgba(61,65,65,0.85) 100%);
+        -webkit-transform: translateZ(0px);
+    }
+    .cancel-filter-list-button-view {
         width: 100%;
         text-align: center;
         padding: 25px;
@@ -408,8 +423,13 @@ h1,h2,h3,h4,h5,h6 {
     }
     .filter-list-view-container {
         width: 100%;
-        .filter-box-view {
-            display: inline-block;
+
+        .filter-list-view-container-content-view {
+            padding-top: 30px;
+
+            .filter-box-view {
+                display: inline-block;
+            }
         }
     }
 }
