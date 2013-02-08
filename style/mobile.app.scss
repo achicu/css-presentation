@@ -181,6 +181,7 @@ h1,h2,h3,h4,h5,h6 {
         & > .controls-placeholder-view {
             position: absolute;
             width: 100%;
+            top: 0px;
             bottom: 130px;
         }
     }
@@ -272,11 +273,14 @@ h1,h2,h3,h4,h5,h6 {
 .filter-controls-view {
     position: absolute;
     -webkit-transform-origin: 0 0;
+    top: 100%;
     width: 100%;
-    height: 150px;
+    height: 100%;
 
     & > .filter-controls-values-view {
+        position: absolute;
         width: 100%;
+        bottom: 0px;
         height: 150px;
 
         .control-view {
@@ -292,8 +296,10 @@ h1,h2,h3,h4,h5,h6 {
     }
 
     & > .filter-controls-labels-view {
-        height: 50px;
+        position: absolute;
+        top: 10px;
         right: 10px;
+        height: 50px;
 
         & > .control-label-view {
             border: 1px solid #ccc;
