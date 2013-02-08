@@ -388,5 +388,27 @@ h1,h2,h3,h4,h5,h6 {
     }
 }
 
+.filter-list-view {
+    .top-bar-view {
+        width: 100%;
+        text-align: center;
+        padding: 25px;
+        background-color: #ccc;
+        -webkit-transform: translateZ(0px);
+    }
+    .stock-filter-box-view {
+        padding-top: 20px;
+        padding-bottom: 30px;
+        width: 100%;
+        text-align: center;
+        background-color: #eee;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        color: black;
+        font-weight: bold;
+        border-radius: 10px;
+    }
+}
+
 
 
