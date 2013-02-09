@@ -149,6 +149,10 @@ h1,h2,h3,h4,h5,h6 {
 
 /* -------- VIEW CLASSES ------- */
 
+.view {
+    z-index: 0;
+}
+
 .dialog-view {
     position: absolute;
     width: 100%;
@@ -522,6 +526,11 @@ h1,h2,h3,h4,h5,h6 {
     .document-list-item-view {
         margin-left: 20px;
         margin-right: 20px;
+        z-index: 0;
+
+        &.selected {
+            z-index: 1;
+        }
 
         &::before {
             position: absolute;
