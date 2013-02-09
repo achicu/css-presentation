@@ -169,10 +169,15 @@ h1,h2,h3,h4,h5,h6 {
     background-color: white;
 }
 
+.content-view {
+    -webkit-transform: translateZ(0px);
+    overflow: hidden;
+    background: url(../img/color_bg.png);
+}
+
 .document-view {
     -webkit-transform: translate3d(10000px, 10000px, 0px);
-    background: url(../img/color_bg.png);
-
+    
     & > .document-ui-view {
         width: 100%;
         height: 100%;
@@ -207,18 +212,18 @@ h1,h2,h3,h4,h5,h6 {
     background: -webkit-linear-gradient(bottom, rgba(41,44,44,0.95) 0%, rgba(61,65,65,0.95) 100%);
 
     .add-filter-button-view {
-        padding-top: 20px;
-        padding-bottom: 35px;
-        width: 70px;
-        text-align: center;
-        height: 50px;
-        background-color: #595b5b;
         margin-top: 35px;
-        color: #c3c3c3;
-        font-weight: bold;
         margin-left: 10px;
         margin-right: 10px;
+        padding-top: 20px;
+        padding-bottom: 35px;
         border-radius: 2px;
+        width: 70px;
+        height: 50px;
+        color: #c3c3c3;
+        text-align: center;
+        background-color: #595b5b;
+        font-weight: bold;
         border: 1px solid #26292a;
         font-size: 4.5em;
         line-height: 5px;
@@ -442,34 +447,50 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .document-list-view {
-    background-color: white;
+    background: -webkit-radial-gradient(#494d4e 0%, #343737 80%, #333636 100%);
 
     .add-preset-button {
-        padding-top: 20px;
-        padding-bottom: 35px;
-        width: 70px;
-        text-align: center;
-        height: 50px;
-        background-color: #eee;
-        color: black;
-        font-weight: bold;
         margin-left: 10px;
         margin-right: 10px;
-        border-radius: 10px;
+        padding-top: 20px;
+        padding-bottom: 35px;
+        border-radius: 2px;
+        width: 70px;
+        height: 60px;
+        color: #c3c3c3;
+        text-align: center;
+        background-color: #595b5b;
+        font-weight: bold;
+        border: 1px solid #26292a;
+        font-size: 4.5em;
+        line-height: 5px;
     }
 
     .document-list-item-view {
         margin-left: 20px;
         margin-right: 20px;
-        -webkit-filter: drop-shadow(0px 0px 10px #333);
 
+        &::before {
+            position: absolute;
+            left: -10px;
+            right: -10px;
+            top: 30%;
+            bottom: 40px;
+            background: -webkit-radial-gradient(rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.9) 50%, rgba(0, 0, 0, 0) 100%);
+            -webkit-filter: blur(10px);
+            content: "";
+        }
+        
         .document-list-item-view-label {
             width: 100%;
             margin-top: 20px;
             font-weight: bold;
             font-size: 1.3em;
             text-align: center;
+            color: white;
+            text-shadow: 1px 1px 1px black;
         }
+
     }
 
 
