@@ -219,11 +219,15 @@ h1,h2,h3,h4,h5,h6 {
     .add-filter-button-view::before {
         content: "+";
     }
+
+    .filter-box-view {
+        top: 50%;
+        @include prefixProperty(transform, translate3d(0px, -50%, 0px) !important);
+    }
 }
 
 .filter-box-view {
     text-align: center;
-    margin-top: 20px;
     color: black;
     padding: 0px;
     font-weight: bold;
@@ -427,7 +431,7 @@ h1,h2,h3,h4,h5,h6 {
         width: 100%;
 
         .filter-list-view-container-content-view {
-            padding-top: 30px;
+            padding-top: 50px;
             padding-bottom: 50px;
 
             .filter-box-view {
