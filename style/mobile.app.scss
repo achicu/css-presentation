@@ -205,21 +205,19 @@ h1,h2,h3,h4,h5,h6 {
     @include prefixValue(background, linear-gradient(bottom, rgba(41,44,44,0.95) 0%, rgba(61,65,65,0.95) 100%));
 
     .add-filter-button-view {
-        margin-top: 35px;
+        top: 50%;
+        @include prefixProperty(transform, translate3d(0px, -50%, 0px) !important);
         margin-left: 10px;
         margin-right: 10px;
-        padding-top: 20px;
-        padding-bottom: 35px;
-        border-radius: 2px;
-        width: 70px;
-        height: 50px;
+        width: 60px;
         color: #c3c3c3;
         text-align: center;
-        background-color: #595b5b;
         font-weight: bold;
-        border: 1px solid #26292a;
         font-size: 4.5em;
-        line-height: 30%;
+    }
+
+    .add-filter-button-view::before {
+        content: "+";
     }
 }
 
@@ -443,20 +441,17 @@ h1,h2,h3,h4,h5,h6 {
     .add-preset-button {
         margin-left: 10px;
         margin-right: 10px;
-        padding-top: 20px;
-        padding-bottom: 35px;
-        border-radius: 2px;
-        width: 70px;
-        height: 60px;
+        width: 60px;
         color: #c3c3c3;
         text-align: center;
-        background-color: #595b5b;
         font-weight: bold;
-        border: 1px solid #26292a;
         font-size: 4.5em;
-        line-height: 30%;
         top: 50%;
         @include prefixProperty(transform, translate3d(0px, -50%, 0px) !important);
+    }
+
+    .add-preset-button::before {
+        content: "+";
     }
 
     .document-list-content-view {
