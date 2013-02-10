@@ -191,7 +191,7 @@ h1,h2,h3,h4,h5,h6 {
             position: absolute;
             width: 100%;
             top: 0px;
-            bottom: 130px;
+            bottom: 90px;
         }
     }
 }
@@ -200,7 +200,7 @@ h1,h2,h3,h4,h5,h6 {
     position: absolute;
     bottom: 0px;
     width: 100%;
-    height: 130px;
+    height: 90px;
     border-top: 1px solid #787a7a;
     @include prefixValue(background, linear-gradient(bottom, rgba(41,44,44,0.95) 0%, rgba(61,65,65,0.95) 100%));
 
@@ -223,6 +223,8 @@ h1,h2,h3,h4,h5,h6 {
     .filter-box-view {
         top: 50%;
         @include prefixProperty(transform, translate3d(0px, -50%, 0px) !important);
+        width: 140px;
+        height: 70px;
     }
 }
 
@@ -237,8 +239,6 @@ h1,h2,h3,h4,h5,h6 {
     white-space: nowrap;
     @includ prefixProperty(transition, background 0.1s linear);
     background: transparent;
-    width: 140px;
-    height: 95px;
 
     &.active-filter-box-view {
         @include prefixValue(background, linear-gradient(top, #00bffe 0%, #004156 100%));
@@ -278,6 +278,7 @@ h1,h2,h3,h4,h5,h6 {
         bottom: 4px;
         border-radius: 5px;
         background: url(../img/mobile/filter-preview.jpg) no-repeat;
+        background-size: cover;
     }
 }
 
@@ -436,6 +437,8 @@ h1,h2,h3,h4,h5,h6 {
 
             .filter-box-view {
                 display: inline-block;
+                width: 140px;
+                height: 95px;
             }
         }
     }
