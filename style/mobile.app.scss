@@ -28,7 +28,7 @@ body {
     overflow: hidden;
     margin: 0;
     padding: 0;
-    background: -webkit-radial-gradient(#494d4e 0%, #343737 80%, #333636 100%);
+    @include prefixValue(background, radial-gradient(#494d4e 0%, #343737 80%, #333636 100%));
 }
 
 #app-body {
@@ -46,7 +46,7 @@ h1,h2,h3,h4,h5,h6 {
     font-family: "Source Sans Pro", "source-l", helvetica, arial, sans-serif;
     margin: 0;
     font-weight: 400;
-    -webkit-font-smoothing: antialiased;
+    @include prefixProperty(font-smoothing, antialiased);
 }
 
 #components {
@@ -164,17 +164,17 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .content-view {
-    -webkit-transform: translateZ(0px);
+    @include prefixProperty(transform, translateZ(0px));
     background: url(../img/color_bg.png);
 }
 
 .document-view {
-    -webkit-transform: translate3d(10000px, 10000px, 0px);
+    @include prefixProperty(transform, translate3d(10000px, 10000px, 0px));
 
     & > .document-ui-view {
         width: 100%;
         height: 100%;
-        -webkit-transform: translateZ(0px);
+        @include prefixProperty(transform, translateZ(0px));
 
         & > .list-button-view {
             position: absolute;
@@ -202,7 +202,7 @@ h1,h2,h3,h4,h5,h6 {
     width: 100%;
     height: 130px;
     border-top: 1px solid #787a7a;
-    background: -webkit-linear-gradient(bottom, rgba(41,44,44,0.95) 0%, rgba(61,65,65,0.95) 100%);
+    @include prefixValue(background, linear-gradient(bottom, rgba(41,44,44,0.95) 0%, rgba(61,65,65,0.95) 100%));
 
     .add-filter-button-view {
         margin-top: 35px;
@@ -233,13 +233,13 @@ h1,h2,h3,h4,h5,h6 {
     margin-right: 10px;
     border-radius: 10px;
     white-space: nowrap;
-    -webkit-transition: background 0.1s linear;
+    @includ prefixProperty(transition, background 0.1s linear);
     background: transparent;
     width: 140px;
     height: 95px;
 
     &.active-filter-box-view {
-        background: -webkit-linear-gradient(top, #00bffe 0%, #004156 100%);
+        @include prefixValue(background, linear-gradient(top, #00bffe 0%, #004156 100%));
     }
 
     & > .filter-label {
@@ -254,7 +254,7 @@ h1,h2,h3,h4,h5,h6 {
         border-bottom-right-radius: 4px;
         font-size: 1.2em;
         text-shadow: 0px 2px 2px black;
-        background: -webkit-linear-gradient(bottom, rgba(0,0,0,0.9) 0%,rgba(0,0,0,0) 70%);
+        @include prefixValue(background, linear-gradient(bottom, rgba(0,0,0,0.9) 0%,rgba(0,0,0,0) 70%));
     }
 
     &::before {
@@ -281,7 +281,7 @@ h1,h2,h3,h4,h5,h6 {
 
 .filter-controls-view {
     position: absolute;
-    -webkit-transform-origin: 0 0;
+    @include prefixProperty(transform-origin, 0 0);
     top: 100%;
     width: 100%;
     height: 100%;
@@ -298,7 +298,7 @@ h1,h2,h3,h4,h5,h6 {
             height: 150px;
 
             & > .control-editor-view {
-                background: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.3) 20%, rgba(0, 0, 0, 0) 40%);
+                @include prefixValue(background, linear-gradient(bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.3) 20%, rgba(0, 0, 0, 0) 40%));
                 border-bottom: 1px solid #212121;
             }
         }
@@ -322,7 +322,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .control-view {
-    -webkit-transform: translateZ(0px);
+    @include prefixProperty(transform, translateZ(0px));
     overflow: hidden;
 
     &.range-control-view {
@@ -331,14 +331,14 @@ h1,h2,h3,h4,h5,h6 {
             position: absolute;
             left: 0;
             bottom: 0;
-            -webkit-transform: translateZ(0px);
+            @include prefixProperty(transform, translateZ(0px));
 
             & > .range-tick {
                 position: absolute;
                 bottom: 0px;
                 width: 2px;
                 height: 50%;
-                -webkit-transform: translateZ(0px);
+                @include prefixProperty(transform, translateZ(0px));
                 background: #313131;
                 border-right: 1px solid rgba(236, 236, 235, 0.40);
 
@@ -367,7 +367,7 @@ h1,h2,h3,h4,h5,h6 {
                 background-color: #212121;
                 color: white;
                 text-align: center;
-                -webkit-transform: translateZ(0px);
+                @include prefixProperty(transform, translateZ(0px));
 
                 &::before {
                     position: absolute;
@@ -410,8 +410,8 @@ h1,h2,h3,h4,h5,h6 {
         width: 100%;
         color: white;
         text-shadow: 1px 1px 1px black;
-        background: -webkit-linear-gradient(bottom, rgba(41,44,44,0.85) 0%, rgba(61,65,65,0.85) 100%);
-        -webkit-transform: translateZ(0px);
+        @include prefixValue(background, linear-gradient(bottom, rgba(41,44,44,0.85) 0%, rgba(61,65,65,0.85) 100%));
+        @include prefixProperty(transform, translateZ(0px));
     }
     .cancel-filter-list-button-view {
         position: absolute;
@@ -422,8 +422,8 @@ h1,h2,h3,h4,h5,h6 {
         color: white;
         text-shadow: 1px 1px 1px black;
         border-top: 1px solid rgba(0, 0, 0, 0.7);
-        -webkit-transform: translateZ(0px);
-        background: -webkit-linear-gradient(bottom, rgba(41,44,44,0.85) 0%, rgba(61,65,65,0.85) 100%);
+        @include prefixProperty(transform, translateZ(0px));
+        @include prefixValue(background, linear-gradient(bottom, rgba(41,44,44,0.85) 0%, rgba(61,65,65,0.85) 100%));
     }
     .filter-list-view-container {
         width: 100%;
@@ -456,7 +456,7 @@ h1,h2,h3,h4,h5,h6 {
         font-size: 4.5em;
         line-height: 5px;
         top: 50%;
-        -webkit-transform: translate3d(0px, -50%, 0px) !important;
+        @include prefixProperty(transform, translate3d(0px, -50%, 0px) !important);
     }
 
     .document-list-content-view {
@@ -469,23 +469,23 @@ h1,h2,h3,h4,h5,h6 {
         width: 202px;
         height: 198px;
         top: 50%;
-        -webkit-transform: translate3d(0px, -50%, 0px);
+        @include prefixProperty(transform, translate3d(0px, -50%, 0px));
         background: url(../img/mobile/logo.png) no-repeat;
         background-size: contain;
     }
 
     .document-list-logo-pointer {
+        @include prefixProperty(transition, opacity 0.3s linear);
+        @include prefixProperty(transform, translate3d(0px, -50%, 0px));
+        @include prefixProperty(transform-origin, -5px 50%);
         position: absolute;
         left: -10px;
         top: 0;
         width: 10px;
         height: 10px;
         top: 50%;
-        -webkit-transform: translate3d(0px, -50%, 0px);
         background-color: rgba(0, 0, 0, 0.4);
-        -webkit-transform-origin: -5px 50%;
         opacity: 1;
-        -webkit-transition: opacity 0.3s linear;
 
         &::before {
             position: absolute;
@@ -513,8 +513,8 @@ h1,h2,h3,h4,h5,h6 {
         text-shadow: 1px 1px 1px black;
         opacity: 0;
         text-align: right;
-        -webkit-transition: opacity 0.3s linear;
-        -webkit-transform: translate3d(0px, -50%, 0px);
+        @include prefixProperty(transition, opacity 0.3s linear);
+        @include prefixProperty(transform, translate3d(0px, -50%, 0px));
     }
 
     .document-list-logo-release-info.visible {
@@ -536,9 +536,9 @@ h1,h2,h3,h4,h5,h6 {
             right: -10px;
             top: 30%;
             bottom: 35px;
-            background: -webkit-radial-gradient(rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.9) 50%, rgba(0, 0, 0, 0) 100%);
-            -webkit-transform: translateZ(-1px);
-            -webkit-filter: blur(10px);
+            @include prefixValue(background, radial-gradient(rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.9) 50%, rgba(0, 0, 0, 0) 100%));
+            @include prefixProperty(transform, translateZ(-1px));
+            @include prefixProperty(filter, blur(10px));
             content: "";
         }
 
@@ -561,7 +561,7 @@ h1,h2,h3,h4,h5,h6 {
     top: 50%;
     width: 100%;
     height: 198px;
-    -webkit-transform: translate3d(0px, -50%, 0px);
+    @include prefixProperty(transform, translate3d(0px, -50%, 0px));
     background: url(../img/mobile/logo.png) center center no-repeat;
     background-size: contain;
     color: transparent;
