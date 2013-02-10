@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-* {
-    box-sizing: border-box;
-}
-
 @import "src/_utils";
 @import "src/_northstar";
+
+* {
+    @include prefixProperty(box-sizing, border-box);
+}
 
 html,
 body {
@@ -219,7 +219,7 @@ h1,h2,h3,h4,h5,h6 {
         font-weight: bold;
         border: 1px solid #26292a;
         font-size: 4.5em;
-        line-height: 5px;
+        line-height: 30%;
     }
 }
 
@@ -454,7 +454,7 @@ h1,h2,h3,h4,h5,h6 {
         font-weight: bold;
         border: 1px solid #26292a;
         font-size: 4.5em;
-        line-height: 5px;
+        line-height: 30%;
         top: 50%;
         @include prefixProperty(transform, translate3d(0px, -50%, 0px) !important);
     }
