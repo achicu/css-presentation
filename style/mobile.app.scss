@@ -610,9 +610,14 @@ h1,h2,h3,h4,h5,h6 {
     color: #000;
     @include user-select(auto);
 
-    .button-view {
+    .buttons-view {
         margin-top: 15px;
-        margin-bottom: 10px;
+        margin-bottom: 15px;
+        left: 0px;
+        right: 0px;
+    }
+
+    .button-view {
         margin-left: 15px;
         margin-right: 15px;
         padding: 10px;
@@ -627,66 +632,75 @@ h1,h2,h3,h4,h5,h6 {
         background: rgba(128, 0, 0, 0.5);
     }
 
-    > * {
-        font-size: 1.05em;
+    .code-view-content {
+        margin-top: 15px;
+        margin-bottom: 15px;
+        left: 15px;
+        right: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
     }
 
-    .css-property-name {
-        float: left;
-    }
+    .code-view-content > .scroll-view-content-view {
+        padding: 10px;
 
-    .css-property-value {
-        float: left;
-    }
+        .css-property-name {
+            font-weight: bold;
+        }
 
-    .data-uri {
-        display: inline-block;
-        width: 200px;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
+        .css-property-value {
+            padding-left: 40px;
+        }
 
-    a {
-        color: #8757ad;
-        text-decoration: underline;
-    }
+        .data-uri {
+            display: inline-block;
+            width: 200px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
 
-    .function-name {
-        color: #446fbd;
-    }
+        a {
+            color: #8757ad;
+            text-decoration: underline;
+        }
 
-    .function-name.custom {
-        color: #446fbd;
-    }
+        .function-name {
+            color: #446fbd;
+        }
 
-    .parameter-name {
-        color: #535353;
-    }
+        .function-name.custom {
+            color: #446fbd;
+        }
 
-    .keyword {
-        color: #446fbd;
-    }
+        .parameter-name {
+            color: #535353;
+        }
 
-    .parameter-value {
-        color: #738d00;
-    }
+        .keyword {
+            color: #446fbd;
+        }
 
-    .parameter-unit {
-        color: #000;
-    }
+        .parameter-value {
+            color: #738d00;
+        }
 
-    .function-arguments.custom {
-    }
+        .parameter-unit {
+            color: #000;
+        }
 
-    .keyframe-percent {
-        color: #000;
-    }
+        .function-arguments.custom {
+        }
 
-    .property-name {
-        color: #000;
-    }
+        .keyframe-percent {
+            color: #000;
+        }
 
-    .keyframe-content {
-        margin-left: 20px;
+        .property-name {
+            color: #000;
+        }
+
+        .keyframe-content {
+            margin-left: 20px;
+        }
     }
 }
