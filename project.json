@@ -100,6 +100,7 @@
         "lib/mobile/views/list_item_view.js",
         "lib/mobile/views/highlight_touch_view.js",
         "lib/mobile/views/drag_view.js",
+        "lib/mobile/views/draggable_view.js",
         "lib/mobile/views/content_view.js",
         "lib/mobile/views/info_view.js",
         "lib/mobile/views/code_view.js",

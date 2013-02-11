@@ -172,9 +172,23 @@ h1,h2,h3,h4,h5,h6 {
     background: url(../img/color_bg.png);
 }
 
+.scroll-view {
+    overflow: hidden;
+}
+
 .highlight-touch-view {
     position: relative;
     @include prefixProperty(transform, translateZ(0px));
+}
+
+.draggable-view {
+    &.draggable-view-dragging {
+        opacity: 0;
+    }
+}
+
+.draggable-view-clone {
+    position: absolute;
 }
 
 .document-view {
@@ -205,16 +219,62 @@ h1,h2,h3,h4,h5,h6 {
             top: 0px;
             bottom: 90px;
         }
+
+        & > .trash-bag-view {
+            display: none;
+            position: absolute;
+            width: 100%;
+            top: 0px;
+            bottom: 90px;
+            @include prefixProperty(transition, (background-color 0.3s linear, opacity 0.3s linear));
+            background: url(../img/mobile/trash.svg) no-repeat center;
+            background-size: 80px;
+            background-color: rgba(0, 0, 0, 0.8);
+
+            &.inside {
+                background-color: rgba(128, 0, 0, 0.8);
+            }
+
+            &::after {
+                position: absolute;
+                left: 0px;
+                right: 0px;
+                padding-left: 30px;
+                padding-right: 30px;
+                top: 50%;
+                margin-top: 45px;
+                color: rgba(255, 255, 255, 0.5);
+                text-align: center;
+                text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.4);
+                font-size: 1.8em;
+                font-weight: bold;
+                content: "Drag here to remove filter"
+            }
+
+            &.visible {
+                display: block;
+                opacity: 0;
+                @include prefixProperty(transform, translateZ(0px));
+
+                &.animate {
+                    opacity: 1;
+                }
+            }
+        }
     }
 }
 
-.active-filter-list-view {
+.active-filters-view {
     position: absolute;
     bottom: 0px;
     width: 100%;
     height: 90px;
     border-top: 1px solid #787a7a;
     @include prefixValue(background, linear-gradient(bottom, rgba(41,44,44,0.95) 0%, rgba(61,65,65,0.95) 100%));
+
+    .active-filters-list-view {
+        overflow: visible;
+    }
 
     .drag-view {
         position: absolute;
@@ -250,11 +310,20 @@ h1,h2,h3,h4,h5,h6 {
         background-size: 30px;
     }
 
-    .filter-box-view {
-        top: 50%;
-        @include prefixProperty(transform, translate3d(0px, -50%, 0px) !important);
+    .filter-box-view-container {
+        height: 100%;
         width: 140px;
-        height: 70px;
+        margin-left: 10px;
+        margin-right: 10px;
+
+        .filter-box-view {
+            position: absolute;
+            left: 0px;
+            top: 50%;
+            @include prefixProperty(transform, translate3d(0px, -50%, 0px) !important);
+            width: 100%;
+            height: 70px;
+        }
     }
 }
 
@@ -263,8 +332,6 @@ h1,h2,h3,h4,h5,h6 {
     color: black;
     padding: 0px;
     font-weight: bold;
-    margin-left: 10px;
-    margin-right: 10px;
     border-radius: 10px;
     white-space: nowrap;
     @includ prefixProperty(transition, background 0.1s linear);
@@ -491,6 +558,8 @@ h1,h2,h3,h4,h5,h6 {
                 display: inline-block;
                 width: 140px;
                 height: 95px;
+                margin-left: 10px;
+                margin-right: 10px;
             }
         }
     }
