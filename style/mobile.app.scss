@@ -608,14 +608,13 @@ h1,h2,h3,h4,h5,h6 {
 
 .code-view {
     color: #000;
-    padding: 15px;
     @include user-select(auto);
 
     .button-view {
-        clear: both;
+        margin-top: 15px;
         margin-bottom: 10px;
-        margin-left: auto;
-        margin-right: auto;
+        margin-left: 15px;
+        margin-right: 15px;
         padding: 10px;
         text-align: center;
         background: rgba(0, 0, 0, 0.5);
