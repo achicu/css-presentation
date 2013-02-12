@@ -527,7 +527,8 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .filter-list-view {
-    background: black;
+    // background: black;
+    @include prefixValue(background, linear-gradient(top, rgba(31,33,33,1) 0%, rgba(19,21,21,1) 100%));
 
     .filter-list-view-title {
         position: absolute;
