@@ -324,10 +324,6 @@ h1,h2,h3,h4,h5,h6 {
     border-top: 1px solid #787a7a;
     @include prefixValue(background, linear-gradient(bottom, rgba(41,44,44,0.95) 0%, rgba(61,65,65,0.95) 100%));
 
-    .active-filters-list-view {
-        overflow: visible;
-    }
-
     .drag-view {
         position: absolute;
         top: 0px;
