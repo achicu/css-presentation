@@ -206,7 +206,7 @@ h1,h2,h3,h4,h5,h6 {
             background-color: rgba(255, 255, 255, 0.1);
             background-size: 24px;
             width: 40px;
-            height: 40px;
+            height: 32px;
             left: 10px;
             top: 10px;
             border-radius: 5px;
@@ -278,19 +278,32 @@ h1,h2,h3,h4,h5,h6 {
         @include prefixValue(background, linear-gradient(top, #00bffe 0%, #004156 100%));
     }
 
-    & > .filter-label {
+    & > .filter-gradient{
         position: absolute;
         bottom: 4px;
-        padding-top: 15px;
-        color: white;
         left: 4px;
         right: 4px;
         height: 45px;
         border-bottom-left-radius: 4px;
         border-bottom-right-radius: 4px;
-        font-size: 1.2em;
-        text-shadow: 0px 2px 2px black;
         @include prefixValue(background, linear-gradient(bottom, rgba(0,0,0,0.9) 0%,rgba(0,0,0,0) 70%));
+    }
+
+    & > .filter-label {
+        position: absolute;
+        bottom: -12px;
+        padding-top: 15px;
+        color: white;
+        left: 4px;
+        right: 4px;
+        height: 45px;
+        // border-bottom-left-radius: 4px;
+        // border-bottom-right-radius: 4px;
+        letter-spacing: 1px;
+        font-size: 1em;
+        font-weight: 100;
+        text-shadow: 0px 2px 2px black;
+        // @include prefixValue(background, linear-gradient(bottom, rgba(0,0,0,0.9) 0%,rgba(0,0,0,0) 70%));
     }
 
     &::before {
@@ -425,7 +438,7 @@ h1,h2,h3,h4,h5,h6 {
             height: 150px;
 
             & > .control-editor-view {
-                @include prefixValue(background, linear-gradient(bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.3) 20%, rgba(0, 0, 0, 0) 40%));
+                @include prefixValue(background, linear-gradient(bottom, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.3) 10%, rgba(255, 255, 255, 0) 40%));
                 border-bottom: 1px solid #212121;
             }
         }
@@ -468,17 +481,17 @@ h1,h2,h3,h4,h5,h6 {
             height: 40px;
             position: absolute;
             left: 0;
-            bottom: 0;
+            bottom: 4px;
             @include prefixProperty(transform, translateZ(0px));
 
             & > .range-tick {
                 position: absolute;
                 bottom: 0px;
-                width: 2px;
+                width: 3px;
                 height: 50%;
                 @include prefixProperty(transform, translateZ(0px));
                 background: #313131;
-                border-right: 1px solid rgba(236, 236, 235, 0.40);
+                border-right: 2px solid rgba(255, 255, 255, .67);
 
                 &.first-range-tick,
                 &.last-range-tick {
@@ -498,8 +511,8 @@ h1,h2,h3,h4,h5,h6 {
                 margin-left: auto;
                 margin-right: auto;
                 width: 45px;
-                border-top-left-radius: 10px;
-                border-top-right-radius: 10px;
+                border-top-left-radius: 3px;
+                border-top-right-radius: 3px;
                 height: 40px;
                 padding-top: 10px;
                 background-color: #212121;
@@ -509,26 +522,30 @@ h1,h2,h3,h4,h5,h6 {
 
                 &::before {
                     position: absolute;
-                    left: -30px;
-                    top: 35%;
-                    width: 0;
-                    height: 0;
-                    border-top: 8px solid transparent;
-                    border-right: 16px solid #212121;
-                    border-bottom: 8px solid transparent;
-                    content: "";
+                    width: 40px;
+                    height: 50px;
+                    background: red;
+                    // background: url(../img/mobile/slider-left.svg);
+                    // left: -30px;
+                    // top: 35%;
+                    // width: 0;
+                    // height: 0;
+                    // border-top: 8px solid transparent;
+                    // border-right: 16px solid #212121;
+                    // border-bottom: 8px solid transparent;
+                    // content: "";
                 }
 
                 &::after {
                     position: absolute;
-                    right: -30px;
-                    top: 35%;
-                    width: 0;
-                    height: 0;
-                    border-top: 8px solid transparent;
-                    border-left: 16px solid #212121;
-                    border-bottom: 8px solid transparent;
-                    content: "";
+                    // right: -30px;
+                    // top: 35%;
+                    // width: 0;
+                    // height: 0;
+                    // border-top: 8px solid transparent;
+                    // border-left: 16px solid #212121;
+                    // border-bottom: 8px solid transparent;
+                    // content: "";
                 }
             }
         }
@@ -536,6 +553,9 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .filter-list-view {
+    // background: black;
+    @include prefixValue(background, linear-gradient(top, rgba(31,33,33,1) 0%, rgba(19,21,21,1) 100%));
+
     .filter-list-view-title {
         position: absolute;
         top: 0px;
@@ -548,18 +568,20 @@ h1,h2,h3,h4,h5,h6 {
         width: 100%;
         color: white;
         text-shadow: 1px 1px 1px black;
+        box-shadow: 0px 1px 1px #636464;
         @include prefixValue(background, linear-gradient(bottom, rgba(41,44,44,0.85) 0%, rgba(61,65,65,0.85) 100%));
         @include prefixProperty(transform, translateZ(0px));
     }
     .cancel-filter-list-button-view {
         position: absolute;
-        bottom: 0px;
-        width: 100%;
+        top: 5px;
+        right: 5px;
         text-align: center;
-        padding: 15px;
+        font-size: 12px;
+        padding: 7px 20px;
         color: white;
-        text-shadow: 1px 1px 1px black;
-        border-top: 1px solid rgba(0, 0, 0, 0.7);
+        border-radius: 4px;
+        border: 1px solid rgba(0, 0, 0, 0.7);
         @include prefixProperty(transform, translateZ(0px));
         @include prefixValue(background, linear-gradient(bottom, rgba(41,44,44,0.85) 0%, rgba(61,65,65,0.85) 100%));
     }
@@ -569,10 +591,11 @@ h1,h2,h3,h4,h5,h6 {
         .filter-list-view-container-content-view {
             padding-top: 50px;
             padding-bottom: 50px;
+            text-align: center;
 
             .filter-box-view {
                 display: inline-block;
-                width: 140px;
+                width: 100px;
                 height: 95px;
                 margin-left: 10px;
                 margin-right: 10px;
@@ -671,9 +694,12 @@ h1,h2,h3,h4,h5,h6 {
             position: absolute;
             left: -10px;
             right: -10px;
-            top: 30%;
-            bottom: 35px;
-            @include prefixValue(background, radial-gradient(rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.9) 50%, rgba(0, 0, 0, 0) 100%));
+            // top: 30%;
+            // bottom: 35px;
+            // @include prefixValue(background, radial-gradient(rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.9) 50%, rgba(0, 0, 0, 0) 100%));
+            top: 70%;
+            bottom: 20px;
+            @include prefixValue(background, radial-gradient(rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.9) 10%, rgba(0, 0, 0, 0) 100%));
             @include prefixProperty(transform, translateZ(-1px));
             @include prefixProperty(filter, blur(10px));
             content: "";
@@ -714,7 +740,11 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .code-view {
+
     color: #000;
+    border-top: 1px solid #212121;
+    box-shadow: inset 0px 1px 0px #636464;
+    @include prefixValue(background, linear-gradient(top, rgba(31,33,33,1) 0%, rgba(19,21,21,1) 100%));
     @include user-select(auto);
 
     .buttons-view {
@@ -727,16 +757,20 @@ h1,h2,h3,h4,h5,h6 {
     .button-view {
         margin-left: 15px;
         margin-right: 15px;
-        padding: 10px;
+        padding: 20px 10px;
         text-align: center;
-        background: rgba(0, 0, 0, 0.5);
         color: white;
-        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
+        text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.8);
+        text-transform: capitalize;
         border-radius: 5px;
+        border: 2px solid #7b9d33;
+        @include prefixValue(background, linear-gradient(top, #a3c55b 0%, #7b9d33 100%));
     }
 
     .reset-picture-button-view {
-        background: rgba(128, 0, 0, 0.5);
+        // background: rgba(128, 0, 0, 0.5);
+        border-color: #aa2c2c;
+        @include prefixValue(background, linear-gradient(top, #b84e4e 0%, #aa2c2c 100%));
     }
 
     .code-view-content {
@@ -744,8 +778,9 @@ h1,h2,h3,h4,h5,h6 {
         margin-bottom: 15px;
         left: 15px;
         right: 15px;
-        border: 1px solid #ccc;
+        border: 1px solid #6e6e6e;
         border-radius: 5px;
+        background: #f2f2f2;
     }
 
     .code-view-content > .scroll-view-content-view {
