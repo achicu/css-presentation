@@ -1,5 +1,6 @@
 
 CACHE MANIFEST
+# Generated on <%=new Date()%>
 
 style/img/mobile/splash640x920.png
 style/img/mobile/splash640x1096.png

@@ -228,7 +228,7 @@ h1,h2,h3,h4,h5,h6 {
             bottom: 90px;
             @include prefixProperty(transition, (background-color 0.3s linear, opacity 0.3s linear));
             background: url(../img/mobile/trash.svg) no-repeat center;
-            background-size: 80px;
+            background-size: 60px;
             background-color: rgba(0, 0, 0, 0.8);
 
             &.inside {
@@ -242,7 +242,7 @@ h1,h2,h3,h4,h5,h6 {
                 padding-left: 30px;
                 padding-right: 30px;
                 top: 50%;
-                margin-top: 45px;
+                margin-top: 55px;
                 color: rgba(255, 255, 255, 0.5);
                 text-align: center;
                 text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.4);
@@ -264,6 +264,58 @@ h1,h2,h3,h4,h5,h6 {
     }
 }
 
+.filter-box-view {
+    text-align: center;
+    color: black;
+    padding: 0px;
+    font-weight: bold;
+    border-radius: 10px;
+    white-space: nowrap;
+    @includ prefixProperty(transition, background 0.1s linear);
+    background: transparent;
+
+    &.active-filter-box-view {
+        @include prefixValue(background, linear-gradient(top, #00bffe 0%, #004156 100%));
+    }
+
+    & > .filter-label {
+        position: absolute;
+        bottom: 4px;
+        padding-top: 15px;
+        color: white;
+        left: 4px;
+        right: 4px;
+        height: 45px;
+        border-bottom-left-radius: 4px;
+        border-bottom-right-radius: 4px;
+        font-size: 1.2em;
+        text-shadow: 0px 2px 2px black;
+        @include prefixValue(background, linear-gradient(bottom, rgba(0,0,0,0.9) 0%,rgba(0,0,0,0) 70%));
+    }
+
+    &::before {
+        position: absolute;
+        left: 4px;
+        top: 4px;
+        right: 4px;
+        bottom: 4px;
+        border-radius: 5px;
+        content: "";
+        background: url(../img/color_bg.png);
+    }
+
+    & > .filter-preview {
+        position: absolute;
+        left: 4px;
+        top: 4px;
+        right: 4px;
+        bottom: 4px;
+        border-radius: 5px;
+        background: url(../img/mobile/filter-preview.jpg) no-repeat;
+        background-size: cover;
+    }
+}
+
 .active-filters-view {
     position: absolute;
     bottom: 0px;
@@ -271,10 +323,6 @@ h1,h2,h3,h4,h5,h6 {
     height: 90px;
     border-top: 1px solid #787a7a;
     @include prefixValue(background, linear-gradient(bottom, rgba(41,44,44,0.95) 0%, rgba(61,65,65,0.95) 100%));
-
-    .active-filters-list-view {
-        overflow: visible;
-    }
 
     .drag-view {
         position: absolute;
@@ -315,34 +363,19 @@ h1,h2,h3,h4,h5,h6 {
 
     .filter-box-view-container {
         height: 100%;
-        width: 140px;
+        width: 100px;
         margin-left: 10px;
         margin-right: 10px;
-
-        .filter-box-view {
-            position: absolute;
-            left: 0px;
-            top: 50%;
-            @include prefixProperty(transform, translate3d(0px, -50%, 0px) !important);
-            width: 100%;
-            height: 70px;
-        }
     }
 }
 
-.filter-box-view {
-    text-align: center;
-    color: black;
-    padding: 0px;
-    font-weight: bold;
-    border-radius: 10px;
-    white-space: nowrap;
-    @includ prefixProperty(transition, background 0.1s linear);
-    background: transparent;
-
-    &.active-filter-box-view {
-        @include prefixValue(background, linear-gradient(top, #00bffe 0%, #004156 100%));
-    }
+.filter-box-view.inside-active-filters-view {
+    position: absolute;
+    left: 0px;
+    top: 50%;
+    @include prefixProperty(transform, translate3d(0px, -50%, 0px) !important);
+    width: 100%;
+    height: 70px;
 
     & > .filter-gradient{
         position: absolute;
@@ -369,7 +402,11 @@ h1,h2,h3,h4,h5,h6 {
         font-size: 1em;
         font-weight: 100;
         text-shadow: 0px 2px 2px black;
-        // @include prefixValue(background, linear-gradient(bottom, rgba(0,0,0,0.9) 0%,rgba(0,0,0,0) 70%));
+
+        font-weight: normal;
+        font-size: 1em;
+        height: 40px;
+
     }
 
     &::before {
