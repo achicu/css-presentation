@@ -728,6 +728,8 @@ h1,h2,h3,h4,h5,h6 {
 .code-view {
 
     color: #000;
+    border-top: 1px solid #212121;
+    box-shadow: inset 0px 1px 0px #636464;
     @include prefixValue(background, linear-gradient(top, rgba(31,33,33,1) 0%, rgba(19,21,21,1) 100%));
     @include user-select(auto);
 
@@ -762,7 +764,7 @@ h1,h2,h3,h4,h5,h6 {
         margin-bottom: 15px;
         left: 15px;
         right: 15px;
-        border: 1px solid #ccc;
+        border: 1px solid #6e6e6e;
         border-radius: 5px;
         background: #f2f2f2;
     }
