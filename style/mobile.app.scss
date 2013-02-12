@@ -723,7 +723,9 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .code-view {
+
     color: #000;
+    @include prefixValue(background, linear-gradient(top, rgba(31,33,33,1) 0%, rgba(19,21,21,1) 100%));
     @include user-select(auto);
 
     .buttons-view {
@@ -755,6 +757,7 @@ h1,h2,h3,h4,h5,h6 {
         right: 15px;
         border: 1px solid #ccc;
         border-radius: 5px;
+        background: #f2f2f2;
     }
 
     .code-view-content > .scroll-view-content-view {
