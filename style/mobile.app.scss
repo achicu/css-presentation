@@ -306,11 +306,11 @@ h1,h2,h3,h4,h5,h6 {
         width: 60px;
         height: 60px;
         color: #c3c3c3;
-        /*background: url(../img/mobile/plus.svg) no-repeat center;*/
-        background: #595b5b;
-        border: 2px solid #26292a;
+        background: url(../img/mobile/plus.svg) no-repeat center;
+        // background: #595b5b;
+        // border: 2px solid #26292a;
         background-size: 30px;
-        box-shadow: inset 0px 1px;
+        // box-shadow: inset 0px 1px;
     }
 
     .filter-box-view-container {
@@ -498,7 +498,8 @@ h1,h2,h3,h4,h5,h6 {
                     position: absolute;
                     width: 40px;
                     height: 50px;
-                    background: url(../img/mobile/slider-left.svg);
+                    background: red;
+                    // background: url(../img/mobile/slider-left.svg);
                     // left: -30px;
                     // top: 35%;
                     // width: 0;
@@ -526,6 +527,8 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .filter-list-view {
+    background: black;
+
     .filter-list-view-title {
         position: absolute;
         top: 0px;
