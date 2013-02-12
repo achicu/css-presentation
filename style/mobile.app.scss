@@ -485,8 +485,8 @@ h1,h2,h3,h4,h5,h6 {
                 margin-left: auto;
                 margin-right: auto;
                 width: 45px;
-                border-top-left-radius: 10px;
-                border-top-right-radius: 10px;
+                border-top-left-radius: 3px;
+                border-top-right-radius: 3px;
                 height: 40px;
                 padding-top: 10px;
                 background-color: #212121;
@@ -496,26 +496,29 @@ h1,h2,h3,h4,h5,h6 {
 
                 &::before {
                     position: absolute;
-                    left: -30px;
-                    top: 35%;
-                    width: 0;
-                    height: 0;
-                    border-top: 8px solid transparent;
-                    border-right: 16px solid #212121;
-                    border-bottom: 8px solid transparent;
-                    content: "";
+                    width: 40px;
+                    height: 50px;
+                    background: url(../img/mobile/slider-left.svg);
+                    // left: -30px;
+                    // top: 35%;
+                    // width: 0;
+                    // height: 0;
+                    // border-top: 8px solid transparent;
+                    // border-right: 16px solid #212121;
+                    // border-bottom: 8px solid transparent;
+                    // content: "";
                 }
 
                 &::after {
                     position: absolute;
-                    right: -30px;
-                    top: 35%;
-                    width: 0;
-                    height: 0;
-                    border-top: 8px solid transparent;
-                    border-left: 16px solid #212121;
-                    border-bottom: 8px solid transparent;
-                    content: "";
+                    // right: -30px;
+                    // top: 35%;
+                    // width: 0;
+                    // height: 0;
+                    // border-top: 8px solid transparent;
+                    // border-left: 16px solid #212121;
+                    // border-bottom: 8px solid transparent;
+                    // content: "";
                 }
             }
         }
