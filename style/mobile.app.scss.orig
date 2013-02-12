@@ -1,0 +1,917 @@
+/*
+ * Copyright (c) 2012 Adobe Systems Incorporated. All rights reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@import "src/_utils";
+@import "src/_northstar";
+
+* {
+    @include prefixProperty(box-sizing, border-box);
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    @include prefixValue(background, radial-gradient(#494d4e 0%, #343737 80%, #333636 100%));
+}
+
+#app-body {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font: 14px "Source Sans Pro", "source", helvetica, arial, sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    color: #000;
+    font-family: "Source Sans Pro", "source-l", helvetica, arial, sans-serif;
+    margin: 0;
+    font-weight: 400;
+    @include prefixProperty(font-smoothing, antialiased);
+}
+
+#components {
+    display: none;
+}
+
+#loading {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+#main {
+    background: #f8f8f8;
+    width: 100%;
+    height: 100%;
+}
+
+#container {
+    position: absolute;
+    @include user-select(auto);
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    color: white;
+    font-size: 16px;
+    padding: 40px;
+    border: none;
+    outline-offset:-15px;
+    background: #263F51;
+    background-image:url(../../images/bottomscene.png);
+    background-position: center bottom;
+    background-repeat: no-repeat;
+
+    p {
+        line-height: 22px;
+    }
+
+    .content-link {
+        color: yellow;
+    }
+
+    #multi-col {
+        h2{
+            color: #60C5DF;
+            font-size: 32px;
+            margin: 0px;
+            text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+        }
+    }
+
+    #svg-img {
+        display: block;
+        position: absolute;
+        right: 10px;
+        bottom: 50px;
+    }
+
+    #png-img {
+        display: block;
+        margin: auto;
+        margin-bottom: 2em;
+    }
+
+    #css3-img {
+        position: absolute;
+        display: block;
+        border: 6px solid #33ccff;
+        background: white;
+        border-radius: 45px;
+        padding: 10px;
+        width: 30px;
+        height: 30px;
+        bottom: -30px;
+        right: 20px;
+    }
+}
+
+@media screen and (orientation:landscape) {
+    #container {
+        font-size: 12px;
+        p {
+            line-height: 16px;
+        }
+
+        #multi-col {
+            h2 {
+                font-size: 22px;
+            }
+        }
+
+        #svg-img {
+            display: none;
+        }
+
+    }
+}
+
+/* -------- VIEW CLASSES ------- */
+
+.view {
+    z-index: 0;
+}
+
+.view-layout {
+    position: relative;
+}
+
+.dialog-view {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 400;
+    background-color: white;
+}
+
+.content-view {
+    @include prefixProperty(transform, translateZ(0px));
+    background: url(../img/color_bg.png);
+}
+
+.scroll-view {
+    overflow: hidden;
+}
+
+.highlight-touch-view {
+    position: relative;
+    @include prefixProperty(transform, translateZ(0px));
+}
+
+.draggable-view {
+    &.draggable-view-dragging {
+        opacity: 0;
+    }
+}
+
+.draggable-view-clone {
+    position: absolute;
+}
+
+.document-view {
+    @include prefixProperty(transform, translate3d(10000px, 10000px, 0px));
+
+    & > .document-ui-view {
+        width: 100%;
+        height: 100%;
+        @include prefixProperty(transform, translateZ(0px));
+
+        & > .list-button-view {
+            position: absolute;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            background: none, url(../img/mobile/list.svg) no-repeat center;
+            background-color: rgba(255, 255, 255, 0.1);
+            background-size: 24px;
+            width: 40px;
+            height: 32px;
+            left: 10px;
+            top: 10px;
+            border-radius: 5px;
+            @include prefixProperty(filter, drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.8)));
+        }
+
+        & > .controls-placeholder-view {
+            position: absolute;
+            width: 100%;
+            top: 0px;
+            bottom: 90px;
+        }
+
+        & > .trash-bag-view {
+            display: none;
+            position: absolute;
+            width: 100%;
+            top: 0px;
+            bottom: 90px;
+            @include prefixProperty(transition, (background-color 0.3s linear, opacity 0.3s linear));
+            background: url(../img/mobile/trash.svg) no-repeat center;
+            background-size: 60px;
+            background-color: rgba(0, 0, 0, 0.8);
+
+            &.inside {
+                background-color: rgba(128, 0, 0, 0.8);
+            }
+
+            &::after {
+                position: absolute;
+                left: 0px;
+                right: 0px;
+                padding-left: 30px;
+                padding-right: 30px;
+                top: 50%;
+                margin-top: 55px;
+                color: rgba(255, 255, 255, 0.5);
+                text-align: center;
+                text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.4);
+                font-size: 1.8em;
+                font-weight: bold;
+                content: "Drag here to remove filter"
+            }
+
+            &.visible {
+                display: block;
+                opacity: 0;
+                @include prefixProperty(transform, translateZ(0px));
+
+                &.animate {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+
+<<<<<<< HEAD
+=======
+.active-filters-view {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 90px;
+    border-top: 1px solid #787a7a;
+    @include prefixValue(background, linear-gradient(bottom, rgba(41,44,44,0.95) 0%, rgba(61,65,65,0.95) 100%));
+
+    .active-filters-list-view {
+        overflow: visible;
+    }
+
+    .drag-view {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        background: none, url(../img/mobile/code.svg) no-repeat center;
+        background-color: transparent;
+        @include prefixProperty(transform, translateZ(20px));
+        @include prefixProperty(filter, drop-shadow(0px 0px 0px rgba(0, 0, 0, 0)));
+        @include prefixProperty(transition, (-webkit-filter 0.3s linear, background-color 0.3s linear));
+        background-size: 24px;
+        width: 40px;
+        height: 100%;
+        padding-left: 15px;
+        padding-right: 15px;
+        z-index: 1;
+    }
+
+    .drag-view.covered {
+        background-color: rgba(0, 0, 0, 0.7);
+        @include prefixProperty(filter, drop-shadow(2px 0px 3px rgba(0, 0, 0, 0.8)));
+    }
+
+    .add-filter-button-view {
+        top: 50%;
+        @include prefixProperty(transform, translate3d(0px, -50%, 0px) !important);
+        margin-left: 10px;
+        margin-right: 10px;
+        width: 60px;
+        height: 60px;
+        color: #c3c3c3;
+        background: url(../img/mobile/plus.svg) no-repeat center;
+        // background: #595b5b;
+        // border: 2px solid #26292a;
+        background-size: 30px;
+        // box-shadow: inset 0px 1px;
+    }
+
+    .filter-box-view-container {
+        height: 100%;
+        width: 140px;
+        margin-left: 10px;
+        margin-right: 10px;
+
+        .filter-box-view {
+            position: absolute;
+            left: 0px;
+            top: 50%;
+            @include prefixProperty(transform, translate3d(0px, -50%, 0px) !important);
+            width: 100%;
+            height: 70px;
+        }
+    }
+}
+
+>>>>>>> c10b3b6aefea2306759940a9487132f9548b13b0
+.filter-box-view {
+    text-align: center;
+    color: black;
+    padding: 0px;
+    font-weight: bold;
+    border-radius: 10px;
+    white-space: nowrap;
+    @includ prefixProperty(transition, background 0.1s linear);
+    background: transparent;
+
+    &.active-filter-box-view {
+        @include prefixValue(background, linear-gradient(top, #00bffe 0%, #004156 100%));
+    }
+
+    & > .filter-gradient{
+        position: absolute;
+        bottom: 4px;
+        left: 4px;
+        right: 4px;
+        height: 45px;
+        border-bottom-left-radius: 4px;
+        border-bottom-right-radius: 4px;
+        @include prefixValue(background, linear-gradient(bottom, rgba(0,0,0,0.9) 0%,rgba(0,0,0,0) 70%));
+    }
+
+    & > .filter-label {
+        position: absolute;
+        bottom: -12px;
+        padding-top: 15px;
+        color: white;
+        left: 4px;
+        right: 4px;
+        height: 45px;
+        // border-bottom-left-radius: 4px;
+        // border-bottom-right-radius: 4px;
+        letter-spacing: 1px;
+        font-size: 1em;
+        font-weight: 100;
+        text-shadow: 0px 2px 2px black;
+        // @include prefixValue(background, linear-gradient(bottom, rgba(0,0,0,0.9) 0%,rgba(0,0,0,0) 70%));
+    }
+
+    &::before {
+        position: absolute;
+        left: 4px;
+        top: 4px;
+        right: 4px;
+        bottom: 4px;
+        border-radius: 5px;
+        content: "";
+        background: url(../img/color_bg.png);
+    }
+
+    & > .filter-preview {
+        position: absolute;
+        left: 4px;
+        top: 4px;
+        right: 4px;
+        bottom: 4px;
+        border-radius: 5px;
+        background: url(../img/mobile/filter-preview.jpg) no-repeat;
+        background-size: cover;
+    }
+}
+
+.active-filters-view {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 90px;
+    border-top: 1px solid #787a7a;
+    @include prefixValue(background, linear-gradient(bottom, rgba(41,44,44,0.95) 0%, rgba(61,65,65,0.95) 100%));
+
+    .drag-view {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        background: none, url(../img/mobile/code.svg) no-repeat center;
+        background-color: transparent;
+        @include prefixProperty(transform, translateZ(20px));
+        @include prefixProperty(filter, drop-shadow(0px 0px 0px rgba(0, 0, 0, 0)));
+        @include prefixProperty(transition, (-webkit-filter 0.3s linear, background-color 0.3s linear));
+        background-size: 24px;
+        width: 40px;
+        height: 100%;
+        padding-left: 15px;
+        padding-right: 15px;
+        z-index: 1;
+    }
+
+    .drag-view.covered {
+        background-color: rgba(0, 0, 0, 0.7);
+        @include prefixProperty(filter, drop-shadow(2px 0px 3px rgba(0, 0, 0, 0.8)));
+    }
+
+    .add-filter-button-view {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        background: none, url(../img/mobile/plus.svg) no-repeat center;
+        background-color: transparent;
+        @include prefixProperty(transform, translateZ(20px));
+        @include prefixProperty(filter, drop-shadow(0px 0px 0px rgba(0, 0, 0, 0)));
+        @include prefixProperty(transition, (-webkit-filter 0.3s linear, background-color 0.3s linear));
+        background-size: 24px;
+        width: 40px;
+        height: 100%;
+        padding-left: 15px;
+        padding-right: 15px;
+        z-index: 1;
+    }
+
+    .active-filters-list-view > .scroll-view-content-view {
+        height: 100%;
+    }
+
+    .add-filter-button-view.covered {
+        background-color: rgba(0, 0, 0, 0.7);
+        @include prefixProperty(filter, drop-shadow(-2px 0px 3px rgba(0, 0, 0, 0.8)));
+    }
+
+    .filter-box-view-container {
+        height: 100%;
+        width: 100px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
+
+.filter-box-view.inside-active-filters-view {
+    position: absolute;
+    left: 0px;
+    top: 50%;
+    @include prefixProperty(transform, translate3d(0px, -50%, 0px) !important);
+    width: 100%;
+    height: 70px;
+
+    & > .filter-label {
+        font-weight: normal;
+        font-size: 1em;
+        height: 40px;
+    }
+}
+
+.filter-controls-view {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    @include prefixProperty(transition, opacity 0.2s linear);
+    opacity: 0;
+
+    &.visible {
+        opacity: 1;
+
+        .filter-controls-values-view {
+            @include prefixProperty(transform, translate3d(0px, 0px, 0px));
+        }
+    }
+
+    & > .filter-controls-values-view {
+        position: absolute;
+        @include prefixProperty(transition, -webkit-transform 0.2s linear);
+        @include prefixProperty(transform-origin, 0 0);
+        @include prefixProperty(transform, translate3d(0px, 100%, 0px));
+        width: 100%;
+        bottom: 0px;
+        height: 150px;
+
+        .control-view {
+            position: absolute;
+            top: 0px;
+            height: 150px;
+
+            & > .control-editor-view {
+                @include prefixValue(background, linear-gradient(bottom, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.3) 10%, rgba(255, 255, 255, 0) 40%));
+                border-bottom: 1px solid #212121;
+            }
+        }
+    }
+
+    & > .filter-controls-labels-view {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+
+        & > .control-label-view {
+            background: rgba(255, 255, 255, 0.12);
+            text-align: center;
+            padding: 7px;
+            color: white;
+            border-top: 1px solid rgba(204, 204, 204, 0.31);
+            border-bottom: 1px solid rgba(204, 204, 204, 0.31);
+            border-left: 1px solid rgba(204, 204, 204, 0.31);
+
+            &:first-of-type {
+                border-top-left-radius: 5px;
+                border-bottom-left-radius: 5px;
+            }
+
+            &:last-of-type {
+                border-top-right-radius: 5px;
+                border-bottom-right-radius: 5px;
+                border-right: 1px solid rgba(204, 204, 204, 0.31);
+            }
+        }
+    }
+}
+
+.control-view {
+    @include prefixProperty(transform, translateZ(0px));
+    overflow: hidden;
+
+    &.range-control-view {
+        & > .range-ticks-bar {
+            height: 40px;
+            position: absolute;
+            left: 0;
+            bottom: 4px;
+            @include prefixProperty(transform, translateZ(0px));
+
+            & > .range-tick {
+                position: absolute;
+                bottom: 0px;
+                width: 3px;
+                height: 50%;
+                @include prefixProperty(transform, translateZ(0px));
+                background: #313131;
+                border-right: 2px solid rgba(255, 255, 255, .67);
+
+                &.first-range-tick,
+                &.last-range-tick {
+                    height: 100%;
+                }
+            }
+        }
+
+        & > .range-label-view {
+            position: absolute;
+            left: 0px;
+            right: 0px;
+            bottom: 0px;
+
+            & > .range-label {
+                position: relative;
+                margin-left: auto;
+                margin-right: auto;
+                width: 45px;
+                border-top-left-radius: 3px;
+                border-top-right-radius: 3px;
+                height: 40px;
+                padding-top: 10px;
+                background-color: #212121;
+                color: white;
+                text-align: center;
+                @include prefixProperty(transform, translateZ(0px));
+
+                &::before {
+                    position: absolute;
+                    width: 40px;
+                    height: 50px;
+                    background: red;
+                    // background: url(../img/mobile/slider-left.svg);
+                    // left: -30px;
+                    // top: 35%;
+                    // width: 0;
+                    // height: 0;
+                    // border-top: 8px solid transparent;
+                    // border-right: 16px solid #212121;
+                    // border-bottom: 8px solid transparent;
+                    // content: "";
+                }
+
+                &::after {
+                    position: absolute;
+                    // right: -30px;
+                    // top: 35%;
+                    // width: 0;
+                    // height: 0;
+                    // border-top: 8px solid transparent;
+                    // border-left: 16px solid #212121;
+                    // border-bottom: 8px solid transparent;
+                    // content: "";
+                }
+            }
+        }
+    }
+}
+
+.filter-list-view {
+    // background: black;
+    @include prefixValue(background, linear-gradient(top, rgba(31,33,33,1) 0%, rgba(19,21,21,1) 100%));
+
+    .filter-list-view-title {
+        position: absolute;
+        top: 0px;
+        padding-top: 10px;
+        padding-left: 10px;
+        padding-bottom: 5px;
+        font-size: 1.4em;
+        font-weight: bold;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.7);
+        width: 100%;
+        color: white;
+        text-shadow: 1px 1px 1px black;
+        box-shadow: 0px 1px 1px #636464;
+        @include prefixValue(background, linear-gradient(bottom, rgba(41,44,44,0.85) 0%, rgba(61,65,65,0.85) 100%));
+        @include prefixProperty(transform, translateZ(0px));
+    }
+    .cancel-filter-list-button-view {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        text-align: center;
+        font-size: 12px;
+        padding: 7px 20px;
+        color: white;
+        border-radius: 4px;
+        border: 1px solid rgba(0, 0, 0, 0.7);
+        @include prefixProperty(transform, translateZ(0px));
+        @include prefixValue(background, linear-gradient(bottom, rgba(41,44,44,0.85) 0%, rgba(61,65,65,0.85) 100%));
+    }
+    .filter-list-view-container {
+        width: 100%;
+
+        .filter-list-view-container-content-view {
+            padding-top: 50px;
+            padding-bottom: 50px;
+            text-align: center;
+
+            .filter-box-view {
+                display: inline-block;
+                width: 100px;
+                height: 95px;
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+        }
+    }
+}
+
+.document-list-view {
+    .add-preset-button {
+        margin-left: 10px;
+        margin-right: 10px;
+        width: 60px;
+        height: 60px;
+        color: #c3c3c3;
+        text-align: center;
+        font-weight: bold;
+        top: 50%;
+        @include prefixProperty(transform, translate3d(0px, -50%, 0px) !important);
+        background: url(../img/mobile/plus.svg) no-repeat center;
+        background-size: 30px;
+    }
+
+    .document-list-content-view {
+        height: 100%;
+    }
+
+    .document-list-logo {
+        position: absolute;
+        left: 0;
+        width: 202px;
+        height: 198px;
+        top: 50%;
+        @include prefixProperty(transform, translate3d(0px, -50%, 0px));
+        background: url(../img/mobile/logo.png) no-repeat;
+        background-size: contain;
+    }
+
+    .document-list-logo-pointer {
+        @include prefixProperty(transition, opacity 0.3s linear);
+        @include prefixProperty(transform, translate3d(0px, -50%, 0px));
+        @include prefixProperty(transform-origin, -5px 50%);
+        position: absolute;
+        left: -10px;
+        top: 0;
+        width: 10px;
+        height: 10px;
+        top: 50%;
+        background-color: rgba(0, 0, 0, 0.4);
+        opacity: 0;
+
+        &::before {
+            position: absolute;
+            left: -20px;
+            top: -5px;
+            width: 0;
+            height: 0;
+            border-top: 10px solid transparent;
+            border-right: 20px solid rgba(0, 0, 0, 0.4);
+            border-bottom: 10px solid transparent;
+            content: "";
+        }
+    }
+
+    .document-list-logo-pointer.visible {
+        opacity: 1;
+    }
+
+    .document-list-logo-release-info {
+        position: absolute;
+        left: -80px;
+        width: 80px;
+        top: 50%;
+        color: white;
+        text-shadow: 1px 1px 1px black;
+        opacity: 0;
+        text-align: right;
+        @include prefixProperty(transition, opacity 0.3s linear);
+        @include prefixProperty(transform, translate3d(0px, -50%, 0px));
+    }
+
+    .document-list-logo-release-info.visible {
+        opacity: 1;
+    }
+
+    .document-list-item-view {
+        margin-left: 20px;
+        margin-right: 20px;
+        z-index: 0;
+
+        &.selected {
+            z-index: 1;
+        }
+
+        &::before {
+            position: absolute;
+            left: -10px;
+            right: -10px;
+            // top: 30%;
+            // bottom: 35px;
+            // @include prefixValue(background, radial-gradient(rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.9) 50%, rgba(0, 0, 0, 0) 100%));
+            top: 70%;
+            bottom: 20px;
+            @include prefixValue(background, radial-gradient(rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.9) 10%, rgba(0, 0, 0, 0) 100%));
+            @include prefixProperty(transform, translateZ(-1px));
+            @include prefixProperty(filter, blur(10px));
+            content: "";
+        }
+
+        .document-list-item-view-label {
+            position: absolute;
+            bottom: 0px;
+            width: 100%;
+            margin-top: 20px;
+            font-weight: bold;
+            font-size: 1.3em;
+            text-align: center;
+            color: white;
+            text-shadow: 1px 1px 1px black;
+        }
+    }
+}
+
+#loading > div {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    height: 198px;
+    @include prefixProperty(transform, translate3d(0px, -50%, 0px));
+    background: url(../img/mobile/logo.png) center center no-repeat;
+    background-size: contain;
+    color: transparent;
+}
+
+.info-view {
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    height: 50%;
+    background: white;
+    @include prefixProperty(transform, translateZ(0px));
+}
+
+.code-view {
+
+    color: #000;
+    border-top: 1px solid #212121;
+    box-shadow: inset 0px 1px 0px #636464;
+    @include prefixValue(background, linear-gradient(top, rgba(31,33,33,1) 0%, rgba(19,21,21,1) 100%));
+    @include user-select(auto);
+
+    .buttons-view {
+        margin-top: 15px;
+        margin-bottom: 15px;
+        left: 0px;
+        right: 0px;
+    }
+
+    .button-view {
+        margin-left: 15px;
+        margin-right: 15px;
+        padding: 20px 10px;
+        text-align: center;
+        color: white;
+        text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.8);
+        text-transform: capitalize;
+        border-radius: 5px;
+        border: 2px solid #7b9d33;
+        @include prefixValue(background, linear-gradient(top, #a3c55b 0%, #7b9d33 100%));
+    }
+
+    .reset-picture-button-view {
+        // background: rgba(128, 0, 0, 0.5);
+        border-color: #aa2c2c;
+        @include prefixValue(background, linear-gradient(top, #b84e4e 0%, #aa2c2c 100%));
+    }
+
+    .code-view-content {
+        margin-top: 15px;
+        margin-bottom: 15px;
+        left: 15px;
+        right: 15px;
+        border: 1px solid #6e6e6e;
+        border-radius: 5px;
+        background: #f2f2f2;
+    }
+
+    .code-view-content > .scroll-view-content-view {
+        padding: 10px;
+
+        .css-property-name {
+            font-weight: bold;
+        }
+
+        .css-property-value {
+            padding-left: 40px;
+        }
+
+        .data-uri {
+            display: inline-block;
+            width: 200px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        a {
+            color: #8757ad;
+            text-decoration: underline;
+        }
+
+        .function-name {
+            color: #446fbd;
+        }
+
+        .function-name.custom {
+            color: #446fbd;
+        }
+
+        .parameter-name {
+            color: #535353;
+        }
+
+        .keyword {
+            color: #446fbd;
+        }
+
+        .parameter-value {
+            color: #738d00;
+        }
+
+        .parameter-unit {
+            color: #000;
+        }
+
+        .function-arguments.custom {
+        }
+
+        .keyframe-percent {
+            color: #000;
+        }
+
+        .property-name {
+            color: #000;
+        }
+
+        .keyframe-content {
+            margin-left: 20px;
+        }
+    }
+}
