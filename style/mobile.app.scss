@@ -389,11 +389,6 @@ h1,h2,h3,h4,h5,h6 {
         }
     }
 
-    .drag-view.covered {
-        background-color: rgba(0, 0, 0, 0.7);
-        @include prefixProperty(filter, drop-shadow(2px 0px 3px rgba(0, 0, 0, 0.8)));
-    }
-
     .add-filter-button-view {
         position: absolute;
         top: 0px;
@@ -411,11 +406,6 @@ h1,h2,h3,h4,h5,h6 {
 
     .active-filters-list-view > .scroll-view-content-view {
         height: 100%;
-    }
-
-    .add-filter-button-view.covered {
-        background-color: rgba(0, 0, 0, 0.7);
-        @include prefixProperty(filter, drop-shadow(-2px 0px 3px rgba(0, 0, 0, 0.8)));
     }
 
     .filter-box-view-container {
