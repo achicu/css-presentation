@@ -1,6 +1,9 @@
 CACHE MANIFEST
 # Generated on <%=new Date()%>
 
+style/font/SourceSansPro-Regular.otf
+style/font/SourceSansPro-Light.otf
+style/font/SourceSansPro-Semibold.otf
 style/img/mobile/splash640x920.png
 style/img/mobile/splash640x1096.png
 style/img/mobile/logo_small.png

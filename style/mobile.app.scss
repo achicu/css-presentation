@@ -15,7 +15,27 @@
  */
 
 @import "src/_utils";
-@import "src/_northstar";
+
+@font-face {
+    font-family: "source";
+    src: url("../font/SourceSansPro-Regular.otf");
+    font-weight: normal;
+    font-style: normal; 
+}
+
+@font-face {
+    font-family: "source-l";
+    src: url("../font/SourceSansPro-Light.otf");
+    font-weight: 300;
+    font-style: normal; 
+}
+
+@font-face {
+    font-family: "source-sb";
+    src: url("../font/SourceSansPro-Semibold.otf");
+    font-weight: 600;
+    font-style: normal; 
+}
 
 * {
     @include prefixProperty(box-sizing, border-box);
@@ -29,6 +49,7 @@ body {
     margin: 0;
     padding: 0;
     @include prefixValue(background, radial-gradient(#494d4e 0%, #343737 80%, #333636 100%));
+    font-family: "source";
 }
 
 #app-body {
@@ -46,7 +67,6 @@ h1,h2,h3,h4,h5,h6 {
     font-family: "Source Sans Pro", "source-l", helvetica, arial, sans-serif;
     margin: 0;
     font-weight: 400;
-    @include prefixProperty(font-smoothing, antialiased);
 }
 
 #components {
@@ -191,6 +211,17 @@ h1,h2,h3,h4,h5,h6 {
     position: absolute;
 }
 
+.highlight-touch-view-cover {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    visibility: hidden;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
 .document-view {
     @include prefixProperty(transform, translate3d(10000px, 10000px, 0px));
 
@@ -271,7 +302,7 @@ h1,h2,h3,h4,h5,h6 {
     font-weight: bold;
     border-radius: 10px;
     white-space: nowrap;
-    @includ prefixProperty(transition, background 0.1s linear);
+    @include prefixProperty(transition, background 0.1s linear);
     background: transparent;
 
     &.active-filter-box-view {
@@ -301,6 +332,8 @@ h1,h2,h3,h4,h5,h6 {
         font-size: 1em;
         font-weight: 100;
         text-shadow: 0px 2px 2px black;
+        font-family: "source-sb";
+        font-weight: 600;
     }
 
     &::before {
@@ -390,6 +423,20 @@ h1,h2,h3,h4,h5,h6 {
         width: 100px;
         margin-left: 10px;
         margin-right: 10px;
+
+        & > .highlight-touch-view-cover {
+            top: 7px;
+            bottom: 7px;
+            left: -2px;
+            right: -2px;
+        }
+
+        & > .filter-box-view.active-filter-box-view + .highlight-touch-view-cover {
+            top: 5px;
+            bottom: 5px;
+            left: -4px;
+            right: -4px;
+        }
     }
 }
 
