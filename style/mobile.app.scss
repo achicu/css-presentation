@@ -342,7 +342,7 @@ h1,h2,h3,h4,h5,h6 {
         @include prefixProperty(transform, translateZ(20px));
         @include prefixProperty(filter, drop-shadow(0px 0px 0px rgba(0, 0, 0, 0)));
         @include prefixProperty(transition, (-webkit-filter 0.3s linear, background-color 0.3s linear));
-        width: 40px;
+        width: 50px;
         height: 100%;
         z-index: 1;
         overflow: hidden;
@@ -371,10 +371,8 @@ h1,h2,h3,h4,h5,h6 {
         @include prefixProperty(filter, drop-shadow(0px 0px 0px rgba(0, 0, 0, 0)));
         @include prefixProperty(transition, (-webkit-filter 0.3s linear, background-color 0.3s linear));
         background-size: 24px;
-        width: 40px;
+        width: 50px;
         height: 100%;
-        padding-left: 15px;
-        padding-right: 15px;
         z-index: 1;
     }
 
