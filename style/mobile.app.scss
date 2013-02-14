@@ -238,7 +238,7 @@ h1,h2,h3,h4,h5,h6 {
         top: 50%;
         border-radius: 5px;
         background: rgba(0, 0, 0, 0.8);
-        @include prefixProperty(transition, (-webkit-transform 0.3s ease-in-out, opacity 0.3s linear));
+        @include prefixBoth(transition, (transform 0.3s ease-in-out, opacity 0.3s linear));
         @include prefixProperty(transform-origin, 0 0);
         @include prefixProperty(transform, scale(0) translate3d(-50%, -50%, 0));
         opacity: 0;
@@ -576,7 +576,7 @@ h1,h2,h3,h4,h5,h6 {
 
     & > .filter-controls-values-view {
         position: absolute;
-        @include prefixProperty(transition, -webkit-transform 0.2s linear);
+        @include prefixBoth(transition, transform 0.2s linear);
         @include prefixProperty(transform-origin, 0 0);
         @include prefixProperty(transform, translate3d(0px, 100%, 0px));
         width: 100%;
