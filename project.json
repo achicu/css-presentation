@@ -104,6 +104,8 @@
         "lib/mobile/views/content_view.js",
         "lib/mobile/views/info_view.js",
         "lib/mobile/views/code_view.js",
+        "lib/mobile/views/popup_view.js",
+        "lib/mobile/views/camera_buttons_view.js",
         "lib/mobile/views/document_view.js",
         "lib/mobile/views/document_list_view.js",
         "lib/mobile/views/active_filter_list_view.js",
