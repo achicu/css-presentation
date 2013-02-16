@@ -297,12 +297,14 @@ h1,h2,h3,h4,h5,h6 {
         top: 10px;
         width: 60px;
         height: 60px;
-        background: rgba(255, 255, 255, 0.5);
+        border: 3px dotted rgba(0, 0, 0, 0.3);
         border-radius: 50px;
         opacity: 0;
-        @include prefixBoth(transition, opacity 0.2s linear);
+        @include prefixBoth(transition, opacity 0.1s linear);
+        pointer-events: none;
 
         &.visible {
+            pointer-events: auto;
             opacity: 1;
         }
     }
