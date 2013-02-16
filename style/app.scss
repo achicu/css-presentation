@@ -40,7 +40,12 @@
 	padding: 4rem;
 	font-size: 2em;
 
-	h1,h2,h3,h4,h5,h6 { 
+	ul {
+		@include list-reset();
+	}
+
+	h1, h2, h3, h4, h5, h6,
+	a, a:visited { 
 		color: white; 
 		text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7); 
 	}
