@@ -62,7 +62,7 @@ module.exports = function(grunt) {
     }
 
     // Project configuration.
-    grunt.initConfig(branding.initGruntConfig({
+    grunt.initConfig({
         pkg: '<json:package.json>',
         meta: {
             banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' +
@@ -84,7 +84,7 @@ module.exports = function(grunt) {
             },
             assets: {
                 files: {
-                    "dist/images/": "images/**",
+                    //"dist/images/": "images/**",
                     "dist/style/img/": "style/img/**",
                     "dist/style/font/": "style/font/**",
                     "dist/third_party/jquery/": "third_party/jquery/**"
@@ -213,7 +213,7 @@ module.exports = function(grunt) {
             port: 9000,
             base: './dist/'
         }
-    }));
+    });
 
     function makeArray(scripts) {
         scripts = Array.isArray(scripts) ? scripts : [scripts];

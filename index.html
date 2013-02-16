@@ -28,12 +28,6 @@ limitations under the License.
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="style/img/mobile/icon72.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="style/img/mobile/icon114.png">
 
-    <!-- iPhone 5 (Retina) -->
-    <link rel="apple-touch-startup-image" href="style/img/mobile/splash640x920.png" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2)">
-    <!-- iPhone 5 -->
-    <link rel="apple-touch-startup-image" href="style/img/mobile/splash640x1096.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)">
-
-
     <% css.forEach(function(cssFile){ %>
         <link rel="stylesheet" href="<%- cssFile %>" />
     <% }) %>
@@ -41,16 +35,12 @@ limitations under the License.
 
 <body>
     <div id="components">
-        <% if (project.branding) { %>
-            <%- file(project.branding.logo) %>
-        <% } %>
-        <% project.mobile_components.forEach(function(component){ %>
+        <% project.components.forEach(function(component){ %>
             <%- file(component) %>
         <% }) %>
     </div>
 
     <div id="app-body">
-
 
         <div id="loading">
             <div>
@@ -58,7 +48,7 @@ limitations under the License.
             </div>
         </div>
 
-        <% project.mobile_popups.forEach(function(popup){ %>
+        <% project.popups.forEach(function(popup){ %>
             <%- file(popup) %>
         <% }) %>
 
@@ -68,9 +58,6 @@ limitations under the License.
             <% }) %>
         <% } %>
 
-        <% if (project.branding) { %>
-            <%- file(project.branding.main) %>
-        <% } %>
     </div>
 
     <% scripts.forEach(function(scriptFile){ %>

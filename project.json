@@ -35,8 +35,6 @@
         "lib/views/popup_view.js",
         "lib/views/dialog_view.js",
         "lib/views/main_view.js",
-        "lib/views/document_view.js",
-        "lib/views/document_list_view.js",
         "lib/application.js",
         "lib/controls/base_control.js",
         "lib/controls/range_control.js",
