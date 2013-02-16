@@ -64,7 +64,7 @@
 		position: absolute;
 		width: 30%;
 		height: 30%;
-		@include prefixProperty(filter, drop-shadow(10px 10px 5px rgba(0, 0, 0, 0.6)));
+		@include prefixProperty(filter, drop-shadow(0px 10px 5px rgba(0, 0, 0, 0.6)));
 		@include prefixBoth(transition, (transform 0.5s linear, opacity 0.5s linear));
 		color: transparent;
 		background: white;
@@ -74,11 +74,11 @@
 		left: 10%;
 		top: 20%;
 		opacity: 0;
-		@include prefixProperty(transform, rotateY(90deg) rotate(-10deg));
+		@include prefixProperty(transform, translateZ(-100px) rotateY(90deg) translateZ(100px) rotate(-10deg));
 
 		&.state-open {
 			opacity: 1;
-			@include prefixProperty(transform, rotateY(0deg) rotate(-10deg));
+			@include prefixProperty(transform, translateZ(-100px) rotateY(0deg) translateZ(100px) rotate(-10deg));
 		}
 	}
 
@@ -86,23 +86,23 @@
 		left: 40%;
 		top: 25%;
 		opacity: 0;
-		@include prefixProperty(transform, rotateY(90deg));
+		@include prefixProperty(transform, translateZ(-100px) rotateY(90deg) translateZ(101px));
 
 		&.state-open {
 			opacity: 1;
-			@include prefixProperty(transform, rotateY(0deg));
+			@include prefixProperty(transform, translateZ(-100px) rotateY(0deg) translateZ(101px));
 		}
 	}
 
 	.css-filters-picture {
 		left: 70%;
-		top: 40%;
+		top: 35%;
 		opacity: 0;
-		@include prefixProperty(transform, rotateY(90deg) rotate(10deg));
+		@include prefixProperty(transform, translateZ(-100px) rotateY(90deg) translateZ(102px) rotate(6deg));
 
 		&.state-open {
 			opacity: 1;
-			@include prefixProperty(transform, rotateY(0deg) rotate(10deg));
+			@include prefixProperty(transform, translateZ(-100px) rotateY(0deg) translateZ(102px) rotate(6deg));
 		}
 	}
 
@@ -110,7 +110,7 @@
 		left: 30%;
 		top: 60%;
 		opacity: 0;
-		@include prefixProperty(transform, translateZ(0px));
+		@include prefixProperty(transform, translateZ(3px));
 
 		&.state-open {
 			opacity: 1;
