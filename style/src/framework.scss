@@ -301,6 +301,14 @@ h1,h2,h3,h4,h5,h6 {
     }
 }
 
+.state-view {
+    pointer-events: none;
+
+    &.state-open {
+        pointer-events: auto;
+    }
+}
+
 .slide-view {
     position: absolute;
     width: 1024px;
