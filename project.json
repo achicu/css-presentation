@@ -39,7 +39,8 @@
         "lib/controls/base_control.js",
         "lib/controls/range_control.js",
         "lib/utils/local_storage.js",
-        "lib/utils/timer.js"
+        "lib/utils/timer.js",
+        "lib/presenter/presenter.js"
     ],
     "components": [
         "html/slides.html"
