@@ -40,7 +40,10 @@
         "lib/controls/range_control.js",
         "lib/utils/local_storage.js",
         "lib/utils/timer.js",
-        "lib/presenter/presenter.js"
+        "lib/presenter/presenter.js",
+        "lib/presenter/template_view.js",
+        "lib/presenter/slide_view.js",
+        "lib/presenter/slides_list_view.js"
     ],
     "components": [
         "html/slides.html"
