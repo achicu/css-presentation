@@ -108,10 +108,10 @@ module.exports = function(grunt) {
             }
         },
         html: {
-            index_dev: generateHTMLConfig('index.html', 'dist/index.dev.html', '<config:lint.all>', ['style/css/app.dev.css', project.injected_dev_css], true, false, "dev.cache.appcache"),
+            index_dev: generateHTMLConfig('index.html', 'dist/index.dev.html', '<config:lint.all>', ['style/css/app.dev.css', project.injected_dev_css], true, false),
             index_dev_qunit: generateHTMLConfig('index.html', 'dist/index.dev.qunit.html', '<config:lint.all>', ['style/css/app.dev.css', project.injected_dev_css], true, true),
 
-            index_concat: generateHTMLConfig('index.html', 'dist/index.concat.html', '<config:concat.js.name>', ['style/css/app.concat.css', project.injected_concat_css], true, false, "concat.cache.appcache"),
+            index_concat: generateHTMLConfig('index.html', 'dist/index.concat.html', '<config:concat.js.name>', ['style/css/app.concat.css', project.injected_concat_css], true, false),
             index_concat_qunit: generateHTMLConfig('index.html', 'dist/index.concat.qunit.html', '<config:concat.js.name>', ['style/css/app.concat.css', project.injected_concat_css], true, true),
 
             index_prod: generateHTMLConfig('index.html', 'dist/index.html', '<config:concat.min_js.name>', 'style/css/app.min.css', false, false, "cache.appcache"),
