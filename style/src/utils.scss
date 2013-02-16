@@ -14,10 +14,6 @@
  * limitations under the License.
  */
 
-$baseColorLight: #494D4E /* Slate Gray */;
-$baseColorDark: #3B3F41 /* Slate Gray */;
-$selectedBg: rgba(0,0,0,.24) /* Slate Gray */;
-
 @mixin prefixProperty($property, $value){
     -webkit-#{$property}: $value;
     -moz-#{$property}: $value;
@@ -42,44 +38,6 @@ $selectedBg: rgba(0,0,0,.24) /* Slate Gray */;
     #{$property}: $value;
 }
 
-@mixin flexbox{
-    @include prefixValue(display, box);
-    /* Flex needs to be last, so that we use the new flex-box when it's available */
-    /* FIXME: Disable the new flex box for now. It seems like stable versions of Chromium don't have the whole implementation yet. */
-    /* @include prefixValue(display, flex); */
-}
-
-@mixin flex($value: 1){
-    @include prefixProperty(flex, $value);
-    @include prefixProperty(box-flex, $value);
-}
-
-@mixin noflex{
-    @include prefixProperty(box-flex, 0);
-	@include prefixProperty(flex, none);
-}
-
-@mixin hbox{
-    @include flexbox;
-    @include prefixProperty(box-orient, horizontal);
-    @include prefixProperty(flex-direction, row);
-}
-
-@mixin vbox{
-    @include flexbox;
-    @include prefixProperty(box-orient, vertical);
-    @include prefixProperty(flex-direction, column);
-}
-
-@mixin valign{
-    @include prefixProperty(box-align, center);
-}
-
-@mixin align-end{
-    @include prefixProperty(box-align, end);
-    margin-bottom: 0;
-}
-
 @mixin user-select($value: auto){
 	-webkit-touch-callout: $value;
 	-webkit-user-select: $value;
@@ -87,11 +45,6 @@ $selectedBg: rgba(0,0,0,.24) /* Slate Gray */;
 	-moz-user-select: $value;
 	-ms-user-select: $value;
 	user-select: $value;
-}
-
-@mixin northstar-bg{
-    background: $baseColorDark url("../img/bg_dark.png");
-    background-repeat: repeat-x;
 }
 
 @mixin list-reset{
@@ -103,8 +56,4 @@ $selectedBg: rgba(0,0,0,.24) /* Slate Gray */;
         margin: 0;
         padding: 0;
     }
-}
-
-@mixin box-shadow{
-    box-shadow: 0 3px 15px 3px rgba(0,0,0,.4);
 }
