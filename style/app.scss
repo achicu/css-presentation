@@ -21,7 +21,20 @@
 	height: 100%;
 }
 
+.slide-content-view {
+	width: 100%;
+	height: 100%;
+
+	.slide-content-view-transform {
+		@include prefixProperty(transform-origin, 0 0);
+	}
+}
+
 .slide-view {
+	position: absolute;
+	width: 1024px;
+	height: 768px;
+
 	color: white;
 	text-align: center;
 	padding: 4rem;
@@ -41,7 +54,7 @@
 	
 	.filter-list-view-item {
 		width: 100%;
-		height: 30px;
+		height: 80px;
 		border-botttom: 1px solid #ccc;
 	}
 }
