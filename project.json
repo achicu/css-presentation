@@ -45,7 +45,8 @@
         "lib/presenter/slide_view.js",
         "lib/presenter/slide_content_view.js",
         "lib/presenter/slides_list_view.js",
-        "lib/presenter/list_view.js"
+        "lib/presenter/list_view.js",
+        "lib/presenter/link_view.js"
     ],
     "components": [
         "html/slides.html"
