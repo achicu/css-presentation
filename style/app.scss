@@ -56,3 +56,66 @@
 	bottom: 0%;
 	background: red;
 }
+
+.slide-about {
+	@include prefixProperty(transform-perspective, 500);
+
+	.css-regions-picture, .css-exclusions-picture, .css-filters-picture, .css-webkit-picture {
+		position: absolute;
+		width: 30%;
+		height: 30%;
+		@include prefixProperty(filter, drop-shadow(10px 10px 5px rgba(0, 0, 0, 0.6)));
+		@include prefixBoth(transition, (transform 0.5s linear, opacity 0.5s linear));
+		color: transparent;
+		background: white;
+	}
+
+	.css-regions-picture {
+		left: 10%;
+		top: 20%;
+		opacity: 0;
+		@include prefixProperty(transform, rotateY(90deg) rotate(-10deg));
+
+		&.state-open {
+			opacity: 1;
+			@include prefixProperty(transform, rotateY(0deg) rotate(-10deg));
+		}
+	}
+
+	.css-exclusions-picture {
+		left: 40%;
+		top: 25%;
+		opacity: 0;
+		@include prefixProperty(transform, rotateY(90deg));
+
+		&.state-open {
+			opacity: 1;
+			@include prefixProperty(transform, rotateY(0deg));
+		}
+	}
+
+	.css-filters-picture {
+		left: 70%;
+		top: 40%;
+		opacity: 0;
+		@include prefixProperty(transform, rotateY(90deg) rotate(10deg));
+
+		&.state-open {
+			opacity: 1;
+			@include prefixProperty(transform, rotateY(0deg) rotate(10deg));
+		}
+	}
+
+	.css-webkit-picture {
+		left: 30%;
+		top: 60%;
+		opacity: 0;
+		@include prefixProperty(transform, translateZ(0px));
+
+		&.state-open {
+			opacity: 1;
+		}
+	}
+}
+
+
