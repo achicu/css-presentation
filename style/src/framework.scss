@@ -335,7 +335,7 @@ h1,h2,h3,h4,h5,h6 {
 
     color: white;
     text-align: center;
-    font-size: 2em;
+    font-size: 2.5em;
 
     ul {
         @include list-reset();
@@ -345,6 +345,7 @@ h1,h2,h3,h4,h5,h6 {
         border: 1px solid rgba(255, 255, 255, 0.4);
         border-radius: 10px;
         margin-top: 1em;
+        margin-bottom: 1em;
 
         li {
             padding-top: 10px;
@@ -355,6 +356,10 @@ h1,h2,h3,h4,h5,h6 {
             &:nth-child(2n+1) {
                 background: rgba(255, 255, 255, 0.05);
             }
+
+            .small {
+                font-size: 0.8em;
+            }
         }
     }
 
@@ -362,5 +367,15 @@ h1,h2,h3,h4,h5,h6 {
     a, a:visited {
         color: white;
         text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
+    }
+
+    .opacity-state {
+        @include prefixProperty(transition, opacity 0.2s linear);
+        @include prefixProperty(transform, translateZ(0px));
+        opacity: 0;
+
+        &.state-open {
+            opacity: 1;
+        }
     }
 }
