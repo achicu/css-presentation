@@ -388,6 +388,12 @@ h1,h2,h3,h4,h5,h6 {
         @include list-reset();
     }
 
+    .smaller-space {
+        margin-left: auto;
+        margin-right: auto;
+        width: 60%;
+    }
+
     .bordered-list {
         border: 1px solid rgba(255, 255, 255, 0.4);
         border-radius: 10px;
@@ -404,9 +410,63 @@ h1,h2,h3,h4,h5,h6 {
                 background: rgba(255, 255, 255, 0.05);
             }
 
+            &.small {
+                font-size: 0.6em;
+            }
+
             .small {
                 font-size: 0.8em;
             }
+        }
+    }
+
+    .simple-list {
+        margin-top: 1em;
+        margin-bottom: 1em;
+
+        li {
+            padding-top: 10px;
+            padding-bottom: 10px;
+
+            &.small {
+                font-size: 0.6em;
+            }
+
+            .small {
+                font-size: 0.8em;
+            }
+        }
+    }
+
+    .row {
+        width: 100%;
+        .cell3 {
+            float: left;
+            width: 31.33%;
+            margin-left: 1%;
+            margin-right: 1%;
+        }
+        .cell2 {
+            float: left;
+            width: 48%;
+            margin-left: 1%;
+            margin-right: 1%;
+        }
+        .cell2-reduced {
+            float: left;
+            width: 29%;
+            margin-left: 1%;
+            margin-right: 1%;
+        }
+        .cell2-reduced:first-of-type {
+            margin-left: 20%;
+        }
+        .cell2-reduced:last-of-type {
+            margin-right: 20%;
+        }
+        &::after {
+            content: "";
+            clear: left;
         }
     }
 
