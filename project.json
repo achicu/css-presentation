@@ -24,7 +24,8 @@
         "lib/views/vertical_layout.js",
         "lib/views/touch_view.js",
         "lib/views/gesture_view.js",
-        "lib/views/image_view.js",
+        "lib/views/pan_view.js",
+        "lib/views/transform_view.js",
         "lib/views/scroll_view.js",
         "lib/views/step_scroll_view.js",
         "lib/views/list_item_view.js",
@@ -48,7 +49,8 @@
         "lib/presenter/list_view.js",
         "lib/presenter/link_view.js",
         "lib/presenter/progress_view.js",
-        "lib/slides/slide_css_demo_view.js"
+        "lib/slides/slide_css_demo_view.js",
+        "lib/slides/touch_areas.js"
     ],
     "components": [
         "html/slides.html"
