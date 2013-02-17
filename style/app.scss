@@ -118,8 +118,17 @@
 }
 
 .slide-css-filters {
+	.filter-syntax {
+		font-size: 0.8em;
+		.filter-name, .prop-name {
+			font-weight: bold;
+		}
+		.filter-name {
+			font-size: 1.1em;
+		}
+	}
 	.filtered-area {
-		margin-top: 2em;
+		margin-top: 1em;
 		margin-left: auto;
 		margin-right: auto;
 		@include prefixProperty(transform, translateZ(0px));
