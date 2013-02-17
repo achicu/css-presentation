@@ -83,6 +83,7 @@ module.exports = function(grunt) {
                 }
             },
             assets: {
+                options: { flatten: false },
                 files: {
                     "dist/images/": "images/**",
                     "dist/style/img/": "style/img/**",

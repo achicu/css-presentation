@@ -62,13 +62,17 @@
 
 	.css-regions-picture, .css-exclusions-picture, .css-filters-picture, .css-webkit-picture {
 		position: absolute;
-		width: 30%;
-		height: 30%;
-		@include prefixProperty(filter, drop-shadow(0px 10px 5px rgba(0, 0, 0, 0.6)));
 		@include prefixBoth(transition, (transform 0.5s linear, opacity 0.5s linear));
-		background-color: white;
 		background-size: contain;
 		background-repeat: no-repeat;
+		background-position: center;
+	}
+
+	.css-regions-picture, .css-exclusions-picture, .css-filters-picture {
+		box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.6);
+		background-color: white;
+		width: 30%;
+		height: 30%;
 	}
 
 	.css-regions-picture {
@@ -76,7 +80,7 @@
 		top: 25%;
 		opacity: 0;
 		@include prefixProperty(transform, translateZ(-100px) rotateY(90deg) translateZ(100px) rotate(-10deg));
-		background-image: url(../../images/regions.png);
+		background-image: url(../../images/specs/regions.png);
 
 		&.state-open {
 			opacity: 1;
@@ -89,7 +93,7 @@
 		top: 25%;
 		opacity: 0;
 		@include prefixProperty(transform, translateZ(-100px) rotateY(90deg) translateZ(101px));
-		background-image: url(../../images/exclusions.png);
+		background-image: url(../../images/specs/exclusions.png);
 
 		&.state-open {
 			opacity: 1;
@@ -102,7 +106,7 @@
 		top: 35%;
 		opacity: 0;
 		@include prefixProperty(transform, translateZ(-100px) rotateY(90deg) translateZ(102px) rotate(6deg));
-		background-image: url(../../images/filters.png);
+		background-image: url(../../images/specs/filters.png);
 
 		&.state-open {
 			opacity: 1;
@@ -111,10 +115,13 @@
 	}
 
 	.css-webkit-picture {
-		left: 30%;
-		top: 60%;
+		left: 20%;
+		top: 50%;
+		width: 40%;
+		height: 40%;
 		opacity: 0;
 		@include prefixProperty(transform, translateZ(3px));
+		background-image: url(../../images/webkit-icon.png);
 
 		&.state-open {
 			opacity: 1;
