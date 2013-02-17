@@ -84,7 +84,7 @@ module.exports = function(grunt) {
             },
             assets: {
                 files: {
-                    //"dist/images/": "images/**",
+                    "dist/images/": "images/**",
                     "dist/style/img/": "style/img/**",
                     "dist/style/font/": "style/font/**",
                     "dist/third_party/jquery/": "third_party/jquery/**"

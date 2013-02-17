@@ -66,15 +66,17 @@
 		height: 30%;
 		@include prefixProperty(filter, drop-shadow(0px 10px 5px rgba(0, 0, 0, 0.6)));
 		@include prefixBoth(transition, (transform 0.5s linear, opacity 0.5s linear));
-		color: transparent;
-		background: white;
+		background-color: white;
+		background-size: contain;
+		background-repeat: no-repeat;
 	}
 
 	.css-regions-picture {
 		left: 10%;
-		top: 20%;
+		top: 25%;
 		opacity: 0;
 		@include prefixProperty(transform, translateZ(-100px) rotateY(90deg) translateZ(100px) rotate(-10deg));
+		background-image: url(../../images/regions.png);
 
 		&.state-open {
 			opacity: 1;
@@ -83,10 +85,11 @@
 	}
 
 	.css-exclusions-picture {
-		left: 40%;
+		left: 35%;
 		top: 25%;
 		opacity: 0;
 		@include prefixProperty(transform, translateZ(-100px) rotateY(90deg) translateZ(101px));
+		background-image: url(../../images/exclusions.png);
 
 		&.state-open {
 			opacity: 1;
@@ -95,10 +98,11 @@
 	}
 
 	.css-filters-picture {
-		left: 70%;
+		left: 60%;
 		top: 35%;
 		opacity: 0;
 		@include prefixProperty(transform, translateZ(-100px) rotateY(90deg) translateZ(102px) rotate(6deg));
+		background-image: url(../../images/filters.png);
 
 		&.state-open {
 			opacity: 1;
