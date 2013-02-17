@@ -41,6 +41,9 @@
 
 	.title-margin {
 		margin-top: 1em;
+		a {
+			text-decoration: none;
+		}
 	}
 
 	.italics {
@@ -198,4 +201,15 @@
 .gruntjs-background {
 	background: url(../../images/gruntjs.png) 100% 90% no-repeat;
 	background-size: 20%;
+}
+
+.slide-edge-inspect {
+	.edge-inspect-logo {
+		vertical-align: middle;
+		margin-right: 0.3em;
+	}
+}
+
+.edge-inspect-background {
+	background: url(../../images/edge_inspect_feature2.png) right bottom no-repeat;
 }
