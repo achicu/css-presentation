@@ -87,6 +87,14 @@
 		background-size: contain;
 		background-repeat: no-repeat;
 		background-position: center;
+
+		.feature-label {
+			position: absolute;
+			top: -1.5em;
+			left: 0px;
+			text-align: center;
+			width: 100%
+		}
 	}
 
 	.css-regions-picture, .css-exclusions-picture, .css-filters-picture {
