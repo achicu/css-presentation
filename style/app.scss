@@ -30,31 +30,19 @@
 	}
 }
 
-.play-view {
-	position: absolute;
-	right: 0%;
-	top: 0%;
-	width: 30%;
-	bottom: 0%;
-	background: red;
-}
+.slide-view {
+	.center {
+		position: absolute;
+		top: 50%;
+		left: 10%;
+		width: 80%;
+		text-align: center;
+		@include prefixProperty(transform, translateY(-50%));
+	}
 
-.play-view-right {
-	position: absolute;
-	right: 0%;
-	top: 0%;
-	width: 30%;
-	bottom: 0%;
-	background: green;
-}
-
-.play-view-left {
-	position: absolute;
-	left: 0%;
-	top: 0%;
-	width: 30%;
-	bottom: 0%;
-	background: red;
+	.title-margin {
+		margin-top: 1em;
+	}
 }
 
 .slide-about {
