@@ -52,6 +52,12 @@
 	}
 }
 
+.intro-background {
+	background: url(../../images/bg_1.jpg) center bottom no-repeat;
+	background-color: rgb(55, 67, 77);
+	background-size: contain;
+}
+
 .slide-about {
 	@include prefixProperty(transform-perspective, 500);
 
