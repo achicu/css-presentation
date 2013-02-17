@@ -47,6 +47,10 @@
 	.italics {
 		font-style: italic;
 	}
+
+	.link-view {
+		display: block;
+	}
 }
 
 .slide-about {
@@ -152,3 +156,16 @@
 		height: 150px;
 	}
 }
+
+.slide-cssfilterlab {
+	.css-filter-lab-preview {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 1em;
+		margin-bottom: 1em;
+		height: 60%;
+		box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.6);
+	}
+}
+
