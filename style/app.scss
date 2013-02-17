@@ -231,6 +231,21 @@
 	}
 }
 
+.offline-background {
+	background: url(../../images/offline.svg) 90% 90% no-repeat;
+	background-size: 10%;
+}
+
+.touch-background {
+	background: url(../../images/phone_ui.svg) 88% 90% no-repeat;
+	background-size: 5%;
+}
+
+.performance-background {
+	background: url(../../images/performance.svg) 90% 90% no-repeat;
+	background-size: 10%;
+}
+
 .slide-touch-gestures {
 	.touch-area {
 		position: relative;
