@@ -58,6 +58,24 @@
 	background-size: contain;
 }
 
+.slide-intro {
+	.white-strip {
+		position: absolute;
+		top: 30%;
+		background-color: white;
+		left: -50%;
+		width: 200%;
+		text-align: center;
+		padding-top: 1em;
+		padding-bottom: 1em;
+		font-size: 0.7em;
+		h1, h2, h3, h4, a { 
+			color: black; 
+			text-shadow: none;
+		}
+	}
+}
+
 .slide-about {
 	@include prefixProperty(transform-perspective, 500);
 
