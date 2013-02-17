@@ -53,22 +53,22 @@
 }
 
 .intro-background {
-	background: url(../../images/bg_1.jpg) center bottom no-repeat;
+	background: url(../../images/bg_1.jpg) center center no-repeat;
 	background-color: rgb(55, 67, 77);
-	background-size: contain;
+	background-size: cover;
 }
 
 .slide-intro {
 	.white-strip {
 		position: absolute;
 		top: 30%;
-		background-color: white;
-		left: -50%;
-		width: 200%;
+		background-color: rgba(255, 255, 255, 0.9);
+		width: 100%;
 		text-align: center;
 		padding-top: 1em;
 		padding-bottom: 1em;
 		font-size: 0.7em;
+		border-radius: 10px;
 		h1, h2, h3, h4, a { 
 			color: black; 
 			text-shadow: none;
