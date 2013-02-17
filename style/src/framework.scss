@@ -215,10 +215,10 @@ h1,h2,h3,h4,h5,h6 {
 
     &.range-control-view {
         & > .range-ticks-bar {
-            height: 40px;
             position: absolute;
             left: 0;
-            bottom: 4px;
+            top: 20%;
+            bottom: 20%;
             @include prefixProperty(transform, translateZ(0px));
 
             & > .range-tick {
@@ -241,17 +241,18 @@ h1,h2,h3,h4,h5,h6 {
             position: absolute;
             left: 0px;
             right: 0px;
-            bottom: 0px;
+            top: 50%;
+            @include prefixProperty(transform, translateY(-50%));
 
             & > .range-label {
                 position: relative;
                 margin-left: auto;
                 margin-right: auto;
                 width: 45px;
-                border-top-left-radius: 3px;
-                border-top-right-radius: 3px;
-                height: 40px;
+                border-radius: 3px;
+                height: 50px;
                 padding-top: 10px;
+                padding-bottom: 10px;
                 background-color: #212121;
                 color: white;
                 text-align: center;
