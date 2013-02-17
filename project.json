@@ -53,6 +53,7 @@
         "lib/slides/touch_areas.js"
     ],
     "components": [
+        "html/info_bar.html",
         "html/slides.html"
     ],
     "popups": [
