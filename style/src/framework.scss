@@ -289,6 +289,21 @@ h1,h2,h3,h4,h5,h6 {
     }
 }
 
+.progress-view {
+    position: absolute;
+    background-color: #aaa;
+
+    .progress-inner-view {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: #555;
+        @include prefixBoth(transition, transform 0.2s linear);
+        @include prefixProperty(transform-origin, 0 0);
+        @include prefixProperty(transform, scaleX(0) translateZ(0px));
+    }
+}
+
 .slides-list-view {
     width: 100%;
     height: 100%;
@@ -309,6 +324,12 @@ h1,h2,h3,h4,h5,h6 {
             pointer-events: auto;
             opacity: 1;
         }
+    }
+
+    .progress-view {
+        width: 100%;
+        bottom: 0px;
+        height: 2px;
     }
 }
 
