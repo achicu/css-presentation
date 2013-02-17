@@ -150,7 +150,7 @@
 	}
 }
 
-.slide-css-filters {
+.slide-css-filters-demo {
 	.filter-syntax {
 		font-size: 0.8em;
 		.filter-name, .prop-name {
@@ -173,7 +173,9 @@
 
 		.slide-css-filters-field {
 			padding: 10px;
+			font-size: 1.2em;
 			width: 300px;
+			border-radius: 10px;
 		}
 	}
 	.blur-control {

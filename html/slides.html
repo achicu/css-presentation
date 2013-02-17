@@ -32,7 +32,7 @@
 		</ul>
 	</div>
 
-	<div data-view="slide-css-demo" data-name="css-filters" class="slide-css-filters" data-filter-name="blur" data-filter-value-units="px">
+	<div data-view="slide" data-name="css-filters" class="slide-css-filters">
 		
 		<h2 class="title-margin">CSS Filters</h2>
 		
@@ -47,6 +47,11 @@
 				Hardware accelerated
 			</li>
 		</ul>
+	</div>
+
+	<div data-view="slide-css-demo" data-name="css-filters-demo" class="slide-css-filters-demo" data-filter-name="blur" data-filter-value-units="px">
+
+		<h2 class="title-margin">CSS Filters Demo</h2>
 
 		<div data-state="4" data-advance="auto" class="opacity-state">
 
@@ -55,19 +60,18 @@
 
 			<div class="filtered-area" data-role="filteredArea">
 				<div>
-					<label for="slide-css-filters-username" class="slide-css-filters-label">User name</label>
+					<label data-native-touch for="slide-css-filters-username" class="slide-css-filters-label">User name</label>
 					<input data-native-touch name="slide-css-filters-username" class="slide-css-filters-field" type="text" />
 				</div>
 
 				<div>
-					<label for="slide-css-filters-password" class="slide-css-filters-label">Password</label>
+					<label data-native-touch for="slide-css-filters-password" class="slide-css-filters-label">Password</label>
 					<input data-native-touch name="slide-css-filters-password" class="slide-css-filters-field" type="password" />
 				</div>
 			</div>
 		
 			<div class="blur-control" data-role="filterControl" data-control="range" data-param-min="0" data-param-max="20" data-param-step="0.001"></div>
 		</div>
-
 	</div>
 
 	<div data-view="slide" data-name="css-filter-types" class="slide-css-filters-continued">
@@ -224,7 +228,7 @@
 	</div>
 
 	<div data-view="slide" data-name="touch-abstraction" class="slide-touch-abstraction">
-		<h2 class="title-margin">Touch Abstrction</h2>
+		<h2 class="title-margin">Touch Gestures</h2>
 
 		<div data-view="transform-touch-area" class="touch-area-container">
 			<div data-view="drag-touch-area" class="touch-area-inner">
