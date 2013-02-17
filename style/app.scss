@@ -229,3 +229,34 @@
 		}
 	}
 }
+
+.slide-touch-abstraction {
+
+	.touch-area-container {
+		margin-top: 1em;
+		position: relative;
+		margin-left: auto;
+		margin-right: auto;
+		width: 31.33%;
+		height: 400px;
+
+		.touch-area-inner {
+			position: relative;
+			width: 100%;
+			height: 100%;
+
+			.touch-area {
+				position: relative;
+				width: 100%;
+				height: 100%;
+				border: 1px solid rgba(255, 255, 255, 0.4);
+				border-radius: 10px;
+				background-color: rgba(255, 255, 255, 0.1);
+
+				.touch-area-label {
+					font-size: 0.7em;
+				}
+			}
+		}
+	}
+}
