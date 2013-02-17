@@ -118,13 +118,23 @@
 }
 
 .slide-css-filters {
-	.diagram {
-		display: inline-block;
-		margin-top: 1em;
+	.filtered-area {
+		margin-top: 2em;
+		margin-left: auto;
+		margin-right: auto;
+
+		.slide-css-filters-label {
+			display: inline-block;
+			width: 200px;
+		}
+
+		.slide-css-filters-field {
+			padding: 10px;
+			width: 300px;
+		}
 	}
 	.blur-control {
-		display: inline-block;
-		width: 400px;
+		width: 100%;
 		height: 100px;
 	}
 }

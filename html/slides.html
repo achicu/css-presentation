@@ -34,30 +34,33 @@
 
 	<div data-view="slide-css-demo" data-name="css-filters" class="slide-css-filters" data-filter-name="blur" data-filter-value-units="px">
 		<div class="center">
-			<h1>CSS Filters</h1>
-			<ul>
+			<h2>CSS Filters</h2>
+			
+			<ul class="bordered-list">
 				<li>
-					Any DOM element (including text, forms, video)
+					Any DOM element<br />(including text, forms, video)
 				</li>
 				<li>
 					Hardware accelerated
 				</li>
 			</ul>
-			<div class="diagram" data-role="filteredArea">
-				<div class="after">
-					<div>
-						<label for="slide-css-filters-username">User name</label>
-						<input name="slide-css-filters-username" type="text" />
-					</div>
-					<div>
-						<label for="slide-css-filters-password">Password</label>
-						<input name="slide-css-filters-password" type="password" />
-					</div>
+
+			<div class="filtered-area" data-role="filteredArea">
+				
+				<div>
+					<label for="slide-css-filters-username" class="slide-css-filters-label">User name</label>
+					<input name="slide-css-filters-username" class="slide-css-filters-field" type="text" />
 				</div>
+
+				<div>
+					<label for="slide-css-filters-password" class="slide-css-filters-label">Password</label>
+					<input name="slide-css-filters-password" class="slide-css-filters-field" type="password" />
+				</div>
+			
 			</div>
-			<div>
-				<div class="blur-control" data-role="filterControl" data-control="range" data-param-min="0" data-param-max="20" data-param-step="0.001"></div>
-			</div>
+			
+			<div class="blur-control" data-role="filterControl" data-control="range" data-param-min="0" data-param-max="20" data-param-step="0.001"></div>
+
 		</div>
 	</div>
 

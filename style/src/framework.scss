@@ -340,6 +340,23 @@ h1,h2,h3,h4,h5,h6 {
         @include list-reset();
     }
 
+    .bordered-list {
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        border-radius: 10px;
+        margin-top: 1em;
+
+        li {
+            padding-top: 10px;
+            padding-bottom: 10px;
+            & + li {
+                border-top: 1px solid rgba(255, 255, 255, 0.4);
+            }
+            &:nth-child(2n+1) {
+                background: rgba(255, 255, 255, 0.05);
+            }
+        }
+    }
+
     h1, h2, h3, h4, h5, h6,
     a, a:visited {
         color: white;
