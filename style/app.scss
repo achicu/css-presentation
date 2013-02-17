@@ -54,7 +54,6 @@
 
 .intro-background {
 	background: url(../../images/bg_1.jpg) center center no-repeat;
-	background-color: rgb(55, 67, 77);
 	background-size: cover;
 }
 
@@ -194,4 +193,9 @@
 
 .demo-background {
 	@include prefixValue(background, radial-gradient(#548DB0 0%, #343737 80%, #333636 100%));
+}
+
+.gruntjs-background {
+	background: url(../../images/gruntjs.png) 100% 90% no-repeat;
+	background-size: 20%;
 }
