@@ -338,6 +338,7 @@ h1,h2,h3,h4,h5,h6 {
     height: 100%;
     visibility: hidden;
     overflow: hidden;
+    @include prefixProperty(transform, translateZ(0));
 
     .slide-content-view-transform {
         @include prefixProperty(transform-origin, 0 0);
