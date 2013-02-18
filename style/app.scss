@@ -30,18 +30,23 @@
 }
 
 .presenter-info-bar {
-	height: 20%;
+	height: 120px;
+	max-height: 50%;
 
 	.info-bar {
 		height: 100%;
 		background-color: rgba(0, 0, 0, 0.3);
+
+		.info-bar-scroll-view-content {
+			padding-bottom: 10px;
+		}
 
 		.button-view {
 			display: block;
 			margin-top: 10px;
 			margin-bottom: 10px;
 			width: 100%;
-			max-width: 100px;
+			max-width: 200px;
 			margin-left: auto;
 			margin-right: auto;
 			padding: 10px;
