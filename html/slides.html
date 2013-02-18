@@ -265,7 +265,7 @@
 						<h3 data-content="Line 1,Line 2,Line 3,Line 4,Line 5,Line 6"></h3>
 						<div data-view="scroll" class="item-line" data-type="horizontal">
 							<div data-role="content" data-view="list" data-layout="horizontal">
-								<div data-view="tap-touch-area" data-repeat="6" class="item-view">
+								<div data-view="tap-touch-area" data-repeat="10" class="item-view">
 									<div class="center">
 										<div class="touch-area-label" data-role="log"></div>
 									</div>
@@ -278,66 +278,83 @@
 		</div>
 	</div>
 
-	<div data-view="slide" data-name="performance" class="slide-performance" data-background-class="performance-background">
+	<div data-view="slide" data-name="performance-animations" class="slide-performance-animations" data-background-class="performance-background">
 		<h2 class="title-margin">Performance</h2>
 
-		<div class="performance-scroll-view" data-view="scroll" data-type="vertical">
-			<div data-view="list" data-role="content" data-layout="vertical">
-				<ul data-view="expandable" class="smaller-space bordered-list">
-					<li data-view="highlight-touch" data-role="title">Animations</li>
-					<li class="small">transforms</li>
-					<li class="small">opacity</li>
-					<li class="small">filters</li>
-				</ul>
-				<ul data-view="expandable" class="smaller-space bordered-list">
-					<li data-view="highlight-touch" data-role="title">Layout</li>
-					<li class="small">Absolute positioning</li>
-					<li class="small">Children count per element</li>
-					<li class="small">Avoid layout readbacks
-						<div class="small">(e.g. clientWidth/clientHeight)</div>
-					</li>
-					<li class="small">Avoid box-shadows on dynamic content</li>
-				</ul>
-				<ul data-view="expandable" class="smaller-space bordered-list">
-					<li data-view="highlight-touch" data-role="title">CSS Selectors</li>
-					<li class="small">Use specific class names</li>
-					<li class="small">Avoid deep indirect ancestors
-						<div class="small">(e.g. body.state .my-object { })</div>
-					</li>
-					<li class="small">Sibling selectors are expensive</li>
-				</ul>
-				<ul data-view="expandable" class="smaller-space bordered-list">
-					<li data-view="highlight-touch" data-role="title">Lazy CSS changes</li>
-					<li class="small">Apply CSS in single step</li>
-					<li class="small">Use requestAnimationFrame</li>
-				</ul>
-				<ul data-view="expandable" class="smaller-space bordered-list">
-					<li data-view="highlight-touch" data-role="title">3D transforms</li>
-					<li class="small">Paint cache</li>
-					<li class="small">Avoid switching non-3D to 3D</li>
-					<li class="small">Use with "opacity" and "filter"</li>
-					<li class="small">Avoid changing z-index
-						<div class="small">transform-style: preserve-3d</div>
-					</li>
-				</ul>
-				<ul data-view="expandable" class="smaller-space bordered-list">
-					<li data-view="highlight-touch" data-role="title">Removing content</li>
-					<li class="small">opacity: 0</li>
-					<li class="small">display: none vs. visibility: hidden</li>
-					<li class="small">Keep elements attached</li>
-					<li class="small">Avoid DOM mutations</li>
-				</ul>
-			</div>
-		</div>
+		<ul class="smaller-space bordered-list">
+			<li>Animations</li>
+			<li class="small">transforms</li>
+			<li class="small">opacity</li>
+			<li class="small">filters</li>
+		</ul>
 	</div>
 
+	<div data-view="slide" data-name="performance-layout" class="slide-performance-layout" data-background-class="performance-background">
+		<h2 class="title-margin">Performance</h2>
+
+		<ul class="smaller-space bordered-list">
+			<li>Layout</li>
+			<li class="small">Absolute positioning</li>
+			<li class="small">Children count per element</li>
+			<li class="small">Avoid layout readbacks
+				<div class="small">(e.g. clientWidth/clientHeight)</div>
+			</li>
+			<li class="small">Avoid box-shadows on dynamic content</li>
+		</ul>
+	</div>
+
+	<div data-view="slide" data-name="performance-css" class="slide-performance-css" data-background-class="performance-background">
+		<h2 class="title-margin">Performance</h2>
+
+		<ul class="smaller-space bordered-list">
+			<li>CSS Selector</li>
+			<li class="small">Use specific class names</li>
+			<li class="small">Avoid deep indirect ancestors
+				<div class="small">(e.g. body.state .my-object { })</div>
+			</li>
+			<li class="small">Sibling selectors are expensive</li>
+		</ul>
+
+		<ul class="smaller-space bordered-list">
+			<li>Lazy CSS changes</li>
+			<li class="small">Apply CSS in single step</li>
+			<li class="small">Use requestAnimationFrame</li>
+		</ul>
+	</div>
+
+	
+	<div data-view="slide" data-name="performance-transforms" class="slide-performance-transforms" data-background-class="performance-background">
+		<h2 class="title-margin">Performance</h2>
+
+		<ul class="smaller-space bordered-list">
+			<li>3D transforms</li>
+			<li class="small">Paint cache</li>
+			<li class="small">Avoid switching non-3D to 3D</li>
+			<li class="small">Use with "opacity" and "filter"</li>
+			<li class="small">Avoid changing z-index
+				<div class="small">transform-style: preserve-3d</div>
+			</li>
+		</ul>
+	</div>			
+				
+	<div data-view="slide" data-name="performance-removing-content" class="slide-performance-removing-content" data-background-class="performance-background">
+		<h2 class="title-margin">Performance</h2>
+
+		<ul class="smaller-space bordered-list">
+			<li>Removing content</li>
+			<li class="small">opacity: 0</li>
+			<li class="small">display: none vs. visibility: hidden</li>
+			<li class="small">Keep elements attached</li>
+			<li class="small">Avoid DOM mutations</li>
+		</ul>
+	</div>
 
 	<div data-view="slide" data-name="animations" class="slide-animations" data-background-class="performance-background">
 		<h2 class="title-margin">Animations</h2>
 
 		<ul class="smaller-space bordered-list">
 			<li class="small">Use film-strip animations</li>
-			<li class="small">requestAnimationFrame</li>
+			<li class="small">Advance with requestAnimationFrame</li>
 		</ul>
 
 		<img src="images/animation.svg" height="250px" />
@@ -351,6 +368,9 @@
 			<li class="small">Message passing</li>
 			<li class="small">Function.toString</li>
 			<li class="small">Asynchronous</li>
+			<li class="small">Cross-compile
+				<div class="small"><a data-view="link" href="http://emscripten.org/">Emscripten</a></div>
+			</li>
 		</ul>
 
 	</div>
