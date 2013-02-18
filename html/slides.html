@@ -42,17 +42,46 @@
 		
 		<h2 class="title-margin" data-view="link" href="http://www.w3.org/TR/filter-effects/">CSS Filters</h2>
 		
-		<ul class="bordered-list smaller-space opacity-state" data-state="1" data-time="0.2" data-advance="auto">
-			<li>
-				Any DOM element<br />(including text, forms, video)
-			</li>
-			<li data-state="2" class="opacity-state" data-time="0.2" data-advance="auto">
-				Can be chained and animated
-			</li>
-			<li data-state="3" class="opacity-state" data-time="0.2" data-advance="auto">
-				Hardware accelerated
-			</li>
-		</ul>
+		<div class="row">
+			
+			<ul class="cell2-reduced bordered-list opacity-state" data-state="1" data-time="0.2" data-advance="auto">
+				<li>Filter Effects</li>
+				<li class="small">
+					Any DOM element
+					<div class="small">
+						(including text, forms, video)
+					</div>
+				</li>
+				<li data-state="2" class="small opacity-state" data-time="0.2" data-advance="auto">
+					Can be chained and animated
+				</li>
+				<li data-state="3" class="small opacity-state" data-time="0.2" data-advance="auto">
+					Hardware accelerated
+				</li>
+			</ul>
+		
+
+			<ul class="cell2-reduced bordered-list opacity-state" data-state="4" data-time="0.2" data-advance="auto">
+				<li>Filter Types</li>
+				<li class="small">
+					CSS Builtin Filters
+					<div class="small">
+						Safari 6, iOS6 and Chrome
+					</div>
+				</li>
+				<li class="small opacity-state" data-state="5" data-time="0.2" data-advance="auto">
+					CSS Custom Filters
+					<div class="small">
+						using WebGL shaders
+					</div>
+				</li>
+				<li class="small opacity-state" data-state="6" data-time="0.2" data-advance="auto">
+					CSS SVG Filter Reference
+				</li>
+			</ul>
+		</div>
+
+		<img src="images/filter_mesh.svg" height="200px" />
 	</div>
 
 	<div data-view="slide-css-demo" data-name="css-filters-demo" class="slide-css-filters-demo" data-filter-name="blur" data-filter-value-units="px">
@@ -78,27 +107,6 @@
 		
 			<div class="blur-control" data-role="filterControl" data-control="range" data-param-min="0" data-param-max="20" data-param-step="0.001"></div>
 		</div>
-	</div>
-
-	<div data-view="slide" data-name="css-filter-types" class="slide-css-filters-continued">
-		<h2 class="title-margin">CSS Filter Types</h2>
-		<ul class="bordered-list smaller-space opacity-state" data-state="1" data-time="0.2" data-advance="auto">
-			<li>
-				CSS Builtin filters
-				<div class="small">
-					Safari 6, iOS6 and Chrome
-				</div>
-			</li>
-			<li class="opacity-state" data-state="2" data-time="0.2" data-advance="auto">
-				CSS Custom Filters
-				<div class="small">
-					using WebGL shaders
-				</div>
-			</li>
-			<li class="opacity-state" data-state="3" data-time="0.2" data-advance="auto">
-				CSS SVG filter reference
-			</li>
-		</ul>
 	</div>
 
 	<div data-view="slide" data-name="cssfilterlab" class="slide-cssfilterlab">
