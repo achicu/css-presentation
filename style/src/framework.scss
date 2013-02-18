@@ -415,12 +415,17 @@ h1,h2,h3,h4,h5,h6 {
                 background: rgba(255, 255, 255, 0.05);
             }
 
-            &.small {
+            &.small, .small {
                 font-size: 0.8em;
             }
 
-            .small {
-                font-size: 0.8em;
+            &.title {
+                background: rgba(0, 0, 0, 0.3);
+            }
+
+            &:first-of-type {
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
             }
         }
     }
