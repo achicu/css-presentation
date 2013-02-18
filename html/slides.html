@@ -38,13 +38,13 @@
 		</ul>
 	</div>
 
-	<div data-view="slide" data-name="css-filters" class="slide-css-filters">
+	<div data-view="slide" data-name="css-filters" class="slide-css-filters" data-background-class="filter-background">
 		
 		<h2 class="title-margin" data-view="link" href="http://www.w3.org/TR/filter-effects/">CSS Filters</h2>
 		
 		<div class="row">
 			
-			<ul class="cell2-reduced bordered-list opacity-state" data-state="1" data-time="0.2" data-advance="auto">
+			<ul class="cell2-reduced bordered-list">
 				<li>Filter Effects</li>
 				<li class="small">
 					Any DOM element
@@ -52,16 +52,16 @@
 						(including text, forms, video)
 					</div>
 				</li>
-				<li data-state="2" class="small opacity-state" data-time="0.2" data-advance="auto">
+				<li class="small">
 					Can be chained and animated
 				</li>
-				<li data-state="3" class="small opacity-state" data-time="0.2" data-advance="auto">
+				<li class="small">
 					Hardware accelerated
 				</li>
 			</ul>
 		
 
-			<ul class="cell2-reduced bordered-list opacity-state" data-state="4" data-time="0.2" data-advance="auto">
+			<ul class="cell2-reduced bordered-list">
 				<li>Filter Types</li>
 				<li class="small">
 					CSS Builtin Filters
@@ -69,44 +69,41 @@
 						Safari 6, iOS6 and Chrome
 					</div>
 				</li>
-				<li class="small opacity-state" data-state="5" data-time="0.2" data-advance="auto">
+				<li class="small">
 					CSS Custom Filters
 					<div class="small">
 						using WebGL shaders
 					</div>
 				</li>
-				<li class="small opacity-state" data-state="6" data-time="0.2" data-advance="auto">
+				<li class="small">
 					CSS SVG Filter Reference
 				</li>
 			</ul>
 		</div>
-
-		<img src="images/filter_mesh.svg" height="200px" />
 	</div>
 
-	<div data-view="slide-css-demo" data-name="css-filters-demo" class="slide-css-filters-demo" data-filter-name="blur" data-filter-value-units="px">
+	<div data-view="slide-css-demo" data-name="css-filters-demo" class="slide-css-filters-demo" data-filter-name="blur" data-filter-value-units="px" data-background-class="filter-background">
 
 		<h2 class="title-margin">CSS Filters Demo</h2>
 
-		<div data-state="4" data-advance="auto" class="opacity-state">
-
-			<p class="filter-syntax" data-role="filterSyntax">
-			</p>
-
-			<div class="filtered-area" data-role="filteredArea">
-				<div>
-					<label data-native-touch for="slide-css-filters-username" class="slide-css-filters-label">User name</label>
-					<input data-native-touch name="slide-css-filters-username" class="slide-css-filters-field" type="text" />
-				</div>
-
-				<div>
-					<label data-native-touch for="slide-css-filters-password" class="slide-css-filters-label">Password</label>
-					<input data-native-touch name="slide-css-filters-password" class="slide-css-filters-field" type="password" />
-				</div>
-			</div>
 		
-			<div class="blur-control" data-role="filterControl" data-control="range" data-param-min="0" data-param-max="20" data-param-step="0.001"></div>
+		<p class="filter-syntax" data-role="filterSyntax">
+		</p>
+
+		<div class="filtered-area" data-role="filteredArea">
+			<div>
+				<label data-native-touch for="slide-css-filters-username" class="slide-css-filters-label">User name</label>
+				<input data-native-touch name="slide-css-filters-username" class="slide-css-filters-field" type="text" />
+			</div>
+
+			<div>
+				<label data-native-touch for="slide-css-filters-password" class="slide-css-filters-label">Password</label>
+				<input data-native-touch name="slide-css-filters-password" class="slide-css-filters-field" type="password" />
+			</div>
 		</div>
+	
+		<div class="blur-control" data-role="filterControl" data-control="range" data-param-min="0" data-param-max="20" data-param-step="0.001"></div>
+	
 	</div>
 
 	<div data-view="slide" data-name="cssfilterlab" class="slide-cssfilterlab">

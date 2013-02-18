@@ -4,9 +4,26 @@ CACHE MANIFEST
 style/font/SourceSansPro-Regular.otf
 style/font/SourceSansPro-Light.otf
 style/font/SourceSansPro-Semibold.otf
+
 style/img/mobile/icon52.png
 style/img/mobile/icon72.png
 style/img/mobile/icon114.png
+
+images/filterlab.jpg
+images/edge_inspect_mnemonic.png
+images/offline.svg
+images/phone_ui.svg
+images/performance.svg
+images/adobe.png
+images/bg_1.jpg
+images/filter_mesh.png
+images/gruntjs.png
+images/edge_inspect_feature2.png
+images/specs/regions.png
+images/specs/exclusions.png
+images/specs/filters.png
+images/webkit-icon.png
+images/adobe.svg
 
 <% css.forEach(function(cssFile){ %>
 <%- cssFile %>

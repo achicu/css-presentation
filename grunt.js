@@ -86,7 +86,7 @@ module.exports = function(grunt) {
                 options: { flatten: false },
                 files: {
                     "dist/images/": "images/**",
-                    "dist/style/img/": "style/img/**",
+                    "dist/style/img/mobile/": "style/img/mobile/**",
                     "dist/style/font/": "style/font/**",
                     "dist/third_party/jquery/": "third_party/jquery/**"
                 }
