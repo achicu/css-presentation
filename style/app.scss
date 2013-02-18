@@ -395,5 +395,17 @@
 	.expandable-view {
 		margin-top: 0.5em;
 		margin-bottom: 0px;
+		width: 100%;
+
+		.label-view {
+			font-size: 0.9em;
+		}
+	}
+
+	.performance-scroll-view {
+		width: 60%;
+		margin-left: auto;
+		margin-right: auto;
+		height: 600px;
 	}
 }

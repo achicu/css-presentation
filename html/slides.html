@@ -280,40 +280,55 @@
 
 	<div data-view="slide" data-name="performance" class="slide-performance" data-background-class="performance-background">
 		<h2 class="title-margin">Performance</h2>
-		<ul data-view="expandable" class="smaller-space bordered-list">
-			<li data-view="highlight-touch" data-role="title">Avoid expensive layouts</li>
-			<li class="small">Use absolute positioning</li>
-			<li class="small">Minimize the number of children per element</li>
-			<li class="small">Avoid reading back layout values
-				<div class="small">(e.g. clientWidth/clientHeight)</div>
-			</li>
-			<li class="small">Avoid changing z-index property</li>
-			<li class="small">Avoid box-shadows on dynamic content</li>
-		</ul>
-		<ul data-view="expandable" class="smaller-space bordered-list">
-			<li data-view="highlight-touch" data-role="title">CSS Selectors</li>
-			<li class="small">Use specific class names</li>
-			<li class="small">Avoid deep indirect ancestors
-				<div class="small">(e.g. body.state .my-object { })</div>
-			</li>
-			<li class="small">Sibling selectors are expensive</li>
-		</ul>
-		<ul data-view="expandable" class="smaller-space bordered-list">
-			<li data-view="highlight-touch" data-role="title">Stack CSS changes</li>
-			<li class="small">Minimize number of layouts</li>
-			<li class="small">requestAnimationFrame</li>
-		</ul>
-		<ul data-view="expandable" class="smaller-space bordered-list">
-			<li data-view="highlight-touch" data-role="title">Use 3D transforms</li>
-			<li class="small">Avoid switching non-3D to 3D</li>
-			<li class="small">Use 3D transforms with "filter"</li>
-		</ul>
-		<ul data-view="expandable" class="smaller-space bordered-list">
-			<li data-view="highlight-touch" data-role="title">Animations</li>
-			<li class="small">transforms</li>
-			<li class="small">opacity</li>
-			<li class="small">filters</li>
-		</ul>
+
+		<div class="performance-scroll-view" data-view="scroll" data-type="vertical">
+			<div data-view="list" data-role="content" data-layout="vertical">
+				<ul data-view="expandable" class="smaller-space bordered-list">
+					<li data-view="highlight-touch" data-role="title">Animations</li>
+					<li class="small">transforms</li>
+					<li class="small">opacity</li>
+					<li class="small">filters</li>
+				</ul>
+				<ul data-view="expandable" class="smaller-space bordered-list">
+					<li data-view="highlight-touch" data-role="title">Layout</li>
+					<li class="small">Absolute positioning</li>
+					<li class="small">Children count per element</li>
+					<li class="small">Avoid layout readbacks
+						<div class="small">(e.g. clientWidth/clientHeight)</div>
+					</li>
+					<li class="small">Avoid box-shadows on dynamic content</li>
+				</ul>
+				<ul data-view="expandable" class="smaller-space bordered-list">
+					<li data-view="highlight-touch" data-role="title">CSS Selectors</li>
+					<li class="small">Use specific class names</li>
+					<li class="small">Avoid deep indirect ancestors
+						<div class="small">(e.g. body.state .my-object { })</div>
+					</li>
+					<li class="small">Sibling selectors are expensive</li>
+				</ul>
+				<ul data-view="expandable" class="smaller-space bordered-list">
+					<li data-view="highlight-touch" data-role="title">Lazy CSS changes</li>
+					<li class="small">Apply CSS in single step</li>
+					<li class="small">Use requestAnimationFrame</li>
+				</ul>
+				<ul data-view="expandable" class="smaller-space bordered-list">
+					<li data-view="highlight-touch" data-role="title">3D transforms</li>
+					<li class="small">Paint cache</li>
+					<li class="small">Avoid switching non-3D to 3D</li>
+					<li class="small">Use with "opacity" and "filter"</li>
+					<li class="small">Avoid changing z-index
+						<div class="small">transform-style: preserve-3d</div>
+					</li>
+				</ul>
+				<ul data-view="expandable" class="smaller-space bordered-list">
+					<li data-view="highlight-touch" data-role="title">Removing content</li>
+					<li class="small">opacity: 0</li>
+					<li class="small">display: none vs. visibility: hidden</li>
+					<li class="small">Keep elements attached</li>
+					<li class="small">Avoid DOM mutations</li>
+				</ul>
+			</div>
+		</div>
 	</div>
 
 
@@ -337,8 +352,6 @@
 			<li class="small">Function.toString</li>
 			<li class="small">Asynchronous</li>
 		</ul>
-
-		<img src="images/animation.svg" height="250px" />
 
 	</div>
 
