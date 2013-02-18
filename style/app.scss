@@ -29,6 +29,33 @@
 	}
 }
 
+.presenter-info-bar {
+	height: 20%;
+
+	.info-bar {
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.3);
+
+		.button-view {
+			display: block;
+			margin-top: 10px;
+			margin-bottom: 10px;
+			width: 100%;
+			max-width: 100px;
+			margin-left: auto;
+			margin-right: auto;
+			padding: 10px;
+			font-size: 1.2em;
+			color: white;
+			text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
+		    text-align: center;
+		    border-radius: 10px;
+		    border: 1px solid rgba(255, 255, 255, 0.5);
+		    background: rgba(255, 255, 255, 0.1);
+		}
+	}
+}
+
 .slide-view {
 	.center {
 		position: absolute;
