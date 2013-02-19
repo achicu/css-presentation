@@ -66,11 +66,8 @@
 				font-weight: bold;
 			}
 
-			&.minute-view {
-				color: #cfcfcf;
-				&.started {
-					color: white;
-				}
+			&.minute-view.started {
+				background: rgba(255, 255, 255, 0.2);
 			}
 		}
 
