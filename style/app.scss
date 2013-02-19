@@ -30,8 +30,7 @@
 }
 
 .presenter-info-bar {
-	height: 300px;
-	max-height: 50%;
+	height: 50%;
 
 	.info-bar {
 		height: 100%;
@@ -67,18 +66,11 @@
 			}
 		}
 
-		.info-bar-scroll-view-content {
-			padding-bottom: 10px;
-		}
-
 		.button-view {
 			display: block;
 			margin-top: 10px;
 			margin-bottom: 10px;
-			width: 100%;
-			max-width: 150px;
-			margin-left: auto;
-			margin-right: auto;
+			width: 150px;
 			padding: 10px;
 			font-size: 1.2em;
 			color: white;
@@ -87,6 +79,28 @@
 		    border-radius: 10px;
 		    border: 1px solid rgba(255, 255, 255, 0.5);
 		    background: rgba(255, 255, 255, 0.1);
+		}
+
+		.horizontal-scroll-view-content {
+			height: 100%;
+		}
+
+		.vertical-scroll-view {
+			width: 150px;
+			height: 100%;
+			margin-left: 10px;
+			margin-right: 10px;
+
+			&:first-of-type {
+				margin-left: 90px;
+			}
+			&:last-of-type {
+				margin-right: 90px;
+			}
+		}
+
+		.vertical-scroll-view-content {
+			padding-bottom: 10px;
 		}
 	}
 }
