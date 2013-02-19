@@ -417,41 +417,56 @@
 					width: 100%;
 					height: 140px;
 
-					.item-view {
-						width: 120px;
-						height: 120px;
-						border: 1px solid rgba(255, 255, 255, 0.4);
-						border-radius: 10px;
-						background-color: rgba(255, 255, 255, 0.1);	
-						font-size: 0.8em;
+					.item-container-view {
 						margin: 10px;
-
-						.touch-area-label {
-							font-size: 0.7em;
-						}
-
-						&.repeated-item-0 {
-							background-color: rgba(128, 0, 0, 0.1);
-						}
-						&.repeated-item-1 {
-							background-color: rgba(128, 128, 0, 0.1);
-						}
-						&.repeated-item-2 {
-							background-color: rgba(0, 128, 0, 0.1);
-						}
-						&.repeated-item-3 {
-							background-color: rgba(128, 0, 128, 0.1);
-						}
-						&.repeated-item-4 {
-							background-color: rgba(0, 128, 128, 0.1);
-						}
-						&.repeated-item-5 {
-							background-color: rgba(0, 0, 128, 0.1);
-						}
 					}
 				}
 			}
 		}
+	}
+}
+
+.slide-touch-scroll-item-view {
+	position: relative;
+	width: 120px;
+	height: 120px;
+	border: 1px solid rgba(255, 255, 255, 0.4);
+	border-radius: 10px;
+	background-color: rgba(255, 255, 255, 0.1);	
+	font-size: 28px;
+	color: white;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
+
+	.center {
+		position: absolute;
+		top: 50%;
+		left: 10%;
+		width: 80%;
+		text-align: center;
+		@include prefixProperty(transform, translateY(-50%));
+	}
+
+	.touch-area-label {
+		font-size: 0.7em;
+	}
+
+	&.repeated-item-0 {
+		background-color: rgba(128, 0, 0, 0.1);
+	}
+	&.repeated-item-1 {
+		background-color: rgba(128, 128, 0, 0.1);
+	}
+	&.repeated-item-2 {
+		background-color: rgba(0, 128, 0, 0.1);
+	}
+	&.repeated-item-3 {
+		background-color: rgba(128, 0, 128, 0.1);
+	}
+	&.repeated-item-4 {
+		background-color: rgba(0, 128, 128, 0.1);
+	}
+	&.repeated-item-5 {
+		background-color: rgba(0, 0, 128, 0.1);
 	}
 }
 
