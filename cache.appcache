@@ -25,6 +25,7 @@ images/specs/exclusions.png
 images/specs/filters.png
 images/webkit-icon.png
 images/adobe.svg
+images/character.svg
 
 <% css.forEach(function(cssFile){ %>
 <%- cssFile %>

@@ -473,3 +473,31 @@
 		}
 	}
 }
+
+.animation-view {
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 100px;
+
+	.debug-view-indicator {
+		display: none;
+	}
+
+	&.debug-view .debug-view-indicator {
+		display: block;
+	}
+	
+	.animation-viewport {
+		position: absolute;
+		overflow: hidden;
+	}
+
+	.animation-image {
+		position: absolute;
+		@include prefixProperty(transform-origin, 0 0);
+		background: url(../../images/character.png) no-repeat left top;
+		width: 2048px;
+		height: 2048px;
+	}
+}

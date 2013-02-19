@@ -52,7 +52,8 @@
         "lib/presenter/info_bar_view.js",
         "lib/presenter/time_report_view.js",
         "lib/slides/slide_css_demo_view.js",
-        "lib/slides/touch_areas.js"
+        "lib/slides/touch_areas.js",
+        "lib/slides/animation_view.js"
     ],
     "components": [
         "html/info_bar.html",
