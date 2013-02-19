@@ -30,43 +30,13 @@
 }
 
 .presenter-info-bar {
-	height: 50%;
+	height: 170px;
 
 	.info-bar {
 		height: 100%;
 		background-color: rgba(0, 0, 0, 0.3);
 
-		.slide-number-view {
-			position: absolute;
-			right: 0px;
-			bottom: 0px;
-			font-weight: bold;
-			font-size: 2.5em;
-			padding-right: 10px;
-			padding-bottom: 10px;
-			color: #949494;
-			text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
-			font-style: italic;
-		}
-
-		.minute-view {
-			position: absolute;
-			left: 0px;
-			bottom: 0px;
-			font-weight: bold;
-			font-size: 2.5em;
-			padding-left: 10px;
-			padding-bottom: 10px;
-			color: #949494;
-			font-style: italic;
-			text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
-			
-			&.started {
-				color: white;
-			}
-		}
-
-		.button-view {
+		.button-view, .data-button-view {
 			display: block;
 			margin-top: 10px;
 			margin-bottom: 10px;
@@ -81,8 +51,32 @@
 		    background: rgba(255, 255, 255, 0.1);
 		}
 
+		.data-button-view {
+			background: rgba(255, 255, 255, 0.05);
+			border: 1px solid rgba(255, 255, 255, 0.3);
+
+			.data-button-label-view {
+				display: inline-block;
+				width: 50px;
+			}
+			.data-button-value-view {
+				display: inline-block;
+				width: 70px;
+				text-align: center;
+				font-weight: bold;
+			}
+
+			&.minute-view {
+				color: #cfcfcf;
+				&.started {
+					color: white;
+				}
+			}
+		}
+
 		.horizontal-scroll-view-content {
 			height: 100%;
+			z-index: 0;
 		}
 
 		.vertical-scroll-view {
