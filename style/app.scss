@@ -30,7 +30,7 @@
 }
 
 .presenter-info-bar {
-	height: 120px;
+	height: 300px;
 	max-height: 50%;
 
 	.info-bar {
@@ -45,7 +45,8 @@
 			font-size: 2.5em;
 			padding-right: 10px;
 			padding-bottom: 10px;
-			color: rgba(255, 255, 255, 0.5);
+			color: #949494;
+			text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
 			font-style: italic;
 		}
 
@@ -57,11 +58,12 @@
 			font-size: 2.5em;
 			padding-left: 10px;
 			padding-bottom: 10px;
-			color: rgba(255, 255, 255, 0.5);
+			color: #949494;
 			font-style: italic;
+			text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
 			
 			&.started {
-				color: rgba(255, 255, 255, 0.9);
+				color: white;
 			}
 		}
 

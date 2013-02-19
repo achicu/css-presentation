@@ -49,6 +49,7 @@
         "lib/presenter/link_view.js",
         "lib/presenter/progress_view.js",
         "lib/presenter/expandable_view.js",
+        "lib/presenter/info_bar_view.js",
         "lib/presenter/time_report_view.js",
         "lib/slides/slide_css_demo_view.js",
         "lib/slides/touch_areas.js"
