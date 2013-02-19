@@ -107,7 +107,7 @@ h1,h2,h3,h4,h5,h6 {
     left: -25px;
     top: -25px;
     background: rgba(255, 255, 255, 0.4);
-    @include prefixProperty(transition, opacity 0.1s linear);
+    // @include prefixProperty(transition, opacity 0.1s linear);
     opacity: 1;
     pointer-events: none;
 
