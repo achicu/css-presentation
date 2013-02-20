@@ -48,7 +48,8 @@ body {
     overflow: hidden;
     margin: 0;
     padding: 0;
-    @include prefixValue(background, radial-gradient(#494d4e 0%, #343737 80%, #333636 100%));
+    @include prefixValue(background, (radial-gradient(rgb(73, 77, 78) 0%, rgba(52, 55, 55, 0.61) 80%, rgba(51, 54, 54, 0.65) 100%), url(../../images/bg.jpg) no-repeat center));
+    background-size: cover;
     font-family: "source";
 }
 
