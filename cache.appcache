@@ -27,6 +27,7 @@ images/specs/filters.png
 images/editor_view.png
 images/webkit-icon.png
 images/adobe.svg
+images/preview.jpg
 images/character.png
 
 <% css.forEach(function(cssFile){ %>
