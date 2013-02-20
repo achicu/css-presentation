@@ -402,8 +402,11 @@
 		<h2 class="title-margin">Animations Demo</h2>
 
 
-		<div data-view="transform-touch-area" data-no-restore>
-			<div data-view="animation" data-src="images/character.png">
+		<div class="row">
+			<div data-repeat="2" class="cell2">
+				<div class="animation-transform-touch-area">
+					<div data-view="transform-touch-area" data-no-restore data-no-touch-capture>
+						<div data-view="animation" data-src="images/character.png">
 
 				<script type="animation/json" data-role="frameData">
 {"frames": [
@@ -857,8 +860,11 @@
 	"scale": "1"
 }
 }
-				</script>
+							</script>
 
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 
