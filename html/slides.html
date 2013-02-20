@@ -85,25 +85,43 @@
 
     </div>
 
-	<div data-view="slide-css-demo" data-name="css-filters-demo" class="slide-css-filters-demo" data-filter-name="blur" data-filter-value-units="px" data-background-class="filter-background">
+	<div data-view="slide-css-demo" data-name="css-filters-demo" class="slide-css-filters-demo" data-filter-name="blur" data-filter-value-units="px">
 
 		<h2 class="title-margin">CSS Filters Demo</h2>
 
+        <div class="filtered-area" data-template-role="filteredArea" data-view="step-scroll" data-type="none">
+            <div data-view="list" data-layout="vertical" data-role="content" class="filtered-area-content">
+                <div data-template-role="imagesPreview" class="filtered-area-item">
+                    <img src="images/preview.jpg" />
+                </div>
+                <div data-template-role="formsPreview" class="filtered-area-item">
+        			<div>
+        				<label for="slide-css-filters-username" class="slide-css-filters-label">User name</label>
+        				<input data-native-touch name="slide-css-filters-username" class="slide-css-filters-field" type="text"
+                            autocapitalize="off" autocorrect="off" autocomplete="off" />
+        			</div>
 
-		<p class="filter-syntax" data-role="filterSyntax">
-		</p>
-
-		<div class="filtered-area" data-role="filteredArea">
-			<div>
-				<label data-native-touch for="slide-css-filters-username" class="slide-css-filters-label">User name</label>
-				<input data-native-touch name="slide-css-filters-username" class="slide-css-filters-field" type="text" />
-			</div>
-
-			<div>
-				<label data-native-touch for="slide-css-filters-password" class="slide-css-filters-label">Password</label>
-				<input data-native-touch name="slide-css-filters-password" class="slide-css-filters-field" type="password" />
-			</div>
+        			<div>
+        				<label for="slide-css-filters-password" class="slide-css-filters-label">Password</label>
+        				<input data-native-touch name="slide-css-filters-password" class="slide-css-filters-field" type="password" />
+        			</div>
+                </div>
+                <div data-template-role="textPreview" class="filtered-area-item" data-native-touch>
+                    Filter effects are a way of processing an element's rendering before it is displayed in the document.
+                </div>
+            </div>
 		</div>
+
+        <p class="filter-syntax" data-role="filterSyntax">
+        </p>
+
+        <div class="element-type-area" data-view="scroll" data-type="vertical" data-scroll-to-center>
+            <div class="element-type-area-content" data-view="list" data-layout="vertical" data-role="content">
+                <div data-view="highlight-touch" class="element-type-item" data-template-role="imagesType">Images</div>
+                <div data-view="highlight-touch" class="element-type-item" data-template-role="formsType">Forms</div>
+                <div data-view="highlight-touch" class="element-type-item" data-template-role="textType">Text</div>
+            </div>
+        </div>
 
 		<div class="blur-control" data-role="filterControl" data-control="range" data-param-min="0" data-param-max="20" data-param-step="0.001"></div>
 

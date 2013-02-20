@@ -242,25 +242,55 @@
 			font-size: 1.1em;
 		}
 	}
+    .title-margin {
+        margin-bottom: 130px;
+    }
 	.filtered-area {
-		margin-top: 1em;
 		margin-left: auto;
 		margin-right: auto;
+        width: 600px;
+        height: 250px;
 		@include prefixProperty(transform, translateZ(0px));
 
-		.slide-css-filters-label {
-			display: inline-block;
-			width: 200px;
-		}
+        .filtered-area-item {
+            left: 0px;
+            width: 600px;
+            height: 250px;
 
-		.slide-css-filters-field {
-			padding: 10px;
-			font-size: 1.2em;
-			width: 300px;
-			border-radius: 10px;
-		}
+            .slide-css-filters-label {
+                display: inline-block;
+                width: 200px;
+            }
+
+            .slide-css-filters-field {
+                padding: 10px;
+                font-size: 1.2em;
+                width: 300px;
+                border-radius: 10px;
+            }
+        }
 	}
+    .element-type-area {
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        bottom: 100px;
+        width: 200px;
+
+        .element-type-area-content {
+            width: 200px;
+
+            .element-type-item {
+                width: 200px;
+                text-align: center;
+                padding-top: 30px;
+                padding-bottom: 30px;
+            }
+        }
+    }
 	.blur-control {
+        position: absolute;
+        bottom: 30px;
 		width: 100%;
 		height: 150px;
 	}
