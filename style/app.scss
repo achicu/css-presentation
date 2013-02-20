@@ -560,12 +560,23 @@
 		text-align: center;
 	}
 
-	.repeated-item-0 .animation-view {
+    .repeated-item-0 .animation-view {
 		@include prefixProperty(transform, scaleX(-1));
 		@include prefixProperty(filter, hue-rotate(120deg));
 	}
 
-	.animation-transform-touch-area {
+    .animation-view {
+        visibility: hidden;
+        opacity: 0;
+        @include prefixProperty(transition, opacity 0.2s linear);
+
+        &.state-open {
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+
+    .animation-transform-touch-area {
 		display: inline-block;
 		width: 321px;
 		height: 288px;
