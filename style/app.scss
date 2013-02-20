@@ -476,8 +476,40 @@
 
 .slide-animations-demo {
 
+	.buttons-view {
+		position: absolute;
+		bottom: 50px;
+		left: 0px;
+		right: 0px;
+
+		.button-view {
+			float: left;
+			margin-left: 10px;
+			margin-right: 10px;
+			display: block;
+			width: 150px;
+			padding: 10px;
+			font-size: 1.2em;
+			color: white;
+			text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
+		    text-align: center;
+		    border-radius: 10px;
+		    border: 1px solid rgba(255, 255, 255, 0.5);
+		    background: rgba(255, 255, 255, 0.1);
+		}
+
+		&::after {
+			text-content: "";
+			clear: left;
+		}
+
+		z-index: 2;
+		@include prefixProperty(transform, translateZ(10px));
+	}
+
 	.row {
 		margin-top: 100px;
+		z-index: 1;
 	}
 
 	.cell2 {
@@ -487,6 +519,10 @@
 	.repeated-item-0 .animation-view {
 		@include prefixProperty(transform, scaleX(-1));
 		@include prefixProperty(filter, hue-rotate(120deg));
+	}
+
+	.repeated-item-1 .animation-view {
+		@include prefixProperty(filter, hue-rotate(1deg));
 	}
 
 	.animation-transform-touch-area {
