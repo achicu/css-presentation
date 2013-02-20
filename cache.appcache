@@ -29,6 +29,7 @@ images/webkit-icon.png
 images/adobe.svg
 images/preview.jpg
 images/character.png
+images/spritesheet_preview.jpg
 
 <% css.forEach(function(cssFile){ %>
 <%- cssFile %>
