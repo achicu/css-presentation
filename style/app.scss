@@ -521,10 +521,6 @@
 		@include prefixProperty(filter, hue-rotate(120deg));
 	}
 
-	.repeated-item-1 .animation-view {
-		@include prefixProperty(filter, hue-rotate(1deg));
-	}
-
 	.animation-transform-touch-area {
 		display: inline-block;	
 		width: 321px;
@@ -542,15 +538,27 @@
 			
 			.animation-viewport {
 				position: absolute;
-				overflow: hidden;
 			}
 
 			.animation-image {
 				position: absolute;
-				@include prefixProperty(transform-origin, 0 0);
-				background: url(../../images/character.png) no-repeat left top;
-				width: 2048px;
-				height: 2048px;
+				
+				.animation-image-view {
+					position: absolute;
+					opacity: 0;
+					background: url(../../images/character.png);
+					@include prefixProperty(transform-origin, 0 0);
+					@include prefixProperty(transform, translateZ(0px));
+
+					.debug-view-indicator {
+						position: absolute;
+						width: 100%;
+						height: 100%;
+						text-align: center;
+						border: 1px solid green;
+					}
+				}
+				
 			}
 		}
 	}
