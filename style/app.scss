@@ -607,3 +607,81 @@
 		}
 	}
 }
+
+.slide-performance-removing-content {
+     .gauge-view-container {
+        position: relative;
+
+        .gauge-view {
+            position: absolute;
+            top: 50%;
+            right: 30px;
+            @include prefixProperty(transform, translateY(-50%));
+            width: 100px;
+            height: 50px;
+            @include prefixValue(background, radial-gradient(bottom, rgba(0, 0, 0, 0.0) 0%, rgba(0, 0, 0, 0.5) 80%, rgba(0, 0, 0, 0.5) 100%));
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            border-top-left-radius: 50px;
+            border-top-right-radius: 50px;
+
+            &::after {
+                position: absolute;
+                top: 20%;
+                left: 0px;
+                right: 0px;
+                text-align: center;
+            }
+
+            .gauge-view-indicator {
+                position: absolute;
+                bottom: 0px;
+                height: 4px;
+                left: -4%;
+                width: 54%;
+                @include prefixValue(background, linear-gradient(right, rgba(255, 255, 255, 0.0) 0%, rgba(255, 255, 255, 0.0) 59%, rgba(255, 255, 255, 0.8) 80%, rgba(255, 255, 255, 0.9) 100%));
+                @include prefixProperty(transform-origin, 100% 50%);
+            }
+
+            &.val1-gauge-view {
+                background-color: rgba(128, 0, 0, 0.5);
+                &::after {
+                    content: "60fps";
+                }
+                .gauge-view-indicator {
+                    @include prefixProperty(transform, rotate(170deg));
+                }
+            }
+
+            &.val2-gauge-view {
+                background-color: rgba(128, 0, 0, 0.4);
+                &::after {
+                    content: "40fps";
+                }
+                .gauge-view-indicator {
+                    @include prefixProperty(transform, rotate(116deg));
+                }
+            }
+
+            &.val3-gauge-view {
+                background-color: rgba(128, 0, 0, 0.1);
+                &::after {
+                    content: "20fps";
+                }
+                .gauge-view-indicator {
+                    @include prefixProperty(transform, rotate(63deg));
+                }
+            }
+
+            &.val4-gauge-view {
+                background-color: rgba(128, 0, 0, 0.0);
+                &::after {
+                    content: "0fps";
+                }
+                .gauge-view-indicator {
+                    @include prefixProperty(transform, rotate(10deg));
+                }
+            }
+        }
+    }
+}
