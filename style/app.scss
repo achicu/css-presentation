@@ -113,6 +113,14 @@
 	.link-view {
 		display: block;
 	}
+
+    .slide-link {
+        position: absolute;
+        bottom: 30px;
+        left: 0px;
+        right: 0px;
+        font-size: 0.6em;
+    }
 }
 
 .intro-background {
@@ -131,8 +139,8 @@
 		padding-bottom: 1em;
 		font-size: 0.7em;
 		border-radius: 10px;
-		h1, h2, h3, h4, a { 
-			color: black; 
+		h1, h2, h3, h4, a {
+			color: black;
 			text-shadow: none;
 		}
 	}
@@ -377,7 +385,7 @@
 			width: 100%;
 			height: 100%;
 
-			.category-line { 
+			.category-line {
 				position: relative;
 				text-align: left;
 				width: 100%;
@@ -403,9 +411,9 @@
 
 				h3 {
 					margin-left: 10px;
-					font-size: 0.8em; 
+					font-size: 0.8em;
 				}
-				
+
 				.item-line {
 					width: 100%;
 					height: 140px;
@@ -425,7 +433,7 @@
 	height: 120px;
 	border: 1px solid rgba(255, 255, 255, 0.4);
 	border-radius: 10px;
-	background-color: rgba(255, 255, 255, 0.1);	
+	background-color: rgba(255, 255, 255, 0.1);
 	font-size: 28px;
 	color: white;
 	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
@@ -467,7 +475,7 @@
 	.expandable-view {
 		margin-top: 0.5em;
 		margin-bottom: 0px;
-		
+
 		.label-view {
 			font-size: 0.9em;
 		}
@@ -513,7 +521,7 @@
 	}
 
 	.cell2 {
-		text-align: center; 
+		text-align: center;
 	}
 
 	.repeated-item-0 .animation-view {
@@ -522,7 +530,7 @@
 	}
 
 	.animation-transform-touch-area {
-		display: inline-block;	
+		display: inline-block;
 		width: 321px;
 		height: 288px;
 
@@ -535,14 +543,14 @@
 			&.debug-view .debug-view-indicator {
 				display: block;
 			}
-			
+
 			.animation-viewport {
 				position: absolute;
 			}
 
 			.animation-image {
 				position: absolute;
-				
+
 				.animation-image-view {
 					position: absolute;
 					opacity: 0;
@@ -558,7 +566,7 @@
 						border: 1px solid green;
 					}
 				}
-				
+
 			}
 		}
 	}
