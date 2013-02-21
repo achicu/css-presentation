@@ -6,11 +6,9 @@
 			<h2>Alexandru Chiculita</h2>
 			<h3>Computer Scientist<h3>
 			<h4>Web Engine Team at Adobe</h4>
-			<ul>
-				<li>
-					<a data-view="link" href="https://twitter.com/achicu">@achicu</a>
-				</li>
-			</ul>
+
+			<a data-view="link" href="https://twitter.com/achicu">@achicu</a>
+
 		</div>
 	</div>
 
@@ -364,11 +362,17 @@
 			<li class="title">Layout</li>
 			<li class="small">Absolute positioning</li>
 			<li class="small">Children count per element</li>
-			<li class="small">Avoid layout readbacks
-				<div class="small">(e.g. clientWidth/clientHeight)</div>
-			</li>
 			<li class="small">Avoid box-shadows on dynamic content</li>
+            <li class="small">Avoid layout readbacks
+                <div class="small">(e.g. clientWidth/clientHeight)</div>
+            </li>
 		</ul>
+
+        <ul class="smaller-space bordered-list">
+            <li class="title">Lazy CSS changes</li>
+            <li class="small">Apply CSS in single step</li>
+            <li class="small">Use requestAnimationFrame</li>
+        </ul>
 	</div>
 
 	<div data-view="slide" data-name="performance-css" class="slide-performance-css" data-background-class="performance-background">
@@ -380,14 +384,12 @@
 			<li class="small">Avoid deep indirect ancestors
 				<div class="small">(e.g. body.state .my-object { })</div>
 			</li>
+            <li class="small">Avoid generic selectors
+                <div class="small">(e.g. .calendar-view div { })</div>
+            </li>
 			<li class="small">Sibling selectors are expensive</li>
 		</ul>
 
-		<ul class="smaller-space bordered-list">
-			<li class="title">Lazy CSS changes</li>
-			<li class="small">Apply CSS in single step</li>
-			<li class="small">Use requestAnimationFrame</li>
-		</ul>
 	</div>
 
 
@@ -397,8 +399,8 @@
 		<ul class="smaller-space bordered-list">
 			<li class="title">3D transforms</li>
 			<li class="small">Paint cache</li>
-			<li class="small">Avoid switching non-3D to 3D</li>
 			<li class="small">Use with "opacity" and "filter"</li>
+            <li class="small">Avoid switching non-3D to 3D</li>
 			<li class="small">Avoid changing z-index
 				<div class="small">transform-style: preserve-3d</div>
 			</li>
@@ -411,8 +413,8 @@
 		<ul class="smaller-space bordered-list">
 			<li>Spritesheet animations</li>
             <li class="small">Overlapped bitmaps</li>
+            <li>Advance with requestAnimationFrame</li>
             <li class="small">Toggle with opacity</li>
-			<li>Advance with requestAnimationFrame</li>
 		</ul>
 
 		<img src="images/animation.svg" height="250px" />
@@ -947,7 +949,10 @@
 	<div data-view="slide" data-name="end">
 		<div class="center">
 			<h1>Thanks!</h1>
-			<a data-view="link" data-href="http://blogs.adobe.com/webplatform">blogs.adobe.com/webplatform</a>
+			<ul>
+                <li><a data-view="link" href="http://blogs.adobe.com/webplatform">blogs.adobe.com/webplatform</a></li>
+                <li><a data-view="link" href="https://twitter.com/achicu">@achicu</a></li>
+            </ul>
 			<br />
 			<img src="images/adobe.png" />
 		</div>
