@@ -21,6 +21,8 @@
         "lib/views/view_layout.js",
         "lib/views/horizontal_layout.js",
         "lib/views/vertical_layout.js",
+        "lib/views/touch.js",
+        "lib/views/touch_view_manager.js",
         "lib/views/touch_view.js",
         "lib/views/gesture_view.js",
         "lib/views/pan_view.js",
