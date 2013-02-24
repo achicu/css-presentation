@@ -18,7 +18,7 @@
 
 @font-face {
     font-family: "source";
-    src: url("../font/SourceSansPro-Regular.otf");
+    src: url("../font/SourceSasnPro-Regular.otf");
     font-weight: normal;
     font-style: normal;
 }
@@ -119,6 +119,10 @@ h1,h2,h3,h4,h5,h6 {
 
 .view {
     z-index: 0;
+}
+
+.touch-view {
+    @include prefixProperty(touch-action, none);
 }
 
 .view-layout {
