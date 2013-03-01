@@ -1,52 +1,52 @@
 <div data-view="step-scroll" data-type="horizontal" id="info-bar" class="info-bar" data-scroll-to-center>
-	
-	<div data-view="list" data-layout="horizontal" data-role="content" class="horizontal-scroll-view-content">
 
-		<div data-view="scroll" data-type="vertical" class="vertical-scroll-view" data-scroll-to-center>
+    <div data-view="list" data-layout="horizontal" data-role="content" class="horizontal-scroll-view-content">
 
-			<div class="vertical-scroll-view-content" data-role="content">
+        <div data-view="scroll" data-type="vertical" class="vertical-scroll-view" data-scroll-to-center>
 
-				<a class="button-view" data-view="highlight-touch" data-on-tap="this.mainView().presenter.startStopTimer()">Start/Stop timer</a>
+            <div class="vertical-scroll-view-content" data-role="content">
 
-				<a class="button-view" data-view="highlight-touch" data-on-tap="this.mainView().presenter.resetTimer()">Reset timer</a>
+                <a class="button-view" data-view="highlight-touch" data-on-tap="this.mainView().presenter.startStopTimer()">Start/Stop timer</a>
 
-				<a class="button-view" data-view="highlight-touch" data-on-tap="this.mainView().presenter.showTimeReport()">Time report</a>
+                <a class="button-view" data-view="highlight-touch" data-on-tap="this.mainView().presenter.resetTimer()">Reset timer</a>
 
-			</div>
+                <a class="button-view" data-view="highlight-touch" data-on-tap="this.mainView().presenter.showTimeReport()">Time report</a>
 
-		</div>
+            </div>
 
-		<div data-view="scroll" data-type="vertical" class="vertical-scroll-view" data-scroll-to-center>
+        </div>
 
-			<div class="vertical-scroll-view-content" data-role="content">
+        <div data-view="scroll" data-type="vertical" class="vertical-scroll-view" data-scroll-to-center>
 
-				<div class="slide-number-view data-button-view">
-					<div class="data-button-label-view">Slide</div>
-					<div class="data-button-value-view" data-template-role="slideNumber"></div>
-				</div>
+            <div class="vertical-scroll-view-content" data-role="content">
 
-				<div class="minute-view data-button-view" data-template-role="minuteParent">
-					<div class="data-button-label-view">Time</div>
-					<div class="data-button-value-view" data-template-role="minute"></div>
-				</div>
-				
-			</div>
-			
-		</div>
+                <div class="slide-number-view data-button-view">
+                    <div class="data-button-label-view">Slide</div>
+                    <div class="data-button-value-view" data-template-role="slideNumber"></div>
+                </div>
 
-		<div data-view="scroll" data-type="vertical" class="vertical-scroll-view" data-scroll-to-center>
+                <div class="minute-view data-button-view" data-template-role="minuteParent">
+                    <div class="data-button-label-view">Time</div>
+                    <div class="data-button-value-view" data-template-role="minute"></div>
+                </div>
 
-			<div data-view="list" data-layout="vertical" class="vertical-scroll-view-content" data-role="content">
+            </div>
 
-				<a class="button-view" data-view="highlight-touch" data-on-tap="this.mainView().app.checkForUpdates()">Update</a>
+        </div>
 
-				<a class="button-view" data-view="highlight-touch" data-on-tap="Global.Touch.togglePreview()">Toggle touch</a>
+        <div data-view="scroll" data-type="vertical" class="vertical-scroll-view" data-scroll-to-center>
 
-				<a class="button-view" data-view="highlight-touch" data-on-tap="this.mainView().presenter.slidesListView.gotoSlideNumber(0, false)">First Slide</a>
-			</div>
+            <div data-view="list" data-layout="vertical" class="vertical-scroll-view-content" data-role="content">
 
-		</div>
+                <a class="button-view" data-view="highlight-touch" data-on-tap="this.mainView().app.checkForUpdates()">Update</a>
 
-	</div>
+                <a class="button-view" data-view="highlight-touch" data-on-tap="Global.Touch.togglePreview()">Toggle touch</a>
+
+                <a class="button-view" data-view="highlight-touch" data-on-tap="this.mainView().presenter.slidesListView.gotoSlideNumber(0, false)">First Slide</a>
+            </div>
+
+        </div>
+
+    </div>
 
 </div>

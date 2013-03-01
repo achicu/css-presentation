@@ -17,102 +17,102 @@
 @import "src/framework";
 
 .slides-list-view {
-	.logo {
-		position: absolute;
-		top: 0px;
-		right: 20px;
-		width: 5%;
-		height: 10%;
-		background: url(../../images/adobe.svg) no-repeat top center;
-		background-size: contain;
-		@include prefixProperty(transform, translateZ(0px));
-	}
+    .logo {
+        position: absolute;
+        top: 0px;
+        right: 20px;
+        width: 5%;
+        height: 10%;
+        background: url(../../images/adobe.svg) no-repeat top center;
+        background-size: contain;
+        @include prefixProperty(transform, translateZ(0px));
+    }
 }
 
 .presenter-info-bar {
-	height: 170px;
+    height: 170px;
 
-	.info-bar {
-		height: 100%;
-		background-color: rgba(0, 0, 0, 0.3);
+    .info-bar {
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.3);
 
-		.button-view, .data-button-view {
-			display: block;
-			margin-top: 10px;
-			margin-bottom: 10px;
-			width: 150px;
-			padding: 10px;
-			font-size: 1.2em;
-			color: white;
-			text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
-		    text-align: center;
-		    border-radius: 10px;
-		    border: 1px solid rgba(255, 255, 255, 0.5);
-		    background: rgba(255, 255, 255, 0.1);
-		}
+        .button-view, .data-button-view {
+            display: block;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            width: 150px;
+            padding: 10px;
+            font-size: 1.2em;
+            color: white;
+            text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
+            text-align: center;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            background: rgba(255, 255, 255, 0.1);
+        }
 
-		.data-button-view {
-			background: rgba(255, 255, 255, 0.05);
-			border: 1px solid rgba(255, 255, 255, 0.3);
+        .data-button-view {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.3);
 
-			.data-button-label-view {
-				display: inline-block;
-				width: 50px;
-			}
-			.data-button-value-view {
-				display: inline-block;
-				width: 70px;
-				text-align: center;
-				font-weight: bold;
-			}
+            .data-button-label-view {
+                display: inline-block;
+                width: 50px;
+            }
+            .data-button-value-view {
+                display: inline-block;
+                width: 70px;
+                text-align: center;
+                font-weight: bold;
+            }
 
-			&.minute-view.started {
-				background: rgba(255, 255, 255, 0.2);
-			}
-		}
+            &.minute-view.started {
+                background: rgba(255, 255, 255, 0.2);
+            }
+        }
 
-		.horizontal-scroll-view-content {
-			height: 100%;
-			z-index: 0;
-		}
+        .horizontal-scroll-view-content {
+            height: 100%;
+            z-index: 0;
+        }
 
-		.vertical-scroll-view {
-			width: 150px;
-			height: 100%;
-			margin-left: 10px;
-			margin-right: 10px;
-		}
+        .vertical-scroll-view {
+            width: 150px;
+            height: 100%;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
 
-		.vertical-scroll-view-content {
-			padding-bottom: 10px;
-		}
-	}
+        .vertical-scroll-view-content {
+            padding-bottom: 10px;
+        }
+    }
 }
 
 .slide-view {
-	.center {
-		position: absolute;
-		top: 50%;
-		left: 10%;
-		width: 80%;
-		text-align: center;
-		@include prefixProperty(transform, translateY(-50%));
-	}
+    .center {
+        position: absolute;
+        top: 50%;
+        left: 10%;
+        width: 80%;
+        text-align: center;
+        @include prefixProperty(transform, translateY(-50%));
+    }
 
-	.title-margin {
-		margin-top: 1em;
-		a {
-			text-decoration: none;
-		}
-	}
+    .title-margin {
+        margin-top: 1em;
+        a {
+            text-decoration: none;
+        }
+    }
 
-	.italics {
-		font-style: italic;
-	}
+    .italics {
+        font-style: italic;
+    }
 
-	.link-view {
-		display: block;
-	}
+    .link-view {
+        display: block;
+    }
 
     .slide-link {
         position: absolute;
@@ -128,133 +128,133 @@
 }
 
 .intro-background {
-	background: url(../../images/bg_1.jpg) center center no-repeat;
-	background-size: cover;
+    background: url(../../images/bg_1.jpg) center center no-repeat;
+    background-size: cover;
 }
 
 .slide-intro {
-	.white-strip {
-		position: absolute;
-		top: 30%;
-		background-color: rgba(255, 255, 255, 0.9);
-		width: 100%;
-		text-align: center;
-		padding-top: 1em;
-		padding-bottom: 1em;
-		font-size: 0.7em;
-		border-radius: 10px;
-		h1, h2, h3, h4, a {
-			color: black;
-			text-shadow: none;
-		}
-	}
+    .white-strip {
+        position: absolute;
+        top: 30%;
+        background-color: rgba(255, 255, 255, 0.9);
+        width: 100%;
+        text-align: center;
+        padding-top: 1em;
+        padding-bottom: 1em;
+        font-size: 0.7em;
+        border-radius: 10px;
+        h1, h2, h3, h4, a {
+            color: black;
+            text-shadow: none;
+        }
+    }
 }
 
 .slide-about {
-	@include prefixProperty(transform-perspective, 500);
+    @include prefixProperty(transform-perspective, 500);
 
-	.css-regions-picture, .css-exclusions-picture, .css-filters-picture, .css-webkit-picture {
-		position: absolute;
-		@include prefixBoth(transition, (transform 0.5s linear, opacity 0.5s linear));
-		background-size: contain;
-		background-repeat: no-repeat;
-		background-position: center;
+    .css-regions-picture, .css-exclusions-picture, .css-filters-picture, .css-webkit-picture {
+        position: absolute;
+        @include prefixBoth(transition, (transform 0.5s linear, opacity 0.5s linear));
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
 
-		.feature-label {
-			position: absolute;
-			top: -1.5em;
-			left: 0px;
-			text-align: center;
-			width: 100%
-		}
-	}
+        .feature-label {
+            position: absolute;
+            top: -1.5em;
+            left: 0px;
+            text-align: center;
+            width: 100%
+        }
+    }
 
-	.css-regions-picture, .css-exclusions-picture, .css-filters-picture {
-		box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.6);
-		background-color: white;
-		width: 30%;
-		height: 30%;
-	}
+    .css-regions-picture, .css-exclusions-picture, .css-filters-picture {
+        box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.6);
+        background-color: white;
+        width: 30%;
+        height: 30%;
+    }
 
-	.css-regions-picture {
-		left: 10%;
-		top: 25%;
-		opacity: 0;
-		@include prefixProperty(transform, translateZ(-100px) rotateY(90deg) translateZ(100px) rotate(-10deg));
-		background-image: url(../../images/specs/regions.png);
+    .css-regions-picture {
+        left: 10%;
+        top: 25%;
+        opacity: 0;
+        @include prefixProperty(transform, translateZ(-100px) rotateY(90deg) translateZ(100px) rotate(-10deg));
+        background-image: url(../../images/specs/regions.png);
 
-		&.state-open {
-			opacity: 1;
-			@include prefixProperty(transform, translateZ(-100px) rotateY(0deg) translateZ(100px) rotate(-10deg));
-		}
-	}
+        &.state-open {
+            opacity: 1;
+            @include prefixProperty(transform, translateZ(-100px) rotateY(0deg) translateZ(100px) rotate(-10deg));
+        }
+    }
 
-	.css-exclusions-picture {
-		left: 35%;
-		top: 25%;
-		opacity: 0;
-		@include prefixProperty(transform, translateZ(-100px) rotateY(90deg) translateZ(101px));
-		background-image: url(../../images/specs/exclusions.png);
+    .css-exclusions-picture {
+        left: 35%;
+        top: 25%;
+        opacity: 0;
+        @include prefixProperty(transform, translateZ(-100px) rotateY(90deg) translateZ(101px));
+        background-image: url(../../images/specs/exclusions.png);
 
-		&.state-open {
-			opacity: 1;
-			@include prefixProperty(transform, translateZ(-100px) rotateY(0deg) translateZ(101px));
-		}
-	}
+        &.state-open {
+            opacity: 1;
+            @include prefixProperty(transform, translateZ(-100px) rotateY(0deg) translateZ(101px));
+        }
+    }
 
-	.css-filters-picture {
-		left: 60%;
-		top: 35%;
-		opacity: 0;
-		@include prefixProperty(transform, translateZ(-100px) rotateY(90deg) translateZ(102px) rotate(6deg));
-		background-image: url(../../images/specs/filters.png);
+    .css-filters-picture {
+        left: 60%;
+        top: 35%;
+        opacity: 0;
+        @include prefixProperty(transform, translateZ(-100px) rotateY(90deg) translateZ(102px) rotate(6deg));
+        background-image: url(../../images/specs/filters.png);
 
-		&.state-open {
-			opacity: 1;
-			@include prefixProperty(transform, translateZ(-100px) rotateY(0deg) translateZ(102px) rotate(6deg));
-		}
-	}
+        &.state-open {
+            opacity: 1;
+            @include prefixProperty(transform, translateZ(-100px) rotateY(0deg) translateZ(102px) rotate(6deg));
+        }
+    }
 
-	.css-webkit-picture {
-		left: 20%;
-		top: 50%;
-		width: 40%;
-		height: 40%;
-		opacity: 0;
-		@include prefixProperty(transform, translateZ(3px));
-		background-image: url(../../images/webkit-icon.png);
+    .css-webkit-picture {
+        left: 20%;
+        top: 50%;
+        width: 40%;
+        height: 40%;
+        opacity: 0;
+        @include prefixProperty(transform, translateZ(3px));
+        background-image: url(../../images/webkit-icon.png);
 
-		&.state-open {
-			opacity: 1;
-		}
-	}
+        &.state-open {
+            opacity: 1;
+        }
+    }
 }
 
 .filter-background {
-	@include prefixProperty(filter, grayscale(100%) opacity(0.5));
-	background: url(../../images/filter_mesh.png) 90% 90% no-repeat;
-	background-size: 10%;
+    @include prefixProperty(filter, grayscale(100%) opacity(0.5));
+    background: url(../../images/filter_mesh.png) 90% 90% no-repeat;
+    background-size: 10%;
 }
 
 .slide-css-filters-demo {
-	.filter-syntax {
-		font-size: 0.8em;
-		.filter-name, .prop-name {
-			font-weight: bold;
-		}
-		.filter-name {
-			font-size: 1.1em;
-		}
-	}
+    .filter-syntax {
+        font-size: 0.8em;
+        .filter-name, .prop-name {
+            font-weight: bold;
+        }
+        .filter-name {
+            font-size: 1.1em;
+        }
+    }
     .title-margin {
         margin-bottom: 130px;
     }
-	.filtered-area {
-		margin-left: auto;
-		margin-right: auto;
+    .filtered-area {
+        margin-left: auto;
+        margin-right: auto;
         width: 600px;
         height: 250px;
-		@include prefixProperty(transform, translateZ(0px));
+        @include prefixProperty(transform, translateZ(0px));
 
         .filtered-area-item {
             left: 0px;
@@ -273,7 +273,7 @@
                 border-radius: 10px;
             }
         }
-	}
+    }
     .element-type-area {
         position: absolute;
         left: 0px;
@@ -292,24 +292,24 @@
             }
         }
     }
-	.blur-control {
+    .blur-control {
         position: absolute;
         bottom: 30px;
-		width: 100%;
-		height: 150px;
-	}
+        width: 100%;
+        height: 150px;
+    }
 }
 
 .slide-cssfilterlab {
-	.css-filter-lab-preview {
-		display: block;
-		margin-left: auto;
-		margin-right: auto;
-		margin-top: 1em;
-		margin-bottom: 1em;
-		height: 60%;
-		box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.6);
-	}
+    .css-filter-lab-preview {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 1em;
+        margin-bottom: 1em;
+        height: 60%;
+        box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.6);
+    }
 
     .css-filter-lab-mobile-preview {
         position: absolute;
@@ -319,207 +319,207 @@
 }
 
 .demo-background {
-	@include prefixValue(background, radial-gradient(#548DB0 0%, #343737 80%, #333636 100%));
+    @include prefixValue(background, radial-gradient(#548DB0 0%, #343737 80%, #333636 100%));
 }
 
 .gruntjs-background {
-	background: url(../../images/gruntjs.png) 90% 90% no-repeat;
-	background-size: 20%;
+    background: url(../../images/gruntjs.png) 90% 90% no-repeat;
+    background-size: 20%;
 }
 
 .slide-edge-inspect {
-	.edge-inspect-logo {
-		vertical-align: middle;
-		margin-right: 0.3em;
-	}
+    .edge-inspect-logo {
+        vertical-align: middle;
+        margin-right: 0.3em;
+    }
 }
 
 .edge-inspect-background {
-	background: url(../../images/edge_inspect_feature2.png) right bottom no-repeat;
-	background-size: 40%;
+    background: url(../../images/edge_inspect_feature2.png) right bottom no-repeat;
+    background-size: 40%;
 }
 
 .slide-features {
-	.features-row {
-		margin-top: 1em;
-	}
+    .features-row {
+        margin-top: 1em;
+    }
 }
 
 .offline-background {
-	background: url(../../images/offline.svg) 90% 90% no-repeat;
-	background-size: 10%;
+    background: url(../../images/offline.svg) 90% 90% no-repeat;
+    background-size: 10%;
 }
 
 .touch-background {
-	background: url(../../images/phone_ui.svg) 88% 90% no-repeat;
-	background-size: 5%;
+    background: url(../../images/phone_ui.svg) 88% 90% no-repeat;
+    background-size: 5%;
 }
 
 .performance-background {
-	background: url(../../images/performance.svg) 90% 90% no-repeat;
-	background-size: 10%;
+    background: url(../../images/performance.svg) 90% 90% no-repeat;
+    background-size: 10%;
 }
 
 .slide-touch-gestures {
-	.touch-area {
-		position: relative;
-		height: 400px;
-		margin-top: 1em;
-		border: 1px solid rgba(255, 255, 255, 0.4);
-		border-radius: 10px;
-		background-color: rgba(255, 255, 255, 0.1);
+    .touch-area {
+        position: relative;
+        height: 400px;
+        margin-top: 1em;
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        border-radius: 10px;
+        background-color: rgba(255, 255, 255, 0.1);
 
-		.touch-area-label {
-			font-size: 0.7em;
-		}
-	}
+        .touch-area-label {
+            font-size: 0.7em;
+        }
+    }
 }
 
 .slide-touch-abstraction {
 
-	.touch-area-container {
-		margin-top: 1em;
-		position: relative;
-		height: 400px;
+    .touch-area-container {
+        margin-top: 1em;
+        position: relative;
+        height: 400px;
 
-		.touch-area-inner {
-			position: relative;
-			width: 100%;
-			height: 100%;
+        .touch-area-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
 
-			.touch-area {
-				position: relative;
-				width: 100%;
-				height: 100%;
-				border: 1px solid rgba(255, 255, 255, 0.4);
-				border-radius: 10px;
-				background-color: rgba(255, 255, 255, 0.1);
+            .touch-area {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                border: 1px solid rgba(255, 255, 255, 0.4);
+                border-radius: 10px;
+                background-color: rgba(255, 255, 255, 0.1);
 
-				.touch-area-label {
-					font-size: 0.7em;
-				}
-			}
-		}
-	}
+                .touch-area-label {
+                    font-size: 0.7em;
+                }
+            }
+        }
+    }
 }
 
 .slide-touch-scroll {
-	.scroll-area-container {
-		margin-top: 1em;
-		position: relative;
-		margin-left: auto;
-		margin-right: auto;
-		width: 50%;
-		height: 500px;
-		overflow: hidden;
+    .scroll-area-container {
+        margin-top: 1em;
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+        height: 500px;
+        overflow: hidden;
 
-		border: 1px solid rgba(255, 255, 255, 0.4);
-		border-radius: 10px;
-		background-color: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        border-radius: 10px;
+        background-color: rgba(255, 255, 255, 0.1);
 
-		.scroll-area-content {
-			box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
-		}
+        .scroll-area-content {
+            box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
+        }
 
-		.scroll-area {
-			width: 100%;
-			height: 100%;
+        .scroll-area {
+            width: 100%;
+            height: 100%;
 
-			.category-line {
-				position: relative;
-				text-align: left;
-				width: 100%;
+            .category-line {
+                position: relative;
+                text-align: left;
+                width: 100%;
 
-				&.repeated-item-0 {
-					background-color: rgba(128, 0, 0, 0.4);
-				}
-				&.repeated-item-1 {
-					background-color: rgba(128, 128, 0, 0.4);
-				}
-				&.repeated-item-2 {
-					background-color: rgba(0, 128, 0, 0.4);
-				}
-				&.repeated-item-3 {
-					background-color: rgba(128, 0, 128, 0.4);
-				}
-				&.repeated-item-4 {
-					background-color: rgba(0, 128, 128, 0.4);
-				}
-				&.repeated-item-5 {
-					background-color: rgba(0, 0, 128, 0.4);
-				}
+                &.repeated-item-0 {
+                    background-color: rgba(128, 0, 0, 0.4);
+                }
+                &.repeated-item-1 {
+                    background-color: rgba(128, 128, 0, 0.4);
+                }
+                &.repeated-item-2 {
+                    background-color: rgba(0, 128, 0, 0.4);
+                }
+                &.repeated-item-3 {
+                    background-color: rgba(128, 0, 128, 0.4);
+                }
+                &.repeated-item-4 {
+                    background-color: rgba(0, 128, 128, 0.4);
+                }
+                &.repeated-item-5 {
+                    background-color: rgba(0, 0, 128, 0.4);
+                }
 
-				h3 {
-					margin-left: 10px;
-					font-size: 0.8em;
-				}
+                h3 {
+                    margin-left: 10px;
+                    font-size: 0.8em;
+                }
 
-				.item-line {
-					width: 100%;
-					height: 140px;
+                .item-line {
+                    width: 100%;
+                    height: 140px;
 
-					.item-container-view {
-						margin: 10px;
-					}
-				}
-			}
-		}
-	}
+                    .item-container-view {
+                        margin: 10px;
+                    }
+                }
+            }
+        }
+    }
 }
 
 .slide-touch-scroll-item-view {
-	position: relative;
-	width: 120px;
-	height: 120px;
-	border: 1px solid rgba(255, 255, 255, 0.4);
-	border-radius: 10px;
-	background-color: rgba(255, 255, 255, 0.1);
-	font-size: 28px;
-	color: white;
-	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
+    position: relative;
+    width: 120px;
+    height: 120px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    font-size: 28px;
+    color: white;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
 
-	.center {
-		position: absolute;
-		top: 50%;
-		left: 10%;
-		width: 80%;
-		text-align: center;
-		@include prefixProperty(transform, translateY(-50%));
-	}
+    .center {
+        position: absolute;
+        top: 50%;
+        left: 10%;
+        width: 80%;
+        text-align: center;
+        @include prefixProperty(transform, translateY(-50%));
+    }
 
-	.touch-area-label {
-		font-size: 0.7em;
-	}
+    .touch-area-label {
+        font-size: 0.7em;
+    }
 
-	&.repeated-item-0 {
-		background-color: rgba(128, 0, 0, 0.1);
-	}
-	&.repeated-item-1 {
-		background-color: rgba(128, 128, 0, 0.1);
-	}
-	&.repeated-item-2 {
-		background-color: rgba(0, 128, 0, 0.1);
-	}
-	&.repeated-item-3 {
-		background-color: rgba(128, 0, 128, 0.1);
-	}
-	&.repeated-item-4 {
-		background-color: rgba(0, 128, 128, 0.1);
-	}
-	&.repeated-item-5 {
-		background-color: rgba(0, 0, 128, 0.1);
-	}
+    &.repeated-item-0 {
+        background-color: rgba(128, 0, 0, 0.1);
+    }
+    &.repeated-item-1 {
+        background-color: rgba(128, 128, 0, 0.1);
+    }
+    &.repeated-item-2 {
+        background-color: rgba(0, 128, 0, 0.1);
+    }
+    &.repeated-item-3 {
+        background-color: rgba(128, 0, 128, 0.1);
+    }
+    &.repeated-item-4 {
+        background-color: rgba(0, 128, 128, 0.1);
+    }
+    &.repeated-item-5 {
+        background-color: rgba(0, 0, 128, 0.1);
+    }
 }
 
 .slide-performance {
-	.expandable-view {
-		margin-top: 0.5em;
-		margin-bottom: 0px;
+    .expandable-view {
+        margin-top: 0.5em;
+        margin-bottom: 0px;
 
-		.label-view {
-			font-size: 0.9em;
-		}
-	}
+        .label-view {
+            font-size: 0.9em;
+        }
+    }
 }
 
 .slide-animations-spritesheet {
@@ -536,50 +536,50 @@
 
 .slide-animations-demo {
 
-	.buttons-view {
-		position: absolute;
-		bottom: 50px;
-		left: 0px;
-		right: 0px;
+    .buttons-view {
+        position: absolute;
+        bottom: 50px;
+        left: 0px;
+        right: 0px;
 
-		.button-view {
-			float: left;
-			margin-left: 10px;
-			margin-right: 10px;
-			display: block;
-			width: 150px;
-			padding: 10px;
-			font-size: 1.2em;
-			color: white;
-			text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
-		    text-align: center;
-		    border-radius: 10px;
-		    border: 1px solid rgba(255, 255, 255, 0.5);
-		    background: rgba(255, 255, 255, 0.1);
-		}
+        .button-view {
+            float: left;
+            margin-left: 10px;
+            margin-right: 10px;
+            display: block;
+            width: 150px;
+            padding: 10px;
+            font-size: 1.2em;
+            color: white;
+            text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
+            text-align: center;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            background: rgba(255, 255, 255, 0.1);
+        }
 
-		&::after {
-			text-content: "";
-			clear: left;
-		}
+        &::after {
+            text-content: "";
+            clear: left;
+        }
 
-		z-index: 2;
-		@include prefixProperty(transform, translateZ(10px));
-	}
+        z-index: 2;
+        @include prefixProperty(transform, translateZ(10px));
+    }
 
-	.row {
-		margin-top: 100px;
-		z-index: 1;
-	}
+    .row {
+        margin-top: 100px;
+        z-index: 1;
+    }
 
-	.cell2 {
-		text-align: center;
-	}
+    .cell2 {
+        text-align: center;
+    }
 
     .repeated-item-0 .animation-view {
-		@include prefixProperty(transform, scaleX(-1));
-		@include prefixProperty(filter, hue-rotate(120deg));
-	}
+        @include prefixProperty(transform, scaleX(-1));
+        @include prefixProperty(filter, hue-rotate(120deg));
+    }
 
     .animation-view {
         visibility: hidden;
@@ -593,46 +593,46 @@
     }
 
     .animation-transform-touch-area {
-		display: inline-block;
-		width: 321px;
-		height: 288px;
+        display: inline-block;
+        width: 321px;
+        height: 288px;
 
-		.animation-view {
+        .animation-view {
 
-			.debug-view-indicator {
-				display: none;
-			}
+            .debug-view-indicator {
+                display: none;
+            }
 
-			&.debug-view .debug-view-indicator {
-				display: block;
-			}
+            &.debug-view .debug-view-indicator {
+                display: block;
+            }
 
-			.animation-viewport {
-				position: absolute;
-			}
+            .animation-viewport {
+                position: absolute;
+            }
 
-			.animation-image {
-				position: absolute;
+            .animation-image {
+                position: absolute;
 
-				.animation-image-view {
-					position: absolute;
-					opacity: 0;
-					background: url(../../images/character.png);
-					@include prefixProperty(transform-origin, 0 0);
-					@include prefixProperty(transform, translateZ(0px));
+                .animation-image-view {
+                    position: absolute;
+                    opacity: 0;
+                    background: url(../../images/character.png);
+                    @include prefixProperty(transform-origin, 0 0);
+                    @include prefixProperty(transform, translateZ(0px));
 
-					.debug-view-indicator {
-						position: absolute;
-						width: 100%;
-						height: 100%;
-						text-align: center;
-						border: 1px solid green;
-					}
-				}
+                    .debug-view-indicator {
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        text-align: center;
+                        border: 1px solid green;
+                    }
+                }
 
-			}
-		}
-	}
+            }
+        }
+    }
 }
 
 .slide-performance-removing-content {
