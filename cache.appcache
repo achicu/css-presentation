@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# Generated on Fri Mar 01 2013 07:14:35 GMT-0800 (PST)
+# Generated on Fri Mar 01 2013 09:15:11 GMT-0800 (PST)
 
 style/font/SourceSansPro-Regular.otf
 style/font/SourceSansPro-Light.otf
@@ -9,7 +9,7 @@ style/img/mobile/icon52.png
 style/img/mobile/icon72.png
 style/img/mobile/icon114.png
 
-images/animation.svg
+images/animation.png
 images/filterlab.jpg
 images/edge_inspect_mnemonic.png
 images/offline.svg

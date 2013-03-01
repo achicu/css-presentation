@@ -874,7 +874,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media -sass-debug-info{filename{}line{font-family:\00003136}}
-.slide-intro .white-strip {
+.slide-intro .white-stripe {
   position: absolute;
   top: 30%;
   background-color: rgba(255, 255, 255, 0.9);
@@ -886,7 +886,7 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 10px;
 }
 @media -sass-debug-info{filename{}line{font-family:\00003146}}
-.slide-intro .white-strip h1, .slide-intro .white-strip h2, .slide-intro .white-strip h3, .slide-intro .white-strip h4, .slide-intro .white-strip a {
+.slide-intro .white-stripe h1, .slide-intro .white-stripe h2, .slide-intro .white-stripe h3, .slide-intro .white-stripe h4, .slide-intro .white-stripe a {
   color: black;
   text-shadow: none;
 }

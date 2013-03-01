@@ -141,8 +141,8 @@ h1, h2, h3, h4, h5, h6 { color: #000; font-family: "Source Sans Pro", "source-l"
 
 .intro-background { background: url(../../images/bg_1.jpg) center center no-repeat; background-size: cover; }
 
-.slide-intro .white-strip { position: absolute; top: 30%; background-color: rgba(255, 255, 255, 0.9); width: 100%; text-align: center; padding-top: 1em; padding-bottom: 1em; font-size: 0.7em; border-radius: 10px; }
-.slide-intro .white-strip h1, .slide-intro .white-strip h2, .slide-intro .white-strip h3, .slide-intro .white-strip h4, .slide-intro .white-strip a { color: black; text-shadow: none; }
+.slide-intro .white-stripe { position: absolute; top: 30%; background-color: rgba(255, 255, 255, 0.9); width: 100%; text-align: center; padding-top: 1em; padding-bottom: 1em; font-size: 0.7em; border-radius: 10px; }
+.slide-intro .white-stripe h1, .slide-intro .white-stripe h2, .slide-intro .white-stripe h3, .slide-intro .white-stripe h4, .slide-intro .white-stripe a { color: black; text-shadow: none; }
 
 .slide-about { -webkit-transform-perspective: 500; -moz-transform-perspective: 500; -ms-transform-perspective: 500; -o-transform-perspective: 500; transform-perspective: 500; }
 .slide-about .css-regions-picture, .slide-about .css-exclusions-picture, .slide-about .css-filters-picture, .slide-about .css-webkit-picture { position: absolute; -webkit-transition: -webkit-transform 0.5s linear, opacity 0.5s linear; -moz-transition: -moz-transform 0.5s linear, opacity 0.5s linear; -ms-transition: -ms-transform 0.5s linear, opacity 0.5s linear; -o-transition: -o-transform 0.5s linear, opacity 0.5s linear; transition: transform 0.5s linear, opacity 0.5s linear; background-size: contain; background-repeat: no-repeat; background-position: center; }
