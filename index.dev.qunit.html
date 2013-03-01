@@ -1,0 +1,1177 @@
+<!DOCTYPE html>
+
+<!--
+Copyright (c) 2012 Adobe Systems Incorporated. All rights reserved.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+<html dir="ltr" lang="en" >
+<head>
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <title>Presenter</title>
+
+    <meta name="apple-mobile-web-app-title" content="W3C Conf" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <link rel="apple-touch-icon-precomposed" href="style/img/mobile/icon52.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="style/img/mobile/icon72.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="style/img/mobile/icon114.png">
+
+    
+        <link rel="stylesheet" href="style/css/app.dev.css" />
+    
+        <link rel="stylesheet" href="http://code.jquery.com/qunit/qunit-1.10.0.css" />
+    
+</head>
+
+<body>
+    <div id="components">
+        
+            <div data-view="step-scroll" data-type="horizontal" id="info-bar" class="info-bar" data-scroll-to-center>
+
+    <div data-view="list" data-layout="horizontal" data-role="content" class="horizontal-scroll-view-content">
+
+        <div data-view="scroll" data-type="vertical" class="vertical-scroll-view" data-scroll-to-center>
+
+            <div class="vertical-scroll-view-content" data-role="content">
+
+                <a class="button-view" data-view="highlight-touch" data-on-tap="this.mainView().presenter.startStopTimer()">Start/Stop timer</a>
+
+                <a class="button-view" data-view="highlight-touch" data-on-tap="this.mainView().presenter.resetTimer()">Reset timer</a>
+
+                <a class="button-view" data-view="highlight-touch" data-on-tap="this.mainView().presenter.showTimeReport()">Time report</a>
+
+            </div>
+
+        </div>
+
+        <div data-view="scroll" data-type="vertical" class="vertical-scroll-view" data-scroll-to-center>
+
+            <div class="vertical-scroll-view-content" data-role="content">
+
+                <div class="slide-number-view data-button-view">
+                    <div class="data-button-label-view">Slide</div>
+                    <div class="data-button-value-view" data-template-role="slideNumber"></div>
+                </div>
+
+                <div class="minute-view data-button-view" data-template-role="minuteParent">
+                    <div class="data-button-label-view">Time</div>
+                    <div class="data-button-value-view" data-template-role="minute"></div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div data-view="scroll" data-type="vertical" class="vertical-scroll-view" data-scroll-to-center>
+
+            <div data-view="list" data-layout="vertical" class="vertical-scroll-view-content" data-role="content">
+
+                <a class="button-view" data-view="highlight-touch" data-on-tap="this.mainView().app.checkForUpdates()">Update</a>
+
+                <a class="button-view" data-view="highlight-touch" data-on-tap="Global.Touch.togglePreview()">Toggle touch</a>
+
+                <a class="button-view" data-view="highlight-touch" data-on-tap="this.mainView().presenter.slidesListView.gotoSlideNumber(0, false)">First Slide</a>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+        
+            <div id="slides">
+
+    <div data-view="slide" data-name="intro" data-background-class="intro-background" class="slide-intro">
+        <div class="white-strip">
+            <h1>CSS FilterLab</h1>
+            <h2>Alexandru Chiculita</h2>
+            <h3>Computer Scientist<h3>
+            <h4>Web Engine Team at Adobe</h4>
+
+            <a data-view="link" href="https://twitter.com/achicu">@achicu</a>
+
+        </div>
+    </div>
+
+    <div data-view="slide" data-name="about" class="slide-about">
+        <h2 class="title-margin">About me</h2>
+        <ul>
+            <li>
+                <a class="css-regions-picture" data-view="link" href="http://www.w3.org/TR/css3-regions/" data-state="1" data-time="0.2" data-advance="auto" alt="CSS Regions">
+                    <div class="feature-label">CSS Regions</div>
+                </a>
+            </li>
+            <li>
+                <a class="css-exclusions-picture" data-view="link" href="http://www.w3.org/TR/css3-exclusions/" data-state="2" data-time="0.2" data-advance="auto" alt="CSS Exclusions">
+                    <div class="feature-label">CSS Exclusions</div>
+                </a>
+            </li>
+            <li>
+                <a class="css-filters-picture" data-view="link" href="http://www.w3.org/TR/filter-effects/" data-state="3" data-time="0.2" data-advance="auto" alt="CSS Filters">
+                    <div class="feature-label">CSS Filters</div>
+                </a>
+            </li>
+            <li>
+                <a class="css-webkit-picture" data-view="link" href="http://webkit.org" data-state="4" data-time="0.2" data-advance="auto" alt="Hacking on WebKit"></a>
+            </li>
+        </ul>
+    </div>
+
+    <div data-view="slide" data-name="css-filters" class="slide-css-filters" data-background-class="filter-background">
+
+        <h2 class="title-margin">CSS Filters</h2>
+
+        <ul class="smaller-space bordered-list">
+            <li>
+                Any DOM element
+                <div class="small">
+                    (including text, forms, video)
+                </div>
+            </li>
+            <li>
+                Can be chained and animated
+            </li>
+            <li>
+                Hardware accelerated
+            </li>
+        </ul>
+
+        <a data-view="link" class="slide-link" href="http://www.w3.org/TR/filter-effects/">http://www.w3.org/TR/filter-effects/</a>
+
+    </div>
+
+    <div data-view="slide" data-name="css-filter-types" class="slide-css-filter-types" data-background-class="filter-background">
+
+        <h2 class="title-margin">CSS Filter Types</h2>
+
+        <ul class="smaller-space bordered-list">
+            <li>
+                CSS Builtin Filters
+                <div class="small">
+                    Safari 6, iOS6 and Chrome
+                </div>
+            </li>
+            <li>
+                CSS Custom Filters
+                <div class="small">
+                    using WebGL shaders
+                </div>
+            </li>
+            <li>
+                CSS SVG Filter Reference
+            </li>
+        </ul>
+
+    </div>
+
+    <div data-view="slide-css-demo" data-name="css-filters-demo" class="slide-css-filters-demo" data-filter-name="blur" data-filter-value-units="px">
+
+        <h2 class="title-margin">CSS Filters Demo</h2>
+
+        <div class="filtered-area" data-template-role="filteredArea" data-view="step-scroll" data-type="none">
+            <div data-view="list" data-layout="vertical" data-role="content" class="filtered-area-content">
+                <div data-template-role="imagesPreview" class="filtered-area-item">
+                    <img src="images/preview.jpg" />
+                </div>
+                <div data-template-role="formsPreview" class="filtered-area-item">
+                    <div>
+                        <label for="slide-css-filters-username" class="slide-css-filters-label">User name</label>
+                        <input data-native-touch name="slide-css-filters-username" class="slide-css-filters-field" type="text"
+                            autocapitalize="off" autocorrect="off" autocomplete="off" />
+                    </div>
+
+                    <div>
+                        <label for="slide-css-filters-password" class="slide-css-filters-label">Password</label>
+                        <input data-native-touch name="slide-css-filters-password" class="slide-css-filters-field" type="password" />
+                    </div>
+                </div>
+                <div data-template-role="textPreview" class="filtered-area-item" data-native-touch>
+                    Filter effects are a way of processing an element's rendering before it is displayed in the document.
+                </div>
+            </div>
+        </div>
+
+        <p class="filter-syntax" data-role="filterSyntax">
+        </p>
+
+        <div class="element-type-area" data-view="scroll" data-type="vertical" data-scroll-to-center>
+            <div class="element-type-area-content" data-view="list" data-layout="vertical" data-role="content">
+                <div data-view="highlight-touch" class="element-type-item" data-template-role="imagesType">Images</div>
+                <div data-view="highlight-touch" class="element-type-item" data-template-role="formsType">Forms</div>
+                <div data-view="highlight-touch" class="element-type-item" data-template-role="textType">Text</div>
+            </div>
+        </div>
+
+        <div class="blur-control" data-role="filterControl" data-control="range" data-param-min="0" data-param-max="20" data-param-step="0.001"></div>
+
+    </div>
+
+    <div data-view="slide" data-name="cssfilterlab" class="slide-cssfilterlab">
+        <h2 class="title-margin">CSS FilterLab</h2>
+
+        <img class="css-filter-lab-preview" src="images/filterlab.jpg" />
+        <img class="css-filter-lab-mobile-preview" src="images/editor_view.png" />
+
+        <a data-view="link" class="slide-link" href="http://html.adobe.com/webstandards/csscustomfilters/cssfilterlab/">http://html.adobe.com/webstandards/csscustomfilters/cssfilterlab/</a>
+
+    </div>
+
+    <div data-view="slide" data-name="demo" data-background-class="demo-background">
+        <div class="center">
+            <h2 class="italics">Demo</h2>
+        </div>
+    </div>
+
+    <div data-view="slide" data-name="grunt-js" class="slide-grunt-js" data-background-class="gruntjs-background">
+        <h2 class="title-margin">Grunt JS</h2>
+
+        <div class="row">
+            <ul class="bordered-list cell2-reduced">
+                <li class="title">Process</li>
+                <li class="small">Compile Templates</li>
+                <li class="small">Lint JS</li>
+                <li class="small">Minify</li>
+                <li class="small">Process CSS</li>
+                <li class="small">Copy Assets</li>
+            </ul>
+            <ul class="bordered-list cell2-reduced">
+                <li class="title">Output</li>
+                <li class="small">Debug Mode</li>
+                <li class="small">Minified Mode</li>
+                <li class="small">Desktop</li>
+                <li class="small">Mobile</li>
+            </ul>
+        </div>
+
+        <a data-view="link" class="slide-link" href="http://gruntjs.com/">http://gruntjs.com/</a>
+    </div>
+
+    <div data-view="slide" data-name="edge-inspect" class="slide-edge-inspect" data-background-class="edge-inspect-background">
+        <h2 class="title-margin"><img class="edge-inspect-logo" src="images/edge_inspect_mnemonic.png" /> Adobe Edge Inspect</h2>
+
+        <ul class="bordered-list smaller-space">
+            <li>Develop on multiple devices</li>
+            <li>Remote WebInspector</li>
+            <li>Refresh all devices at once</li>
+        </ul>
+
+        <a data-view="link" class="slide-link" href="http://html.adobe.com/edge/inspect/">http://html.adobe.com/edge/inspect/</a>
+    </div>
+
+    <div data-view="slide" data-name="features" class="slide-features">
+        <h2 class="title-margin">Web Features</h2>
+
+        <div class="row features-row">
+            <div class="cell3">
+                <img height="200px" src="images/offline.svg" />
+                <ul class="bordered-list">
+                    <li>Offline</li>
+                    <li class="small">Application cache</li>
+                    <li class="small">Web Storage</li>
+                </ul>
+            </div>
+            <div class="cell3">
+                <img height="200px" src="images/phone_ui.svg" />
+                <ul class="bordered-list">
+                    <li>Mobile UI</li>
+                    <li class="small">Touch Events</li>
+                    <li class="small">Gesture Recognition</li>
+                </ul>
+            </div>
+            <div class="cell3">
+                <img height="200px" src="images/performance.svg" />
+                <ul class="bordered-list">
+                    <li>Performance</li>
+                    <li class="small">requestAnimationFrame</li>
+                    <li class="small">Worker threads</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div data-view="slide" data-name="app-cache" class="slide-app-cache" data-background-class="offline-background">
+        <h2 class="title-margin">Application Cache</h2>
+        <ul class="bordered-list smaller-space">
+            <li class="title">Offline Repository</li>
+            <li class="small">Automatically creates local copy</li>
+            <li class="small">Snappy reloads</li>
+            <li class="title">Good to know</li>
+            <li class="small">User interface for updates</li>
+            <li class="small">Avoid it in development builds</li>
+            <li class="small">Inject the date/time as a comment</li>
+        </ul>
+
+        <div class="slide-link">
+            <a data-view="link" href="http://alistapart.com/article/application-cache-is-a-douchebag">http://alistapart.com/article/application-cache-is-a-douchebag</a>
+            <a data-view="link" href="http://www.w3.org/TR/html51/browsers.html#offline">http://www.w3.org/TR/html51/browsers.html#offline</a>
+        </div>
+    </div>
+
+    <div data-view="slide" data-name="web-storage" class="slide-web-storage" data-background-class="offline-background">
+        <h2 class="title-margin">Web Storage</h2>
+        <ul class="bordered-list smaller-space">
+            <li>Store user settings</li>
+            <li>Limited in size
+                <div class="small">~ 2.5MB</div></li>
+            <li>Key/Value system</li>
+            <li>localStorage
+                <div class="small">persistent across reloads</div>
+            </li>
+            <li>sessionStorage
+                <div class="small">persistent per session</div>
+            </li>
+        </ul>
+
+        <a data-view="link" class="slide-link" href="http://www.w3.org/TR/webstorage/">http://www.w3.org/TR/webstorage/</a>
+    </div>
+
+    <div data-view="slide" data-name="touch-gestures" class="slide-touch-gestures" data-background-class="touch-background">
+        <h2 class="title-margin">Touch Gestures</h2>
+        <div class="row">
+            <div data-view="tap-touch-area" class="cell3 touch-area">
+                <div class="center">
+                    <h3>Tap &amp; Long Hold</h3>
+                    <div class="touch-area-label" data-role="log"></div>
+                </div>
+            </div>
+            <div data-view="drag-touch-area" class="cell3 touch-area">
+                <div class="center">
+                    <h3>Drag</h3>
+                </div>
+            </div>
+            <div data-view="transform-touch-area" class="cell3 touch-area">
+                <div class="center">
+                    <h3>Pinch and zoom</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div data-view="slide" data-name="touch-abstraction" class="slide-touch-abstraction" data-background-class="touch-background">
+        <h2 class="title-margin">Touch Gestures</h2>
+
+        <div class="row">
+            <div data-view="transform-touch-area" data-repeat="3" data-no-restore class="cell3 touch-area-container">
+                <div data-view="drag-touch-area" data-no-restore class="touch-area-inner">
+                    <div data-view="tap-touch-area" class="touch-area">
+                        <div class="center">
+                            <h3>Combined</h3>
+                            <div class="touch-area-label" data-role="log"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div data-view="slide" data-name="touch-scroll" class="slide-touch-scroll" data-background-class="touch-background">
+        <h2 class="title-margin">Touch Scrolling</h2>
+
+        <div class="scroll-area-container" data-view="transform-touch-area">
+            <div class="scroll-area" data-view="scroll" data-type="vertical">
+                <div class="scroll-area-content" data-role="content" data-view="list" data-layout="vertical">
+                    <div class="category-line" data-repeat="6">
+                        <h3 data-content="Line 1,Line 2,Line 3,Line 4,Line 5,Line 6"></h3>
+                        <div data-view="scroll" class="item-line" data-type="horizontal">
+                            <div data-role="content" data-view="list" data-layout="horizontal">
+                                <div data-view="tap-drag-touch-area" data-repeat="10" class="item-container-view">
+                                    <div data-role="content" class="slide-touch-scroll-item-view">
+                                        <div class="center">
+                                            <div class="touch-area-label" data-role="log"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div data-view="slide" data-name="touch" class="slide-touch" data-background-class="touch-background">
+        <h2 class="title-margin">Desktop &amp; Mobile</h2>
+
+        <ul class="smaller-space bordered-list">
+            <li class="title">Abstraction layer</li>
+            <li class="small">Mouse</li>
+            <li class="small">Touch</li>
+            <li class="small">
+                Pointers
+                <div class="small">Only in IE10</div>
+            </li>
+        </ul>
+
+        <div class="slide-link">
+            <a data-view="link" href="http://www.w3.org/TR/touch-events/">http://www.w3.org/TR/touch-events/</a>
+            <a data-view="link" href="http://www.w3.org/TR/pointerevents/">http://www.w3.org/TR/pointerevents/</a>
+        </div>
+
+    </div>
+
+    <div data-view="slide" data-name="touch-framework" class="slide-touch-framework" data-background-class="touch-background">
+        <h2 class="title-margin">User Interaction Framework</h2>
+
+        <ul class="smaller-space bordered-list">
+
+            <li>Native CSS &amp; JS events
+                <div class="small">But only in IE10</div>
+            </li>
+            <li>Check gestures on ancestors</li>
+            <li>Capture touch events</li>
+            <li>Visualize touch pointers</li>
+        </ul>
+
+    </div>
+
+    <div data-view="slide" data-name="performance-animations" class="slide-performance-animations" data-background-class="performance-background">
+        <h2 class="title-margin">Performance</h2>
+
+        <ul class="smaller-space bordered-list">
+            <li class="title">Smooth Animations</li>
+            <li class="small">transforms</li>
+            <li class="small">opacity</li>
+            <li class="small">filters</li>
+        </ul>
+    </div>
+
+    <div data-view="slide" data-name="performance-layout" class="slide-performance-layout" data-background-class="performance-background">
+        <h2 class="title-margin">Performance</h2>
+
+        <ul class="smaller-space bordered-list">
+            <li class="title">Layout</li>
+            <li class="small">Absolute positioning</li>
+            <li class="small">Children count per element</li>
+            <li class="small">Avoid box-shadows on dynamic content</li>
+            <li class="small">Avoid layout readbacks
+                <div class="small">(e.g. clientWidth/clientHeight)</div>
+            </li>
+        </ul>
+
+        <ul class="smaller-space bordered-list">
+            <li class="title">Lazy CSS changes</li>
+            <li class="small">Apply CSS in single step</li>
+            <li class="small">Use requestAnimationFrame</li>
+        </ul>
+    </div>
+
+    <div data-view="slide" data-name="performance-css" class="slide-performance-css" data-background-class="performance-background">
+        <h2 class="title-margin">Performance</h2>
+
+        <ul class="smaller-space bordered-list">
+            <li class="title">CSS Selector</li>
+            <li class="small">Use specific class names</li>
+            <li class="small">Avoid deep indirect ancestors
+                <div class="small">(e.g. body.state .my-object { })</div>
+            </li>
+            <li class="small">Avoid generic selectors
+                <div class="small">(e.g. .calendar-view div { })</div>
+            </li>
+            <li class="small">Sibling selectors are expensive</li>
+        </ul>
+
+    </div>
+
+
+    <div data-view="slide" data-name="performance-transforms" class="slide-performance-transforms" data-background-class="performance-background">
+        <h2 class="title-margin">Performance</h2>
+
+        <ul class="smaller-space bordered-list">
+            <li class="title">3D transforms</li>
+            <li class="small">Paint cache</li>
+            <li class="small">Use with "opacity" and "filter"</li>
+            <li class="small">Avoid switching non-3D to 3D</li>
+            <li class="small">Avoid changing z-index
+                <div class="small">transform-style: preserve-3d</div>
+            </li>
+        </ul>
+    </div>
+
+    <div data-view="slide" data-name="animations" class="slide-animations" data-background-class="performance-background">
+        <h2 class="title-margin">Animations</h2>
+
+        <ul class="smaller-space bordered-list">
+            <li>Spritesheet animations</li>
+            <li class="small">Overlapped bitmaps</li>
+            <li>Advance with requestAnimationFrame</li>
+            <li class="small">Toggle with opacity</li>
+        </ul>
+
+        <img src="images/animation.png" height="250px" />
+
+    </div>
+
+    <div data-view="slide" data-name="animations-spritesheet" class="slide-animations-spritesheet">
+        <h2 class="title-margin">Spritesheet</h2>
+
+        <img class="css-spritesheet-preview" src="images/spritesheet_preview.jpg" />
+
+        <a data-view="link" class="slide-link" href="http://www.adobe.com/inspire/2012/12/ten-steps-flash-cs6.html">http://www.adobe.com/inspire/2012/12/ten-steps-flash-cs6.html</a>
+
+    </div>
+
+    <div data-view="slide-animation" data-name="animations-demo" class="slide-animations-demo" data-background-class="performance-background">
+        <h2 class="title-margin">Animations Demo</h2>
+
+        <div class="buttons-view">
+            <div class="button-view" data-role="playButton" data-view="highlight-touch"><div class="title-view">Play</div></div>
+            <div class="button-view" data-role="resetButton" data-view="highlight-touch">Reset</div>
+        </div>
+
+        <div class="row">
+            <div data-repeat="2" class="cell2">
+                <div class="animation-transform-touch-area">
+                    <div data-view="transform-touch-area" data-no-restore data-no-touch-capture>
+                        <div data-view="animation" data-src="images/character.png" data-state="1" data-time="0.2" data-advance="auto">
+
+                <script type="animation/json" data-role="frameData">
+{"frames": [
+
+{
+    "filename": "Symbol 1 instance 10000",
+    "frame": {"x":0,"y":551,"w":276,"h":256},
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": {"x":5,"y":6,"w":321,"h":288},
+    "sourceSize": {"w":321,"h":288}
+}
+,{
+    "filename": "Symbol 1 instance 10001",
+    "frame": {"x":278,"y":544,"w":277,"h":260},
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": {"x":4,"y":6,"w":321,"h":288},
+    "sourceSize": {"w":321,"h":288}
+}
+,{
+    "filename": "Symbol 1 instance 10002",
+    "frame": {"x":0,"y":285,"w":277,"h":265},
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": {"x":3,"y":5,"w":321,"h":288},
+    "sourceSize": {"w":321,"h":288}
+}
+,{
+    "filename": "Symbol 1 instance 10003",
+    "frame": {"x":1705,"y":831,"w":277,"h":268},
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": {"x":3,"y":5,"w":321,"h":288},
+    "sourceSize": {"w":321,"h":288}
+}
+,{
+    "filename": "Symbol 1 instance 10004",
+    "frame": {"x":1706,"y":559,"w":278,"h":271},
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": {"x":2,"y":5,"w":321,"h":288},
+    "sourceSize": {"w":321,"h":288}
+}
+,{
+    "filename": "Symbol 1 instance 10005",
+    "frame": {"x":1714,"y":283,"w":278,"h":275},
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": {"x":2,"y":4,"w":321,"h":288},
+    "sourceSize": {"w":321,"h":288}
+}
+,{
+    "filename": "Symbol 1 instance 10006",
+    "frame": {"x":1434,"y":280,"w":279,"h":278},
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": {"x":2,"y":4,"w":321,"h":288},
+    "sourceSize": {"w":321,"h":288}
+}
+,{
+    "filename": "Symbol 1 instance 10007",
+    "frame": {"x":573,"y":284,"w":281,"h":280},
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": {"x":2,"y":4,"w":321,"h":288},
+    "sourceSize": {"w":321,"h":288}
+}
+,{
+    "filename": "Symbol 1 instance 10008",
+    "frame": {"x":1722,"y":0,"w":283,"h":282},
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": {"x":2,"y":4,"w":321,"h":288},
+    "sourceSize": {"w":321,"h":288}
+}
+,{
+    "filename": "Symbol 1 instance 10009",
+    "frame": {"x":573,"y":0,"w":284,"h":283},
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": {"x":3,"y":4,"w":321,"h":288},
+    "sourceSize": {"w":321,"h":288}
+}
+,{
+    "filename": "Symbol 1 instance 10010",
+    "frame": {"x":0,"y":0,"w":286,"h":284},
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": {"x":3,"y":4,"w":321,"h":288},
+    "sourceSize": {"w":321,"h":288}
+}
+,{
+    "filename": "Symbol 1 instance 10011",
+    "frame": {"x":287,"y":0,"w":285,"h":284},
+    "rotated": true,
+    "trimmed": true,
+    "spriteSourceSize": {"x":1,"y":3,"w":321,"h":288},
+    "sourceSize": {"w":321,"h":288}
+}
+,{
+    "filename": "Symbol 1 instance 10012",
+    "frame": {"x":858,"y":0,"w":286,"h":281},
+    "rotated": true,
+    "trimmed": true,
+    "spriteSourceSize": {"x":0,"y":2,"w":321,"h":288},
+    "sourceSize": {"w":321,"h":288}
+}
+,{
+    "filename": "Symbol 1 instance 10013",
+    "frame": {"x":1434,"y":0,"w":287,"h":279},
+    "rotated": true,
+    "trimmed": true,
+    "spriteSourceSize": {"x":0,"y":1,"w":321,"h":288},
+    "sourceSize": {"w":321,"h":288}
+}
+,{
+    "filename": "Symbol 1 instance 10014",
+    "frame": {"x":1145,"y":0,"w":288,"h":279},
+    "rotated": true,
+    "trimmed": true,
+    "spriteSourceSize": {"x":0,"y":0,"w":321,"h":288},
+    "sourceSize": {"w":321,"h":288}
+}
+,{
+    "filename": "Symbol 1 instance 10015",
+    "frame": {"x":1145,"y":280,"w":288,"h":276},
+    "rotated": true,
+    "trimmed": true,
+    "spriteSourceSize": {"x":2,"y":0,"w":321,"h":288},
+    "sourceSize": {"w":321,"h":288}
+}
+,{
+    "filename": "Symbol 1 instance 10016",
+    "frame": {"x":858,"y":282,"w":274,"h":288},
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": {"x":4,"y":0,"w":321,"h":288},
+    "sourceSize": {"w":321,"h":288}
+}
+,{
+    "filename": "Symbol 1 instance 10017",
+    "frame": {"x":1133,"y":557,"w":286,"h":271},
+    "rotated": true,
+    "trimmed": true,
+    "spriteSourceSize": {"x":6,"y":1,"w":321,"h":288},
+    "sourceSize": {"w":321,"h":288}
+}
+,{
+    "filename": "Symbol 1 instance 10018",
+    "frame": {"x":1420,"y":559,"w":285,"h":267},
+    "rotated": true,
+    "trimmed": true,
+    "spriteSourceSize": {"x":10,"y":2,"w":321,"h":288},
+    "sourceSize": {"w":321,"h":288}
+}
+,{
+    "filename": "Symbol 1 instance 10019",
+    "frame": {"x":1420,"y":827,"w":284,"h":263},
+    "rotated": true,
+    "trimmed": true,
+    "spriteSourceSize": {"x":14,"y":3,"w":321,"h":288},
+    "sourceSize": {"w":321,"h":288}
+}
+,{
+    "filename": "Symbol 1 instance 10020",
+    "frame": {"x":278,"y":285,"w":281,"h":258},
+    "rotated": true,
+    "trimmed": true,
+    "spriteSourceSize": {"x":18,"y":5,"w":321,"h":288},
+    "sourceSize": {"w":321,"h":288}
+}
+,{
+    "filename": "Symbol 1 instance 10021",
+    "frame": {"x":556,"y":565,"w":279,"h":253},
+    "rotated": true,
+    "trimmed": true,
+    "spriteSourceSize": {"x":23,"y":7,"w":321,"h":288},
+    "sourceSize": {"w":321,"h":288}
+}
+,{
+    "filename": "Symbol 1 instance 10022",
+    "frame": {"x":277,"y":805,"w":276,"h":248},
+    "rotated": true,
+    "trimmed": true,
+    "spriteSourceSize": {"x":28,"y":10,"w":321,"h":288},
+    "sourceSize": {"w":321,"h":288}
+}
+,{
+    "filename": "Symbol 1 instance 10023",
+    "frame": {"x":0,"y":1523,"w":273,"h":242},
+    "rotated": true,
+    "trimmed": true,
+    "spriteSourceSize": {"x":34,"y":12,"w":321,"h":288},
+    "sourceSize": {"w":321,"h":288}
+}
+,{
+    "filename": "Symbol 1 instance 10024",
+    "frame": {"x":0,"y":1766,"w":270,"h":236},
+    "rotated": true,
+    "trimmed": true,
+    "spriteSourceSize": {"x":39,"y":15,"w":321,"h":288},
+    "sourceSize": {"w":321,"h":288}
+}
+,{
+    "filename": "Symbol 1 instance 10025",
+    "frame": {"x":522,"y":1661,"w":232,"h":266},
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": {"x":43,"y":18,"w":321,"h":288},
+    "sourceSize": {"w":321,"h":288}
+}
+,{
+    "filename": "Symbol 1 instance 10026",
+    "frame": {"x":1530,"y":1345,"w":262,"h":228},
+    "rotated": true,
+    "trimmed": true,
+    "spriteSourceSize": {"x":47,"y":21,"w":321,"h":288},
+    "sourceSize": {"w":321,"h":288}
+}
+,{
+    "filename": "Symbol 1 instance 10027",
+    "frame": {"x":1530,"y":1574,"w":259,"h":225},
+    "rotated": true,
+    "trimmed": true,
+    "spriteSourceSize": {"x":49,"y":24,"w":321,"h":288},
+    "sourceSize": {"w":321,"h":288}
+}
+,{
+    "filename": "Symbol 1 instance 10028",
+    "frame": {"x":1524,"y":1800,"w":256,"h":224},
+    "rotated": true,
+    "trimmed": true,
+    "spriteSourceSize": {"x":50,"y":26,"w":321,"h":288},
+    "sourceSize": {"w":321,"h":288}
+}
+,{
+    "filename": "Symbol 1 instance 10029",
+    "frame": {"x":1245,"y":1809,"w":253,"h":223},
+    "rotated": true,
+    "trimmed": true,
+    "spriteSourceSize": {"x":51,"y":28,"w":321,"h":288},
+    "sourceSize": {"w":321,"h":288}
+}
+,{
+    "filename": "Symbol 1 instance 10030",
+    "frame": {"x":990,"y":1796,"w":254,"h":225},
+    "rotated": true,
+    "trimmed": true,
+    "spriteSourceSize": {"x":51,"y":27,"w":321,"h":288},
+    "sourceSize": {"w":321,"h":288}
+}
+,{
+    "filename": "Symbol 1 instance 10031",
+    "frame": {"x":1269,"y":1582,"w":254,"h":226},
+    "rotated": true,
+    "trimmed": true,
+    "spriteSourceSize": {"x":51,"y":26,"w":321,"h":288},
+    "sourceSize": {"w":321,"h":288}
+}
+,{
+    "filename": "Symbol 1 instance 10032",
+    "frame": {"x":1790,"y":1616,"w":255,"h":228},
+    "rotated": true,
+    "trimmed": true,
+    "spriteSourceSize": {"x":51,"y":25,"w":321,"h":288},
+    "sourceSize": {"w":321,"h":288}
+}
+,{
+    "filename": "Symbol 1 instance 10033",
+    "frame": {"x":1793,"y":1359,"w":229,"h":256},
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": {"x":51,"y":23,"w":321,"h":288},
+    "sourceSize": {"w":321,"h":288}
+}
+,{
+    "filename": "Symbol 1 instance 10034",
+    "frame": {"x":1808,"y":1100,"w":232,"h":258},
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": {"x":50,"y":21,"w":321,"h":288},
+    "sourceSize": {"w":321,"h":288}
+}
+,{
+    "filename": "Symbol 1 instance 10035",
+    "frame": {"x":755,"y":1681,"w":234,"h":258},
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": {"x":49,"y":20,"w":321,"h":288},
+    "sourceSize": {"w":321,"h":288}
+}
+,{
+    "filename": "Symbol 1 instance 10036",
+    "frame": {"x":1010,"y":1558,"w":258,"h":237},
+    "rotated": true,
+    "trimmed": true,
+    "spriteSourceSize": {"x":47,"y":19,"w":321,"h":288},
+    "sourceSize": {"w":321,"h":288}
+}
+,{
+    "filename": "Symbol 1 instance 10037",
+    "frame": {"x":1270,"y":1340,"w":259,"h":241},
+    "rotated": true,
+    "trimmed": true,
+    "spriteSourceSize": {"x":45,"y":18,"w":321,"h":288},
+    "sourceSize": {"w":321,"h":288}
+}
+,{
+    "filename": "Symbol 1 instance 10038",
+    "frame": {"x":1548,"y":1100,"w":259,"h":244},
+    "rotated": true,
+    "trimmed": true,
+    "spriteSourceSize": {"x":43,"y":17,"w":321,"h":288},
+    "sourceSize": {"w":321,"h":288}
+}
+,{
+    "filename": "Symbol 1 instance 10039",
+    "frame": {"x":274,"y":1661,"w":247,"h":258},
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": {"x":41,"y":17,"w":321,"h":288},
+    "sourceSize": {"w":321,"h":288}
+}
+,{
+    "filename": "Symbol 1 instance 10040",
+    "frame": {"x":759,"y":1424,"w":250,"h":256},
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": {"x":38,"y":18,"w":321,"h":288},
+    "sourceSize": {"w":321,"h":288}
+}
+,{
+    "filename": "Symbol 1 instance 10041",
+    "frame": {"x":1014,"y":1303,"w":255,"h":254},
+    "rotated": true,
+    "trimmed": true,
+    "spriteSourceSize": {"x":35,"y":18,"w":321,"h":288},
+    "sourceSize": {"w":321,"h":288}
+}
+,{
+    "filename": "Symbol 1 instance 10042",
+    "frame": {"x":505,"y":1402,"w":253,"h":258},
+    "rotated": true,
+    "trimmed": true,
+    "spriteSourceSize": {"x":32,"y":20,"w":321,"h":288},
+    "sourceSize": {"w":321,"h":288}
+}
+,{
+    "filename": "Symbol 1 instance 10043",
+    "frame": {"x":762,"y":1162,"w":251,"h":261},
+    "rotated": true,
+    "trimmed": true,
+    "spriteSourceSize": {"x":30,"y":21,"w":321,"h":288},
+    "sourceSize": {"w":321,"h":288}
+}
+,{
+    "filename": "Symbol 1 instance 10044",
+    "frame": {"x":1284,"y":1091,"w":263,"h":248},
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": {"x":28,"y":23,"w":321,"h":288},
+    "sourceSize": {"w":321,"h":288}
+}
+,{
+    "filename": "Symbol 1 instance 10045",
+    "frame": {"x":1014,"y":1057,"w":269,"h":245},
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": {"x":25,"y":25,"w":321,"h":288},
+    "sourceSize": {"w":321,"h":288}
+}
+,{
+    "filename": "Symbol 1 instance 10046",
+    "frame": {"x":0,"y":1281,"w":275,"h":241},
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": {"x":23,"y":28,"w":321,"h":288},
+    "sourceSize": {"w":321,"h":288}
+}
+,{
+    "filename": "Symbol 1 instance 10047",
+    "frame": {"x":524,"y":1121,"w":237,"h":280},
+    "rotated": true,
+    "trimmed": true,
+    "spriteSourceSize": {"x":22,"y":31,"w":321,"h":288},
+    "sourceSize": {"w":321,"h":288}
+}
+,{
+    "filename": "Symbol 1 instance 10048",
+    "frame": {"x":780,"y":876,"w":233,"h":285},
+    "rotated": true,
+    "trimmed": true,
+    "spriteSourceSize": {"x":20,"y":34,"w":321,"h":288},
+    "sourceSize": {"w":321,"h":288}
+}
+,{
+    "filename": "Symbol 1 instance 10049",
+    "frame": {"x":276,"y":1281,"w":228,"h":290},
+    "rotated": true,
+    "trimmed": true,
+    "spriteSourceSize": {"x":19,"y":38,"w":321,"h":288},
+    "sourceSize": {"w":321,"h":288}
+}
+,{
+    "filename": "Symbol 1 instance 10050",
+    "frame": {"x":1061,"y":829,"w":295,"h":227},
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": {"x":17,"y":38,"w":321,"h":288},
+    "sourceSize": {"w":321,"h":288}
+}
+,{
+    "filename": "Symbol 1 instance 10051",
+    "frame": {"x":224,"y":1054,"w":299,"h":226},
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": {"x":16,"y":38,"w":321,"h":288},
+    "sourceSize": {"w":321,"h":288}
+}
+,{
+    "filename": "Symbol 1 instance 10052",
+    "frame": {"x":554,"y":819,"w":225,"h":301},
+    "rotated": true,
+    "trimmed": true,
+    "spriteSourceSize": {"x":16,"y":38,"w":321,"h":288},
+    "sourceSize": {"w":321,"h":288}
+}
+,{
+    "filename": "Symbol 1 instance 10053",
+    "frame": {"x":836,"y":571,"w":224,"h":304},
+    "rotated": true,
+    "trimmed": true,
+    "spriteSourceSize": {"x":15,"y":38,"w":321,"h":288},
+    "sourceSize": {"w":321,"h":288}
+}
+,{
+    "filename": "Symbol 1 instance 10054",
+    "frame": {"x":0,"y":808,"w":223,"h":306},
+    "rotated": true,
+    "trimmed": true,
+    "spriteSourceSize": {"x":15,"y":38,"w":321,"h":288},
+    "sourceSize": {"w":321,"h":288}
+}],
+"meta": {
+    "app": "Adobe Flash CS6",
+    "version": "12.0.0.481",
+    "image": "character.png",
+    "format": "RGBA8888",
+    "size": {"w":2048,"h":2048},
+    "scale": "1"
+}
+}
+                            </script>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div data-view="slide" data-name="performance-removing-content" class="slide-performance-removing-content" data-background-class="performance-background">
+        <h2 class="title-margin">Performance</h2>
+
+        <ul class="smaller-space bordered-list">
+            <li class="title">Removing content</li>
+            <li class="small gauge-view-container">Removing from DOM
+                <div class="gauge-view val4-gauge-view"><div class="gauge-view-indicator"></div></div>
+                <div class="small">No memory</div>
+            </li>
+            <li class="small gauge-view-container">display: none
+                <div class="gauge-view val3-gauge-view"><div class="gauge-view-indicator"></div></div>
+                <div class="small">DOM memory</div>
+            </li>
+            <li class="small gauge-view-container">visibility: hidden
+                <div class="gauge-view val2-gauge-view"><div class="gauge-view-indicator"></div></div>
+                <div class="small">Layout memory</div>
+            </li>
+            <li class="small gauge-view-container">opacity: 0
+                <div class="gauge-view val1-gauge-view"><div class="gauge-view-indicator"></div></div>
+                <div class="small">GPU memory</div>
+            </li>
+        </ul>
+
+    </div>
+
+    <div data-view="slide" data-name="worker-threads" class="slide-worker-threads" data-background-class="performance-background">
+        <h2 class="title-margin">Worker Threads</h2>
+
+        <ul class="smaller-space bordered-list">
+            <li class="small">Message passing</li>
+            <li class="small">Cross-compile
+                <div class="small"><a data-view="link" href="http://emscripten.org/">Emscripten</a></div>
+            </li>
+            <li class="small">Asynchronous</li>
+        </ul>
+
+        <a data-view="link" class="slide-link" href="http://www.w3.org/TR/workers/">http://www.w3.org/TR/workers/</a>
+
+    </div>
+
+    <div data-view="slide" data-name="end">
+        <div class="center">
+            <h1>Thanks!</h1>
+            <ul>
+                <li><a data-view="link" href="http://blogs.adobe.com/webplatform">blogs.adobe.com/webplatform</a></li>
+                <li><a data-view="link" href="https://twitter.com/achicu">@achicu</a></li>
+            </ul>
+            <br />
+            <img src="images/adobe.png" />
+        </div>
+    </div>
+
+</div>
+
+        
+    </div>
+
+    <div id="app-body">
+
+        <div id="loading">
+            <div>
+                Loading presenter ...
+            </div>
+        </div>
+
+        
+
+        
+            
+                    <div id="qunit"></div>
+
+    <script>
+    (function() {
+        // Remove the loading indicator.
+        var loadingEl = document.getElementById("loading");
+        loadingEl.parentNode.removeChild(loadingEl);
+    })();
+    </script>
+
+            
+        
+
+    </div>
+
+    
+        <script src="third_party/jquery/jquery-1.8.0.min.js"></script>
+    
+        <script src="http://code.jquery.com/qunit/qunit-1.10.0.js"></script>
+    
+        <script src="lib/utils/utils.js"></script>
+    
+        <script src="lib/utils/event_dispatcher.js"></script>
+    
+        <script src="lib/views/view.js"></script>
+    
+        <script src="lib/views/view_layout.js"></script>
+    
+        <script src="lib/views/horizontal_layout.js"></script>
+    
+        <script src="lib/views/vertical_layout.js"></script>
+    
+        <script src="lib/views/touch.js"></script>
+    
+        <script src="lib/views/touch_view_manager.js"></script>
+    
+        <script src="lib/views/touch_view.js"></script>
+    
+        <script src="lib/views/gesture_view.js"></script>
+    
+        <script src="lib/views/pan_view.js"></script>
+    
+        <script src="lib/views/transform_view.js"></script>
+    
+        <script src="lib/views/scroll_view.js"></script>
+    
+        <script src="lib/views/step_scroll_view.js"></script>
+    
+        <script src="lib/views/list_item_view.js"></script>
+    
+        <script src="lib/views/highlight_touch_view.js"></script>
+    
+        <script src="lib/views/drag_view.js"></script>
+    
+        <script src="lib/views/draggable_view.js"></script>
+    
+        <script src="lib/views/info_view.js"></script>
+    
+        <script src="lib/views/popup_view.js"></script>
+    
+        <script src="lib/views/dialog_view.js"></script>
+    
+        <script src="lib/views/main_view.js"></script>
+    
+        <script src="lib/application.js"></script>
+    
+        <script src="lib/controls/base_control.js"></script>
+    
+        <script src="lib/controls/range_control.js"></script>
+    
+        <script src="lib/utils/local_storage.js"></script>
+    
+        <script src="lib/utils/timer.js"></script>
+    
+        <script src="lib/presenter/presenter.js"></script>
+    
+        <script src="lib/presenter/template_view.js"></script>
+    
+        <script src="lib/presenter/slide_view.js"></script>
+    
+        <script src="lib/presenter/slide_content_view.js"></script>
+    
+        <script src="lib/presenter/slides_list_view.js"></script>
+    
+        <script src="lib/presenter/list_view.js"></script>
+    
+        <script src="lib/presenter/link_view.js"></script>
+    
+        <script src="lib/presenter/progress_view.js"></script>
+    
+        <script src="lib/presenter/expandable_view.js"></script>
+    
+        <script src="lib/presenter/info_bar_view.js"></script>
+    
+        <script src="lib/presenter/time_report_view.js"></script>
+    
+        <script src="lib/slides/slide_css_demo_view.js"></script>
+    
+        <script src="lib/slides/touch_areas.js"></script>
+    
+        <script src="lib/slides/animation_view.js"></script>
+    
+        <script src="lib/slides/slide_animation_view.js"></script>
+    
+</body>
+</html>

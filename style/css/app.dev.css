@@ -1,0 +1,1577 @@
+/*
+ * Copyright (c) 2012 Adobe Systems Incorporated. All rights reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/*
+ * Copyright (c) 2012 Adobe Systems Incorporated. All rights reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/*
+ * Copyright (c) 2012 Adobe Systems Incorporated. All rights reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+@font-face {
+  font-family: "source";
+  src: url("../font/SourceSansPro-Regular.otf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "source-l";
+  src: url("../font/SourceSansPro-Light.otf");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "source-sb";
+  src: url("../font/SourceSansPro-Semibold.otf");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/achicu\/code\/css-presenter\/style\/src\/framework\.scss}line{font-family:\0000340}}
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/achicu\/code\/css-presenter\/style\/src\/framework\.scss}line{font-family:\0000345}}
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  background: -webkit-radial-gradient(#494d4e 0%, rgba(52, 55, 55, 0.61) 80%, rgba(51, 54, 54, 0.65) 100%), url(../../images/bg.jpg) no-repeat center;
+  background: -moz-radial-gradient(#494d4e 0%, rgba(52, 55, 55, 0.61) 80%, rgba(51, 54, 54, 0.65) 100%), url(../../images/bg.jpg) no-repeat center;
+  background: -ms-radial-gradient(#494d4e 0%, rgba(52, 55, 55, 0.61) 80%, rgba(51, 54, 54, 0.65) 100%), url(../../images/bg.jpg) no-repeat center;
+  background: -o-radial-gradient(#494d4e 0%, rgba(52, 55, 55, 0.61) 80%, rgba(51, 54, 54, 0.65) 100%), url(../../images/bg.jpg) no-repeat center;
+  background: radial-gradient(#494d4e 0%, rgba(52, 55, 55, 0.61) 80%, rgba(51, 54, 54, 0.65) 100%), url(../../images/bg.jpg) no-repeat center;
+  background-size: cover;
+  font-family: "source";
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/achicu\/code\/css-presenter\/style\/src\/framework\.scss}line{font-family:\0000356}}
+#app-body {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font: 14px "Source Sans Pro", "source", helvetica, arial, sans-serif;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/achicu\/code\/css-presenter\/style\/src\/framework\.scss}line{font-family:\0000366}}
+h1, h2, h3, h4, h5, h6 {
+  color: #000;
+  font-family: "Source Sans Pro", "source-l", helvetica, arial, sans-serif;
+  margin: 0;
+  font-weight: 400;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/achicu\/code\/css-presenter\/style\/src\/framework\.scss}line{font-family:\0000373}}
+#components {
+  display: none;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/achicu\/code\/css-presenter\/style\/src\/framework\.scss}line{font-family:\0000377}}
+#loading {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/achicu\/code\/css-presenter\/style\/src\/framework\.scss}line{font-family:\0000384}}
+#loading > div {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-size: 1.5em;
+  -webkit-transform: translate3d(0px, -50%, 0px);
+  -moz-transform: translate3d(0px, -50%, 0px);
+  -ms-transform: translate3d(0px, -50%, 0px);
+  -o-transform: translate3d(0px, -50%, 0px);
+  transform: translate3d(0px, -50%, 0px);
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/achicu\/code\/css-presenter\/style\/src\/framework\.scss}line{font-family:\0000395}}
+#main {
+  background: #f8f8f8;
+  width: 100%;
+  height: 100%;
+}
+
+/* -------- VIEW CLASSES ------- */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/achicu\/code\/css-presenter\/style\/src\/framework\.scss}line{font-family:\00003103}}
+.touch-preview {
+  position: absolute;
+  border-radius: 50px;
+  width: 50px;
+  height: 50px;
+  left: -25px;
+  top: -25px;
+  background: rgba(255, 255, 255, 0.4);
+  opacity: 1;
+  pointer-events: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/achicu\/code\/css-presenter\/style\/src\/framework\.scss}line{font-family:\00003115}}
+.touch-preview.touch-end {
+  opacity: 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/achicu\/code\/css-presenter\/style\/src\/framework\.scss}line{font-family:\00003120}}
+.view {
+  z-index: 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/achicu\/code\/css-presenter\/style\/src\/framework\.scss}line{font-family:\00003124}}
+.touch-view {
+  -webkit-touch-action: none;
+  -moz-touch-action: none;
+  -ms-touch-action: none;
+  -o-touch-action: none;
+  touch-action: none;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/achicu\/code\/css-presenter\/style\/src\/framework\.scss}line{font-family:\00003128}}
+.view-layout {
+  position: relative;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/achicu\/code\/css-presenter\/style\/src\/framework\.scss}line{font-family:\00003132}}
+.dialog-view {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 400;
+  background-color: white;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/achicu\/code\/css-presenter\/style\/src\/framework\.scss}line{font-family:\00003142}}
+.content-view {
+  -webkit-transform: translateZ(0px);
+  -moz-transform: translateZ(0px);
+  -ms-transform: translateZ(0px);
+  -o-transform: translateZ(0px);
+  transform: translateZ(0px);
+  background: url(../img/color_bg.png);
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/achicu\/code\/css-presenter\/style\/src\/framework\.scss}line{font-family:\00003147}}
+.scroll-view {
+  overflow: hidden;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/achicu\/code\/css-presenter\/style\/src\/framework\.scss}line{font-family:\00003151}}
+.highlight-touch-view {
+  position: relative;
+  -webkit-transform: translateZ(0px);
+  -moz-transform: translateZ(0px);
+  -ms-transform: translateZ(0px);
+  -o-transform: translateZ(0px);
+  transform: translateZ(0px);
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/achicu\/code\/css-presenter\/style\/src\/framework\.scss}line{font-family:\00003157}}
+.draggable-view.draggable-view-dragging {
+  opacity: 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/achicu\/code\/css-presenter\/style\/src\/framework\.scss}line{font-family:\00003162}}
+.draggable-view-clone {
+  position: absolute;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/achicu\/code\/css-presenter\/style\/src\/framework\.scss}line{font-family:\00003166}}
+.highlight-touch-view-cover {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  visibility: hidden;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/achicu\/code\/css-presenter\/style\/src\/framework\.scss}line{font-family:\00003177}}
+.info-view {
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  height: 30%;
+  -webkit-transform: translateZ(0px);
+  -moz-transform: translateZ(0px);
+  -ms-transform: translateZ(0px);
+  -o-transform: translateZ(0px);
+  transform: translateZ(0px);
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/achicu\/code\/css-presenter\/style\/src\/framework\.scss}line{font-family:\00003185}}
+.expandable-view {
+  overflow: hidden;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/achicu\/code\/css-presenter\/style\/src\/framework\.scss}line{font-family:\00003189}}
+.popup-view-background {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  background: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  -webkit-transition: opacity 0.3s linear;
+  -moz-transition: opacity 0.3s linear;
+  -ms-transition: opacity 0.3s linear;
+  -o-transition: opacity 0.3s linear;
+  transition: opacity 0.3s linear;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/achicu\/code\/css-presenter\/style\/src\/framework\.scss}line{font-family:\00003199}}
+.popup-view-background .popup-view {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border-radius: 5px;
+  background: rgba(0, 0, 0, 0.8);
+  -webkit-transition: -webkit-transform 0.3s ease-in-out, opacity 0.3s linear;
+  -moz-transition: -moz-transform 0.3s ease-in-out, opacity 0.3s linear;
+  -ms-transition: -ms-transform 0.3s ease-in-out, opacity 0.3s linear;
+  -o-transition: -o-transform 0.3s ease-in-out, opacity 0.3s linear;
+  transition: transform 0.3s ease-in-out, opacity 0.3s linear;
+  -webkit-transform-origin: 0 0;
+  -moz-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  -o-transform-origin: 0 0;
+  transform-origin: 0 0;
+  -webkit-transform: scale(0) translate3d(-50%, -50%, 0);
+  -moz-transform: scale(0) translate3d(-50%, -50%, 0);
+  -ms-transform: scale(0) translate3d(-50%, -50%, 0);
+  -o-transform: scale(0) translate3d(-50%, -50%, 0);
+  transform: scale(0) translate3d(-50%, -50%, 0);
+  opacity: 0;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/achicu\/code\/css-presenter\/style\/src\/framework\.scss}line{font-family:\00003212}}
+.popup-view-background.open {
+  opacity: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/achicu\/code\/css-presenter\/style\/src\/framework\.scss}line{font-family:\00003215}}
+.popup-view-background.open > .popup-view {
+  opacity: 1;
+  -webkit-transform: scale(1) translate3d(-50%, -50%, 0);
+  -moz-transform: scale(1) translate3d(-50%, -50%, 0);
+  -ms-transform: scale(1) translate3d(-50%, -50%, 0);
+  -o-transform: scale(1) translate3d(-50%, -50%, 0);
+  transform: scale(1) translate3d(-50%, -50%, 0);
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/achicu\/code\/css-presenter\/style\/src\/framework\.scss}line{font-family:\00003222}}
+.control-view {
+  -webkit-transform: translateZ(0px);
+  -moz-transform: translateZ(0px);
+  -ms-transform: translateZ(0px);
+  -o-transform: translateZ(0px);
+  transform: translateZ(0px);
+  overflow: hidden;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/achicu\/code\/css-presenter\/style\/src\/framework\.scss}line{font-family:\00003227}}
+.control-view.range-control-view > .range-ticks-bar {
+  position: absolute;
+  left: 0;
+  top: 20%;
+  bottom: 20%;
+  -webkit-transform: translateZ(0px);
+  -moz-transform: translateZ(0px);
+  -ms-transform: translateZ(0px);
+  -o-transform: translateZ(0px);
+  transform: translateZ(0px);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/achicu\/code\/css-presenter\/style\/src\/framework\.scss}line{font-family:\00003234}}
+.control-view.range-control-view > .range-ticks-bar > .range-tick {
+  position: absolute;
+  bottom: 0px;
+  width: 3px;
+  height: 50%;
+  -webkit-transform: translateZ(0px);
+  -moz-transform: translateZ(0px);
+  -ms-transform: translateZ(0px);
+  -o-transform: translateZ(0px);
+  transform: translateZ(0px);
+  background: #313131;
+  border-right: 2px solid rgba(255, 255, 255, 0.67);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/achicu\/code\/css-presenter\/style\/src\/framework\.scss}line{font-family:\00003244}}
+.control-view.range-control-view > .range-ticks-bar > .range-tick.first-range-tick, .control-view.range-control-view > .range-ticks-bar > .range-tick.last-range-tick {
+  height: 100%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/achicu\/code\/css-presenter\/style\/src\/framework\.scss}line{font-family:\00003250}}
+.control-view.range-control-view > .range-label-view {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/achicu\/code\/css-presenter\/style\/src\/framework\.scss}line{font-family:\00003257}}
+.control-view.range-control-view > .range-label-view > .range-label {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  width: 45px;
+  border-radius: 3px;
+  height: 50px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #212121;
+  color: white;
+  text-align: center;
+  -webkit-transform: translateZ(0px);
+  -moz-transform: translateZ(0px);
+  -ms-transform: translateZ(0px);
+  -o-transform: translateZ(0px);
+  transform: translateZ(0px);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/achicu\/code\/css-presenter\/style\/src\/framework\.scss}line{font-family:\00003271}}
+.control-view.range-control-view > .range-label-view > .range-label::before {
+  position: absolute;
+  width: 40px;
+  height: 50px;
+  left: -30px;
+  top: 35%;
+  width: 0;
+  height: 0;
+  border-top: 8px solid transparent;
+  border-right: 16px solid #212121;
+  border-bottom: 8px solid transparent;
+  content: "";
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/achicu\/code\/css-presenter\/style\/src\/framework\.scss}line{font-family:\00003285}}
+.control-view.range-control-view > .range-label-view > .range-label::after {
+  position: absolute;
+  right: -30px;
+  top: 35%;
+  width: 0;
+  height: 0;
+  border-top: 8px solid transparent;
+  border-left: 16px solid #212121;
+  border-bottom: 8px solid transparent;
+  content: "";
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/achicu\/code\/css-presenter\/style\/src\/framework\.scss}line{font-family:\00003301}}
+.progress-view {
+  position: absolute;
+  background-color: #aaa;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/achicu\/code\/css-presenter\/style\/src\/framework\.scss}line{font-family:\00003305}}
+.progress-view .progress-inner-view {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #555;
+  -webkit-transition: -webkit-transform 0.2s linear;
+  -moz-transition: -moz-transform 0.2s linear;
+  -ms-transition: -ms-transform 0.2s linear;
+  -o-transition: -o-transform 0.2s linear;
+  transition: transform 0.2s linear;
+  -webkit-transform-origin: 0 0;
+  -moz-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  -o-transform-origin: 0 0;
+  transform-origin: 0 0;
+  -webkit-transform: scaleX(0) translateZ(0px);
+  -moz-transform: scaleX(0) translateZ(0px);
+  -ms-transform: scaleX(0) translateZ(0px);
+  -o-transform: scaleX(0) translateZ(0px);
+  transform: scaleX(0) translateZ(0px);
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/achicu\/code\/css-presenter\/style\/src\/framework\.scss}line{font-family:\00003316}}
+.slides-list-view {
+  width: 100%;
+  height: 100%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/achicu\/code\/css-presenter\/style\/src\/framework\.scss}line{font-family:\00003320}}
+.slides-list-view .advance-button-view {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 60px;
+  height: 60px;
+  border: 3px dotted rgba(0, 0, 0, 0.3);
+  border-radius: 50px;
+  opacity: 0;
+  -webkit-transition: -webkit-opacity 0.1s linear;
+  -moz-transition: -moz-opacity 0.1s linear;
+  -ms-transition: -ms-opacity 0.1s linear;
+  -o-transition: -o-opacity 0.1s linear;
+  transition: opacity 0.1s linear;
+  pointer-events: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/achicu\/code\/css-presenter\/style\/src\/framework\.scss}line{font-family:\00003332}}
+.slides-list-view .advance-button-view.visible {
+  pointer-events: auto;
+  opacity: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/achicu\/code\/css-presenter\/style\/src\/framework\.scss}line{font-family:\00003338}}
+.slides-list-view .progress-view {
+  width: 100%;
+  bottom: 0px;
+  height: 2px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/achicu\/code\/css-presenter\/style\/src\/framework\.scss}line{font-family:\00003345}}
+.slide-content-view {
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  overflow: hidden;
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/achicu\/code\/css-presenter\/style\/src\/framework\.scss}line{font-family:\00003352}}
+.slide-content-view .slide-content-view-transform {
+  -webkit-transform-origin: 0 0;
+  -moz-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  -o-transform-origin: 0 0;
+  transform-origin: 0 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/achicu\/code\/css-presenter\/style\/src\/framework\.scss}line{font-family:\00003356}}
+.slide-content-view.visible {
+  visibility: visible;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/achicu\/code\/css-presenter\/style\/src\/framework\.scss}line{font-family:\00003361}}
+.state-view {
+  pointer-events: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/achicu\/code\/css-presenter\/style\/src\/framework\.scss}line{font-family:\00003364}}
+.state-view.state-open {
+  pointer-events: auto;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/achicu\/code\/css-presenter\/style\/src\/framework\.scss}line{font-family:\00003369}}
+.background-view {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  -webkit-transform: translateZ(0px);
+  -moz-transform: translateZ(0px);
+  -ms-transform: translateZ(0px);
+  -o-transform: translateZ(0px);
+  transform: translateZ(0px);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/achicu\/code\/css-presenter\/style\/src\/framework\.scss}line{font-family:\00003377}}
+.background-view .slide-background-view {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  -webkit-transform: translateZ(0px);
+  -moz-transform: translateZ(0px);
+  -ms-transform: translateZ(0px);
+  -o-transform: translateZ(0px);
+  transform: translateZ(0px);
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/achicu\/code\/css-presenter\/style\/src\/framework\.scss}line{font-family:\00003388}}
+.slide-view {
+  position: absolute;
+  width: 1024px;
+  height: 768px;
+  color: white;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
+  text-align: center;
+  font-size: 2.5em;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/achicu\/code\/css-presenter\/style\/src\/framework\.scss}line{font-family:\00003397}}
+.slide-view ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/achicu\/code\/css-presenter\/style\/src\/utils\.scss}line{font-family:\0000355}}
+.slide-view ul > li {
+  margin: 0;
+  padding: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/achicu\/code\/css-presenter\/style\/src\/framework\.scss}line{font-family:\00003401}}
+.slide-view .smaller-space {
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/achicu\/code\/css-presenter\/style\/src\/framework\.scss}line{font-family:\00003407}}
+.slide-view .bordered-list {
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 10px;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/achicu\/code\/css-presenter\/style\/src\/framework\.scss}line{font-family:\00003413}}
+.slide-view .bordered-list li {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/achicu\/code\/css-presenter\/style\/src\/framework\.scss}line{font-family:\00003416}}
+.slide-view .bordered-list li + li {
+  border-top: 1px solid rgba(255, 255, 255, 0.4);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/achicu\/code\/css-presenter\/style\/src\/framework\.scss}line{font-family:\00003419}}
+.slide-view .bordered-list li:nth-child(2n+1) {
+  background: rgba(255, 255, 255, 0.05);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/achicu\/code\/css-presenter\/style\/src\/framework\.scss}line{font-family:\00003423}}
+.slide-view .bordered-list li.small, .slide-view .bordered-list li .small {
+  font-size: 0.8em;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/achicu\/code\/css-presenter\/style\/src\/framework\.scss}line{font-family:\00003427}}
+.slide-view .bordered-list li.title {
+  background: rgba(0, 0, 0, 0.3);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/achicu\/code\/css-presenter\/style\/src\/framework\.scss}line{font-family:\00003431}}
+.slide-view .bordered-list li:first-of-type {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/achicu\/code\/css-presenter\/style\/src\/framework\.scss}line{font-family:\00003438}}
+.slide-view .simple-list {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/achicu\/code\/css-presenter\/style\/src\/framework\.scss}line{font-family:\00003442}}
+.slide-view .simple-list li {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/achicu\/code\/css-presenter\/style\/src\/framework\.scss}line{font-family:\00003446}}
+.slide-view .simple-list li.small {
+  font-size: 0.6em;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/achicu\/code\/css-presenter\/style\/src\/framework\.scss}line{font-family:\00003450}}
+.slide-view .simple-list li .small {
+  font-size: 0.8em;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/achicu\/code\/css-presenter\/style\/src\/framework\.scss}line{font-family:\00003456}}
+.slide-view .row {
+  width: 100%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/achicu\/code\/css-presenter\/style\/src\/framework\.scss}line{font-family:\00003458}}
+.slide-view .row .cell3 {
+  float: left;
+  width: 31.33%;
+  margin-left: 1%;
+  margin-right: 1%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/achicu\/code\/css-presenter\/style\/src\/framework\.scss}line{font-family:\00003464}}
+.slide-view .row .cell2 {
+  float: left;
+  width: 48%;
+  margin-left: 1%;
+  margin-right: 1%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/achicu\/code\/css-presenter\/style\/src\/framework\.scss}line{font-family:\00003470}}
+.slide-view .row .cell2-reduced {
+  float: left;
+  width: 29%;
+  margin-left: 1%;
+  margin-right: 1%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/achicu\/code\/css-presenter\/style\/src\/framework\.scss}line{font-family:\00003476}}
+.slide-view .row .cell2-reduced:first-of-type {
+  margin-left: 20%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/achicu\/code\/css-presenter\/style\/src\/framework\.scss}line{font-family:\00003479}}
+.slide-view .row .cell2-reduced:last-of-type {
+  margin-right: 20%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/achicu\/code\/css-presenter\/style\/src\/framework\.scss}line{font-family:\00003482}}
+.slide-view .row::after {
+  content: "";
+  clear: left;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/achicu\/code\/css-presenter\/style\/src\/framework\.scss}line{font-family:\00003489}}
+.slide-view h1, .slide-view h2, .slide-view h3, .slide-view h4, .slide-view h5, .slide-view h6,
+.slide-view a, .slide-view a:visited {
+  color: white;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/achicu\/code\/css-presenter\/style\/src\/framework\.scss}line{font-family:\00003494}}
+.slide-view .opacity-state {
+  -webkit-transition: opacity 0.2s linear;
+  -moz-transition: opacity 0.2s linear;
+  -ms-transition: opacity 0.2s linear;
+  -o-transition: opacity 0.2s linear;
+  transition: opacity 0.2s linear;
+  -webkit-transform: translateZ(0px);
+  -moz-transform: translateZ(0px);
+  -ms-transform: translateZ(0px);
+  -o-transform: translateZ(0px);
+  transform: translateZ(0px);
+  opacity: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/achicu\/code\/css-presenter\/style\/src\/framework\.scss}line{font-family:\00003499}}
+.slide-view .opacity-state.state-open {
+  opacity: 1;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/achicu\/code\/css-presenter\/style\/src\/framework\.scss}line{font-family:\00003506}}
+.timing-view .timing-content-buttons-view {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+  height: 50px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/achicu\/code\/css-presenter\/style\/src\/framework\.scss}line{font-family:\00003512}}
+.timing-view .timing-content-buttons-view .timing-content-button-view {
+  display: block;
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 150px;
+  padding: 10px;
+  font-size: 1.2em;
+  color: white;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
+  text-align: center;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.9);
+  background: rgba(0, 0, 0, 0.8);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/achicu\/code\/css-presenter\/style\/src\/framework\.scss}line{font-family:\00003529}}
+.timing-view .timing-content-view {
+  width: 100%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/achicu\/code\/css-presenter\/style\/src\/framework\.scss}line{font-family:\00003531}}
+.timing-view .timing-content-view .slide-item-view {
+  height: 41px;
+  border-top: 1px solid #ccc;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/achicu\/code\/css-presenter\/style\/src\/framework\.scss}line{font-family:\00003537}}
+.timing-view .timing-content-view .slide-item-view .slide-number {
+  z-index: 1;
+  width: 30px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/achicu\/code\/css-presenter\/style\/src\/framework\.scss}line{font-family:\00003544}}
+.timing-view .timing-content-view .slide-item-view .slide-name {
+  z-index: 1;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/achicu\/code\/css-presenter\/style\/src\/framework\.scss}line{font-family:\00003550}}
+.timing-view .timing-content-view .slide-item-view .slide-time {
+  z-index: 1;
+  width: 30px;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-weight: bold;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/achicu\/code\/css-presenter\/style\/src\/framework\.scss}line{font-family:\00003558}}
+.timing-view .timing-content-view .slide-item-view .slide-scale-time {
+  position: absolute;
+  z-index: 0;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 128, 0, 0.5);
+  -webkit-transform-origin: 100% 0;
+  -moz-transform-origin: 100% 0;
+  -ms-transform-origin: 100% 0;
+  -o-transform-origin: 100% 0;
+  transform-origin: 100% 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/achicu\/code\/css-presenter\/style\/src\/framework\.scss}line{font-family:\00003569}}
+.timing-view .timing-content-view .slide-item-view .highlight-touch-view-cover {
+  z-index: 2;
+}
+
+@media -sass-debug-info{filename{}line{font-family:\0000320}}
+.slides-list-view .logo {
+  position: absolute;
+  top: 0px;
+  right: 20px;
+  width: 5%;
+  height: 10%;
+  background: url(../../images/adobe.svg) no-repeat top center;
+  background-size: contain;
+  -webkit-transform: translateZ(0px);
+  -moz-transform: translateZ(0px);
+  -ms-transform: translateZ(0px);
+  -o-transform: translateZ(0px);
+  transform: translateZ(0px);
+}
+
+@media -sass-debug-info{filename{}line{font-family:\0000332}}
+.presenter-info-bar {
+  height: 170px;
+}
+@media -sass-debug-info{filename{}line{font-family:\0000335}}
+.presenter-info-bar .info-bar {
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+@media -sass-debug-info{filename{}line{font-family:\0000339}}
+.presenter-info-bar .info-bar .button-view, .presenter-info-bar .info-bar .data-button-view {
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 150px;
+  padding: 10px;
+  font-size: 1.2em;
+  color: white;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
+  text-align: center;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.1);
+}
+@media -sass-debug-info{filename{}line{font-family:\0000354}}
+.presenter-info-bar .info-bar .data-button-view {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+@media -sass-debug-info{filename{}line{font-family:\0000358}}
+.presenter-info-bar .info-bar .data-button-view .data-button-label-view {
+  display: inline-block;
+  width: 50px;
+}
+@media -sass-debug-info{filename{}line{font-family:\0000362}}
+.presenter-info-bar .info-bar .data-button-view .data-button-value-view {
+  display: inline-block;
+  width: 70px;
+  text-align: center;
+  font-weight: bold;
+}
+@media -sass-debug-info{filename{}line{font-family:\0000369}}
+.presenter-info-bar .info-bar .data-button-view.minute-view.started {
+  background: rgba(255, 255, 255, 0.2);
+}
+@media -sass-debug-info{filename{}line{font-family:\0000374}}
+.presenter-info-bar .info-bar .horizontal-scroll-view-content {
+  height: 100%;
+  z-index: 0;
+}
+@media -sass-debug-info{filename{}line{font-family:\0000379}}
+.presenter-info-bar .info-bar .vertical-scroll-view {
+  width: 150px;
+  height: 100%;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+@media -sass-debug-info{filename{}line{font-family:\0000386}}
+.presenter-info-bar .info-bar .vertical-scroll-view-content {
+  padding-bottom: 10px;
+}
+
+@media -sass-debug-info{filename{}line{font-family:\0000393}}
+.slide-view .center {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  width: 80%;
+  text-align: center;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+@media -sass-debug-info{filename{}line{font-family:\00003102}}
+.slide-view .title-margin {
+  margin-top: 1em;
+}
+@media -sass-debug-info{filename{}line{font-family:\00003104}}
+.slide-view .title-margin a {
+  text-decoration: none;
+}
+@media -sass-debug-info{filename{}line{font-family:\00003109}}
+.slide-view .italics {
+  font-style: italic;
+}
+@media -sass-debug-info{filename{}line{font-family:\00003113}}
+.slide-view .link-view {
+  display: block;
+}
+@media -sass-debug-info{filename{}line{font-family:\00003117}}
+.slide-view .slide-link {
+  position: absolute;
+  bottom: 30px;
+  left: 0px;
+  right: 0px;
+  font-size: 0.6em;
+}
+@media -sass-debug-info{filename{}line{font-family:\00003125}}
+.slide-view a {
+  text-decoration: none;
+}
+
+@media -sass-debug-info{filename{}line{font-family:\00003130}}
+.intro-background {
+  background: url(../../images/bg_1.jpg) center center no-repeat;
+  background-size: cover;
+}
+
+@media -sass-debug-info{filename{}line{font-family:\00003136}}
+.slide-intro .white-strip {
+  position: absolute;
+  top: 30%;
+  background-color: rgba(255, 255, 255, 0.9);
+  width: 100%;
+  text-align: center;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  font-size: 0.7em;
+  border-radius: 10px;
+}
+@media -sass-debug-info{filename{}line{font-family:\00003146}}
+.slide-intro .white-strip h1, .slide-intro .white-strip h2, .slide-intro .white-strip h3, .slide-intro .white-strip h4, .slide-intro .white-strip a {
+  color: black;
+  text-shadow: none;
+}
+
+@media -sass-debug-info{filename{}line{font-family:\00003153}}
+.slide-about {
+  -webkit-transform-perspective: 500;
+  -moz-transform-perspective: 500;
+  -ms-transform-perspective: 500;
+  -o-transform-perspective: 500;
+  transform-perspective: 500;
+}
+@media -sass-debug-info{filename{}line{font-family:\00003156}}
+.slide-about .css-regions-picture, .slide-about .css-exclusions-picture, .slide-about .css-filters-picture, .slide-about .css-webkit-picture {
+  position: absolute;
+  -webkit-transition: -webkit-transform 0.5s linear, opacity 0.5s linear;
+  -moz-transition: -moz-transform 0.5s linear, opacity 0.5s linear;
+  -ms-transition: -ms-transform 0.5s linear, opacity 0.5s linear;
+  -o-transition: -o-transform 0.5s linear, opacity 0.5s linear;
+  transition: transform 0.5s linear, opacity 0.5s linear;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+@media -sass-debug-info{filename{}line{font-family:\00003163}}
+.slide-about .css-regions-picture .feature-label, .slide-about .css-exclusions-picture .feature-label, .slide-about .css-filters-picture .feature-label, .slide-about .css-webkit-picture .feature-label {
+  position: absolute;
+  top: -1.5em;
+  left: 0px;
+  text-align: center;
+  width: 100%;
+}
+@media -sass-debug-info{filename{}line{font-family:\00003172}}
+.slide-about .css-regions-picture, .slide-about .css-exclusions-picture, .slide-about .css-filters-picture {
+  box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.6);
+  background-color: white;
+  width: 30%;
+  height: 30%;
+}
+@media -sass-debug-info{filename{}line{font-family:\00003179}}
+.slide-about .css-regions-picture {
+  left: 10%;
+  top: 25%;
+  opacity: 0;
+  -webkit-transform: translateZ(-100px) rotateY(90deg) translateZ(100px) rotate(-10deg);
+  -moz-transform: translateZ(-100px) rotateY(90deg) translateZ(100px) rotate(-10deg);
+  -ms-transform: translateZ(-100px) rotateY(90deg) translateZ(100px) rotate(-10deg);
+  -o-transform: translateZ(-100px) rotateY(90deg) translateZ(100px) rotate(-10deg);
+  transform: translateZ(-100px) rotateY(90deg) translateZ(100px) rotate(-10deg);
+  background-image: url(../../images/specs/regions.png);
+}
+@media -sass-debug-info{filename{}line{font-family:\00003186}}
+.slide-about .css-regions-picture.state-open {
+  opacity: 1;
+  -webkit-transform: translateZ(-100px) rotateY(0deg) translateZ(100px) rotate(-10deg);
+  -moz-transform: translateZ(-100px) rotateY(0deg) translateZ(100px) rotate(-10deg);
+  -ms-transform: translateZ(-100px) rotateY(0deg) translateZ(100px) rotate(-10deg);
+  -o-transform: translateZ(-100px) rotateY(0deg) translateZ(100px) rotate(-10deg);
+  transform: translateZ(-100px) rotateY(0deg) translateZ(100px) rotate(-10deg);
+}
+@media -sass-debug-info{filename{}line{font-family:\00003192}}
+.slide-about .css-exclusions-picture {
+  left: 35%;
+  top: 25%;
+  opacity: 0;
+  -webkit-transform: translateZ(-100px) rotateY(90deg) translateZ(101px);
+  -moz-transform: translateZ(-100px) rotateY(90deg) translateZ(101px);
+  -ms-transform: translateZ(-100px) rotateY(90deg) translateZ(101px);
+  -o-transform: translateZ(-100px) rotateY(90deg) translateZ(101px);
+  transform: translateZ(-100px) rotateY(90deg) translateZ(101px);
+  background-image: url(../../images/specs/exclusions.png);
+}
+@media -sass-debug-info{filename{}line{font-family:\00003199}}
+.slide-about .css-exclusions-picture.state-open {
+  opacity: 1;
+  -webkit-transform: translateZ(-100px) rotateY(0deg) translateZ(101px);
+  -moz-transform: translateZ(-100px) rotateY(0deg) translateZ(101px);
+  -ms-transform: translateZ(-100px) rotateY(0deg) translateZ(101px);
+  -o-transform: translateZ(-100px) rotateY(0deg) translateZ(101px);
+  transform: translateZ(-100px) rotateY(0deg) translateZ(101px);
+}
+@media -sass-debug-info{filename{}line{font-family:\00003205}}
+.slide-about .css-filters-picture {
+  left: 60%;
+  top: 35%;
+  opacity: 0;
+  -webkit-transform: translateZ(-100px) rotateY(90deg) translateZ(102px) rotate(6deg);
+  -moz-transform: translateZ(-100px) rotateY(90deg) translateZ(102px) rotate(6deg);
+  -ms-transform: translateZ(-100px) rotateY(90deg) translateZ(102px) rotate(6deg);
+  -o-transform: translateZ(-100px) rotateY(90deg) translateZ(102px) rotate(6deg);
+  transform: translateZ(-100px) rotateY(90deg) translateZ(102px) rotate(6deg);
+  background-image: url(../../images/specs/filters.png);
+}
+@media -sass-debug-info{filename{}line{font-family:\00003212}}
+.slide-about .css-filters-picture.state-open {
+  opacity: 1;
+  -webkit-transform: translateZ(-100px) rotateY(0deg) translateZ(102px) rotate(6deg);
+  -moz-transform: translateZ(-100px) rotateY(0deg) translateZ(102px) rotate(6deg);
+  -ms-transform: translateZ(-100px) rotateY(0deg) translateZ(102px) rotate(6deg);
+  -o-transform: translateZ(-100px) rotateY(0deg) translateZ(102px) rotate(6deg);
+  transform: translateZ(-100px) rotateY(0deg) translateZ(102px) rotate(6deg);
+}
+@media -sass-debug-info{filename{}line{font-family:\00003218}}
+.slide-about .css-webkit-picture {
+  left: 20%;
+  top: 50%;
+  width: 40%;
+  height: 40%;
+  opacity: 0;
+  -webkit-transform: translateZ(3px);
+  -moz-transform: translateZ(3px);
+  -ms-transform: translateZ(3px);
+  -o-transform: translateZ(3px);
+  transform: translateZ(3px);
+  background-image: url(../../images/webkit-icon.png);
+}
+@media -sass-debug-info{filename{}line{font-family:\00003227}}
+.slide-about .css-webkit-picture.state-open {
+  opacity: 1;
+}
+
+@media -sass-debug-info{filename{}line{font-family:\00003233}}
+.filter-background {
+  -webkit-filter: grayscale(100%) opacity(0.5);
+  -moz-filter: grayscale(100%) opacity(0.5);
+  -ms-filter: grayscale(100%) opacity(0.5);
+  -o-filter: grayscale(100%) opacity(0.5);
+  filter: grayscale(100%) opacity(0.5);
+  background: url(../../images/filter_mesh.png) 90% 90% no-repeat;
+  background-size: 10%;
+}
+
+@media -sass-debug-info{filename{}line{font-family:\00003240}}
+.slide-css-filters-demo .filter-syntax {
+  font-size: 0.8em;
+}
+@media -sass-debug-info{filename{}line{font-family:\00003242}}
+.slide-css-filters-demo .filter-syntax .filter-name, .slide-css-filters-demo .filter-syntax .prop-name {
+  font-weight: bold;
+}
+@media -sass-debug-info{filename{}line{font-family:\00003245}}
+.slide-css-filters-demo .filter-syntax .filter-name {
+  font-size: 1.1em;
+}
+@media -sass-debug-info{filename{}line{font-family:\00003249}}
+.slide-css-filters-demo .title-margin {
+  margin-bottom: 130px;
+}
+@media -sass-debug-info{filename{}line{font-family:\00003252}}
+.slide-css-filters-demo .filtered-area {
+  margin-left: auto;
+  margin-right: auto;
+  width: 600px;
+  height: 250px;
+  -webkit-transform: translateZ(0px);
+  -moz-transform: translateZ(0px);
+  -ms-transform: translateZ(0px);
+  -o-transform: translateZ(0px);
+  transform: translateZ(0px);
+}
+@media -sass-debug-info{filename{}line{font-family:\00003259}}
+.slide-css-filters-demo .filtered-area .filtered-area-item {
+  left: 0px;
+  width: 600px;
+  height: 250px;
+}
+@media -sass-debug-info{filename{}line{font-family:\00003264}}
+.slide-css-filters-demo .filtered-area .filtered-area-item .slide-css-filters-label {
+  display: inline-block;
+  width: 200px;
+}
+@media -sass-debug-info{filename{}line{font-family:\00003269}}
+.slide-css-filters-demo .filtered-area .filtered-area-item .slide-css-filters-field {
+  padding: 10px;
+  font-size: 1.2em;
+  width: 300px;
+  border-radius: 10px;
+}
+@media -sass-debug-info{filename{}line{font-family:\00003277}}
+.slide-css-filters-demo .element-type-area {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  bottom: 100px;
+  width: 200px;
+}
+@media -sass-debug-info{filename{}line{font-family:\00003284}}
+.slide-css-filters-demo .element-type-area .element-type-area-content {
+  width: 200px;
+}
+@media -sass-debug-info{filename{}line{font-family:\00003287}}
+.slide-css-filters-demo .element-type-area .element-type-area-content .element-type-item {
+  width: 200px;
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+@media -sass-debug-info{filename{}line{font-family:\00003295}}
+.slide-css-filters-demo .blur-control {
+  position: absolute;
+  bottom: 30px;
+  width: 100%;
+  height: 150px;
+}
+
+@media -sass-debug-info{filename{}line{font-family:\00003304}}
+.slide-cssfilterlab .css-filter-lab-preview {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  height: 60%;
+  box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.6);
+}
+@media -sass-debug-info{filename{}line{font-family:\00003314}}
+.slide-cssfilterlab .css-filter-lab-mobile-preview {
+  position: absolute;
+  right: 50px;
+  bottom: 30px;
+}
+
+@media -sass-debug-info{filename{}line{font-family:\00003321}}
+.demo-background {
+  background: -webkit-radial-gradient(#548db0 0%, #343737 80%, #333636 100%);
+  background: -moz-radial-gradient(#548db0 0%, #343737 80%, #333636 100%);
+  background: -ms-radial-gradient(#548db0 0%, #343737 80%, #333636 100%);
+  background: -o-radial-gradient(#548db0 0%, #343737 80%, #333636 100%);
+  background: radial-gradient(#548db0 0%, #343737 80%, #333636 100%);
+}
+
+@media -sass-debug-info{filename{}line{font-family:\00003325}}
+.gruntjs-background {
+  background: url(../../images/gruntjs.png) 90% 90% no-repeat;
+  background-size: 20%;
+}
+
+@media -sass-debug-info{filename{}line{font-family:\00003331}}
+.slide-edge-inspect .edge-inspect-logo {
+  vertical-align: middle;
+  margin-right: 0.3em;
+}
+
+@media -sass-debug-info{filename{}line{font-family:\00003337}}
+.edge-inspect-background {
+  background: url(../../images/edge_inspect_feature2.png) right bottom no-repeat;
+  background-size: 40%;
+}
+
+@media -sass-debug-info{filename{}line{font-family:\00003343}}
+.slide-features .features-row {
+  margin-top: 1em;
+}
+
+@media -sass-debug-info{filename{}line{font-family:\00003348}}
+.offline-background {
+  background: url(../../images/offline.svg) 90% 90% no-repeat;
+  background-size: 10%;
+}
+
+@media -sass-debug-info{filename{}line{font-family:\00003353}}
+.touch-background {
+  background: url(../../images/phone_ui.svg) 88% 90% no-repeat;
+  background-size: 5%;
+}
+
+@media -sass-debug-info{filename{}line{font-family:\00003358}}
+.performance-background {
+  background: url(../../images/performance.svg) 90% 90% no-repeat;
+  background-size: 10%;
+}
+
+@media -sass-debug-info{filename{}line{font-family:\00003364}}
+.slide-touch-gestures .touch-area {
+  position: relative;
+  height: 400px;
+  margin-top: 1em;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+@media -sass-debug-info{filename{}line{font-family:\00003372}}
+.slide-touch-gestures .touch-area .touch-area-label {
+  font-size: 0.7em;
+}
+
+@media -sass-debug-info{filename{}line{font-family:\00003380}}
+.slide-touch-abstraction .touch-area-container {
+  margin-top: 1em;
+  position: relative;
+  height: 400px;
+}
+@media -sass-debug-info{filename{}line{font-family:\00003385}}
+.slide-touch-abstraction .touch-area-container .touch-area-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+@media -sass-debug-info{filename{}line{font-family:\00003390}}
+.slide-touch-abstraction .touch-area-container .touch-area-inner .touch-area {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+@media -sass-debug-info{filename{}line{font-family:\00003398}}
+.slide-touch-abstraction .touch-area-container .touch-area-inner .touch-area .touch-area-label {
+  font-size: 0.7em;
+}
+
+@media -sass-debug-info{filename{}line{font-family:\00003407}}
+.slide-touch-scroll .scroll-area-container {
+  margin-top: 1em;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  height: 500px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+@media -sass-debug-info{filename{}line{font-family:\00003420}}
+.slide-touch-scroll .scroll-area-container .scroll-area-content {
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
+}
+@media -sass-debug-info{filename{}line{font-family:\00003424}}
+.slide-touch-scroll .scroll-area-container .scroll-area {
+  width: 100%;
+  height: 100%;
+}
+@media -sass-debug-info{filename{}line{font-family:\00003428}}
+.slide-touch-scroll .scroll-area-container .scroll-area .category-line {
+  position: relative;
+  text-align: left;
+  width: 100%;
+}
+@media -sass-debug-info{filename{}line{font-family:\00003433}}
+.slide-touch-scroll .scroll-area-container .scroll-area .category-line.repeated-item-0 {
+  background-color: rgba(128, 0, 0, 0.4);
+}
+@media -sass-debug-info{filename{}line{font-family:\00003436}}
+.slide-touch-scroll .scroll-area-container .scroll-area .category-line.repeated-item-1 {
+  background-color: rgba(128, 128, 0, 0.4);
+}
+@media -sass-debug-info{filename{}line{font-family:\00003439}}
+.slide-touch-scroll .scroll-area-container .scroll-area .category-line.repeated-item-2 {
+  background-color: rgba(0, 128, 0, 0.4);
+}
+@media -sass-debug-info{filename{}line{font-family:\00003442}}
+.slide-touch-scroll .scroll-area-container .scroll-area .category-line.repeated-item-3 {
+  background-color: rgba(128, 0, 128, 0.4);
+}
+@media -sass-debug-info{filename{}line{font-family:\00003445}}
+.slide-touch-scroll .scroll-area-container .scroll-area .category-line.repeated-item-4 {
+  background-color: rgba(0, 128, 128, 0.4);
+}
+@media -sass-debug-info{filename{}line{font-family:\00003448}}
+.slide-touch-scroll .scroll-area-container .scroll-area .category-line.repeated-item-5 {
+  background-color: rgba(0, 0, 128, 0.4);
+}
+@media -sass-debug-info{filename{}line{font-family:\00003452}}
+.slide-touch-scroll .scroll-area-container .scroll-area .category-line h3 {
+  margin-left: 10px;
+  font-size: 0.8em;
+}
+@media -sass-debug-info{filename{}line{font-family:\00003457}}
+.slide-touch-scroll .scroll-area-container .scroll-area .category-line .item-line {
+  width: 100%;
+  height: 140px;
+}
+@media -sass-debug-info{filename{}line{font-family:\00003461}}
+.slide-touch-scroll .scroll-area-container .scroll-area .category-line .item-line .item-container-view {
+  margin: 10px;
+}
+
+@media -sass-debug-info{filename{}line{font-family:\00003470}}
+.slide-touch-scroll-item-view {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+  font-size: 28px;
+  color: white;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
+}
+@media -sass-debug-info{filename{}line{font-family:\00003481}}
+.slide-touch-scroll-item-view .center {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  width: 80%;
+  text-align: center;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+@media -sass-debug-info{filename{}line{font-family:\00003490}}
+.slide-touch-scroll-item-view .touch-area-label {
+  font-size: 0.7em;
+}
+@media -sass-debug-info{filename{}line{font-family:\00003494}}
+.slide-touch-scroll-item-view.repeated-item-0 {
+  background-color: rgba(128, 0, 0, 0.1);
+}
+@media -sass-debug-info{filename{}line{font-family:\00003497}}
+.slide-touch-scroll-item-view.repeated-item-1 {
+  background-color: rgba(128, 128, 0, 0.1);
+}
+@media -sass-debug-info{filename{}line{font-family:\00003500}}
+.slide-touch-scroll-item-view.repeated-item-2 {
+  background-color: rgba(0, 128, 0, 0.1);
+}
+@media -sass-debug-info{filename{}line{font-family:\00003503}}
+.slide-touch-scroll-item-view.repeated-item-3 {
+  background-color: rgba(128, 0, 128, 0.1);
+}
+@media -sass-debug-info{filename{}line{font-family:\00003506}}
+.slide-touch-scroll-item-view.repeated-item-4 {
+  background-color: rgba(0, 128, 128, 0.1);
+}
+@media -sass-debug-info{filename{}line{font-family:\00003509}}
+.slide-touch-scroll-item-view.repeated-item-5 {
+  background-color: rgba(0, 0, 128, 0.1);
+}
+
+@media -sass-debug-info{filename{}line{font-family:\00003515}}
+.slide-performance .expandable-view {
+  margin-top: 0.5em;
+  margin-bottom: 0px;
+}
+@media -sass-debug-info{filename{}line{font-family:\00003519}}
+.slide-performance .expandable-view .label-view {
+  font-size: 0.9em;
+}
+
+@media -sass-debug-info{filename{}line{font-family:\00003526}}
+.slide-animations-spritesheet .css-spritesheet-preview {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  height: 60%;
+  box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.6);
+}
+
+@media -sass-debug-info{filename{}line{font-family:\00003539}}
+.slide-animations-demo .buttons-view {
+  position: absolute;
+  bottom: 50px;
+  left: 0px;
+  right: 0px;
+  z-index: 2;
+  -webkit-transform: translateZ(10px);
+  -moz-transform: translateZ(10px);
+  -ms-transform: translateZ(10px);
+  -o-transform: translateZ(10px);
+  transform: translateZ(10px);
+}
+@media -sass-debug-info{filename{}line{font-family:\00003545}}
+.slide-animations-demo .buttons-view .button-view {
+  float: left;
+  margin-left: 10px;
+  margin-right: 10px;
+  display: block;
+  width: 150px;
+  padding: 10px;
+  font-size: 1.2em;
+  color: white;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
+  text-align: center;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.1);
+}
+@media -sass-debug-info{filename{}line{font-family:\00003561}}
+.slide-animations-demo .buttons-view::after {
+  text-content: "";
+  clear: left;
+}
+@media -sass-debug-info{filename{}line{font-family:\00003570}}
+.slide-animations-demo .row {
+  margin-top: 100px;
+  z-index: 1;
+}
+@media -sass-debug-info{filename{}line{font-family:\00003575}}
+.slide-animations-demo .cell2 {
+  text-align: center;
+}
+@media -sass-debug-info{filename{}line{font-family:\00003579}}
+.slide-animations-demo .repeated-item-0 .animation-view {
+  -webkit-transform: scaleX(-1);
+  -moz-transform: scaleX(-1);
+  -ms-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  transform: scaleX(-1);
+  -webkit-filter: hue-rotate(120deg);
+  -moz-filter: hue-rotate(120deg);
+  -ms-filter: hue-rotate(120deg);
+  -o-filter: hue-rotate(120deg);
+  filter: hue-rotate(120deg);
+}
+@media -sass-debug-info{filename{}line{font-family:\00003584}}
+.slide-animations-demo .animation-view {
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: opacity 0.2s linear;
+  -moz-transition: opacity 0.2s linear;
+  -ms-transition: opacity 0.2s linear;
+  -o-transition: opacity 0.2s linear;
+  transition: opacity 0.2s linear;
+}
+@media -sass-debug-info{filename{}line{font-family:\00003589}}
+.slide-animations-demo .animation-view.state-open {
+  visibility: visible;
+  opacity: 1;
+}
+@media -sass-debug-info{filename{}line{font-family:\00003595}}
+.slide-animations-demo .animation-transform-touch-area {
+  display: inline-block;
+  width: 321px;
+  height: 288px;
+}
+@media -sass-debug-info{filename{}line{font-family:\00003602}}
+.slide-animations-demo .animation-transform-touch-area .animation-view .debug-view-indicator {
+  display: none;
+}
+@media -sass-debug-info{filename{}line{font-family:\00003606}}
+.slide-animations-demo .animation-transform-touch-area .animation-view.debug-view .debug-view-indicator {
+  display: block;
+}
+@media -sass-debug-info{filename{}line{font-family:\00003610}}
+.slide-animations-demo .animation-transform-touch-area .animation-view .animation-viewport {
+  position: absolute;
+}
+@media -sass-debug-info{filename{}line{font-family:\00003614}}
+.slide-animations-demo .animation-transform-touch-area .animation-view .animation-image {
+  position: absolute;
+}
+@media -sass-debug-info{filename{}line{font-family:\00003617}}
+.slide-animations-demo .animation-transform-touch-area .animation-view .animation-image .animation-image-view {
+  position: absolute;
+  opacity: 0;
+  background: url(../../images/character.png);
+  -webkit-transform-origin: 0 0;
+  -moz-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  -o-transform-origin: 0 0;
+  transform-origin: 0 0;
+  -webkit-transform: translateZ(0px);
+  -moz-transform: translateZ(0px);
+  -ms-transform: translateZ(0px);
+  -o-transform: translateZ(0px);
+  transform: translateZ(0px);
+}
+@media -sass-debug-info{filename{}line{font-family:\00003624}}
+.slide-animations-demo .animation-transform-touch-area .animation-view .animation-image .animation-image-view .debug-view-indicator {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  border: 1px solid green;
+}
+
+@media -sass-debug-info{filename{}line{font-family:\00003639}}
+.slide-performance-removing-content .gauge-view-container {
+  position: relative;
+}
+@media -sass-debug-info{filename{}line{font-family:\00003642}}
+.slide-performance-removing-content .gauge-view-container .gauge-view {
+  position: absolute;
+  top: 50%;
+  right: 30px;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+  width: 100px;
+  height: 50px;
+  background: -webkit-radial-gradient(bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 80%, rgba(0, 0, 0, 0.5) 100%);
+  background: -moz-radial-gradient(bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 80%, rgba(0, 0, 0, 0.5) 100%);
+  background: -ms-radial-gradient(bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 80%, rgba(0, 0, 0, 0.5) 100%);
+  background: -o-radial-gradient(bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 80%, rgba(0, 0, 0, 0.5) 100%);
+  background: radial-gradient(bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 80%, rgba(0, 0, 0, 0.5) 100%);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+}
+@media -sass-debug-info{filename{}line{font-family:\00003655}}
+.slide-performance-removing-content .gauge-view-container .gauge-view::after {
+  position: absolute;
+  top: 20%;
+  left: 0px;
+  right: 0px;
+  text-align: center;
+}
+@media -sass-debug-info{filename{}line{font-family:\00003663}}
+.slide-performance-removing-content .gauge-view-container .gauge-view .gauge-view-indicator {
+  position: absolute;
+  bottom: 0px;
+  height: 4px;
+  left: -4%;
+  width: 54%;
+  background: -webkit-linear-gradient(right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 59%, rgba(255, 255, 255, 0.8) 80%, rgba(255, 255, 255, 0.9) 100%);
+  background: -moz-linear-gradient(right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 59%, rgba(255, 255, 255, 0.8) 80%, rgba(255, 255, 255, 0.9) 100%);
+  background: -ms-linear-gradient(right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 59%, rgba(255, 255, 255, 0.8) 80%, rgba(255, 255, 255, 0.9) 100%);
+  background: -o-linear-gradient(right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 59%, rgba(255, 255, 255, 0.8) 80%, rgba(255, 255, 255, 0.9) 100%);
+  background: linear-gradient(right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 59%, rgba(255, 255, 255, 0.8) 80%, rgba(255, 255, 255, 0.9) 100%);
+  -webkit-transform-origin: 100% 50%;
+  -moz-transform-origin: 100% 50%;
+  -ms-transform-origin: 100% 50%;
+  -o-transform-origin: 100% 50%;
+  transform-origin: 100% 50%;
+}
+@media -sass-debug-info{filename{}line{font-family:\00003673}}
+.slide-performance-removing-content .gauge-view-container .gauge-view.val1-gauge-view {
+  background-color: rgba(128, 0, 0, 0.5);
+}
+@media -sass-debug-info{filename{}line{font-family:\00003675}}
+.slide-performance-removing-content .gauge-view-container .gauge-view.val1-gauge-view::after {
+  content: "60fps";
+}
+@media -sass-debug-info{filename{}line{font-family:\00003678}}
+.slide-performance-removing-content .gauge-view-container .gauge-view.val1-gauge-view .gauge-view-indicator {
+  -webkit-transform: rotate(170deg);
+  -moz-transform: rotate(170deg);
+  -ms-transform: rotate(170deg);
+  -o-transform: rotate(170deg);
+  transform: rotate(170deg);
+}
+@media -sass-debug-info{filename{}line{font-family:\00003683}}
+.slide-performance-removing-content .gauge-view-container .gauge-view.val2-gauge-view {
+  background-color: rgba(128, 0, 0, 0.4);
+}
+@media -sass-debug-info{filename{}line{font-family:\00003685}}
+.slide-performance-removing-content .gauge-view-container .gauge-view.val2-gauge-view::after {
+  content: "40fps";
+}
+@media -sass-debug-info{filename{}line{font-family:\00003688}}
+.slide-performance-removing-content .gauge-view-container .gauge-view.val2-gauge-view .gauge-view-indicator {
+  -webkit-transform: rotate(116deg);
+  -moz-transform: rotate(116deg);
+  -ms-transform: rotate(116deg);
+  -o-transform: rotate(116deg);
+  transform: rotate(116deg);
+}
+@media -sass-debug-info{filename{}line{font-family:\00003693}}
+.slide-performance-removing-content .gauge-view-container .gauge-view.val3-gauge-view {
+  background-color: rgba(128, 0, 0, 0.1);
+}
+@media -sass-debug-info{filename{}line{font-family:\00003695}}
+.slide-performance-removing-content .gauge-view-container .gauge-view.val3-gauge-view::after {
+  content: "20fps";
+}
+@media -sass-debug-info{filename{}line{font-family:\00003698}}
+.slide-performance-removing-content .gauge-view-container .gauge-view.val3-gauge-view .gauge-view-indicator {
+  -webkit-transform: rotate(63deg);
+  -moz-transform: rotate(63deg);
+  -ms-transform: rotate(63deg);
+  -o-transform: rotate(63deg);
+  transform: rotate(63deg);
+}
+@media -sass-debug-info{filename{}line{font-family:\00003703}}
+.slide-performance-removing-content .gauge-view-container .gauge-view.val4-gauge-view {
+  background-color: rgba(128, 0, 0, 0);
+}
+@media -sass-debug-info{filename{}line{font-family:\00003705}}
+.slide-performance-removing-content .gauge-view-container .gauge-view.val4-gauge-view::after {
+  content: "0fps";
+}
+@media -sass-debug-info{filename{}line{font-family:\00003708}}
+.slide-performance-removing-content .gauge-view-container .gauge-view.val4-gauge-view .gauge-view-indicator {
+  -webkit-transform: rotate(10deg);
+  -moz-transform: rotate(10deg);
+  -ms-transform: rotate(10deg);
+  -o-transform: rotate(10deg);
+  transform: rotate(10deg);
+}
