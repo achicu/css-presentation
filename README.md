@@ -3,6 +3,9 @@ CSS Presenter
 
 Enjoy CSS Presenter!
 
+Hosted version:
+http://achicu.github.com/css-presentation
+
 Running
 -----
 
